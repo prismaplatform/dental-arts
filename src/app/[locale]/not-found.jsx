@@ -1,7 +1,7 @@
-import React from 'react'
-import SectionHeading from './ui/SectionHeading';
-import Spacing from './ui/Spacing';
-import Button from './ui/Button';
+import React from "react";
+import SectionHeading from "../ui/SectionHeading";
+import Spacing from "../ui/Spacing";
+import Button from "../ui/Button";
 export const metadata = {
   title: "404 - Page not Found..!",
 };
@@ -19,5 +19,5 @@ export default function PageNotFound() {
         <Button btnText="Back To Home" btnUrl="/" />
       </div>
     </div>
-  )
+  );
 }
