@@ -1,12 +1,12 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import DropDown from './DropDown';
-import Spacing from '../Spacing';
-import IconBoxStyle11 from '../IconBox/IconBoxStyle11';
-import Newsletter from '../Widget/Newsletter';
-import SocialWidget from '../Widget/SocialWidget';
-import Image from 'next/image';
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import DropDown from "./DropDown";
+import Spacing from "../Spacing";
+import IconBoxStyle11 from "../IconBox/IconBoxStyle11";
+import Newsletter from "../Widget/Newsletter";
+import SocialWidget from "../Widget/SocialWidget";
+import Image from "next/image";
 
 export default function Header({ logoSrc, variant }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -21,17 +21,18 @@ export default function Header({ logoSrc, variant }) {
         setIsSticky(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     // Cleanup function to remove the event listener
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
     <>
       <header
-        className={`cs_site_header cs_style1 cs_sticky_header ${variant} ${isSticky ? 'cs_active_sticky' : ''
-          }`}
+        className={`cs_site_header cs_style1 cs_sticky_header ${variant} ${
+          isSticky ? "cs_active_sticky" : ""
+        }`}
       >
         <div className="cs_main_header">
           <div className="container">
@@ -41,10 +42,7 @@ export default function Header({ logoSrc, variant }) {
                   <Image src={logoSrc} alt="Logo" height={28} width={173} />
                 </Link>
                 <nav className="cs_nav">
-                  <ul
-                    className={`${mobileToggle ? 'cs_nav_list cs_active' : 'cs_nav_list'
-                      }`}
-                  >
+                  <ul className={`${mobileToggle ? "cs_nav_list cs_active" : "cs_nav_list"}`}>
                     <li className="menu-item-has-children">
                       <Link href="/">Home</Link>
                       <DropDown>
@@ -84,17 +82,13 @@ export default function Header({ logoSrc, variant }) {
                             <Link href="/departments">Departments</Link>
                           </li>
                           <li>
-                            <Link href="/departments/department-details">
-                              Department Details
-                            </Link>
+                            <Link href="/departments/department-details">Department Details</Link>
                           </li>
                           <li>
                             <Link href="/doctors">Doctors</Link>
                           </li>
                           <li>
-                            <Link href="doctors/doctor-details">
-                              Doctor Details
-                            </Link>
+                            <Link href="doctors/doctor-details">Doctor Details</Link>
                           </li>
                           <li>
                             <Link href="/pricing-plan">Pricing Plan</Link>
@@ -113,11 +107,7 @@ export default function Header({ logoSrc, variant }) {
                     </li>
                   </ul>
                   <span
-                    className={
-                      mobileToggle
-                        ? 'cs_menu_toggle cs_teggle_active'
-                        : 'cs_menu_toggle'
-                    }
+                    className={mobileToggle ? "cs_menu_toggle cs_teggle_active" : "cs_menu_toggle"}
                     onClick={() => setMobileToggle(!mobileToggle)}
                   >
                     <span></span>
@@ -176,25 +166,16 @@ export default function Header({ logoSrc, variant }) {
           </div>
         </div>
       </header>
-      <div className={`cs_sidenav ${sideNav ? 'active' : ''}`}>
-        <div
-          className="cs_sidenav_overlay"
-          onClick={() => setSideNav(!sideNav)}
-        />
+      <div className={`cs_sidenav ${sideNav ? "active" : ""}`}>
+        <div className="cs_sidenav_overlay" onClick={() => setSideNav(!sideNav)} />
         <div className="cs_sidenav_in">
-          <button
-            className="cs_close"
-            type="button"
-            onClick={() => setSideNav(!sideNav)}
-          >
+          <button className="cs_close" type="button" onClick={() => setSideNav(!sideNav)}>
             <Image src="/images/icons/close.svg" alt="Close" height={28} width={28} />
           </button>
           <div className="cs_logo_box">
             <Image src={logoSrc} alt="Logo" height={28} width={173} />
             <div className="cs_height_15" />
-            <h3 className="cs_fs_24 cs_semibold mb-0">
-              Your Partner in Health and Wellness
-            </h3>
+            <h3 className="cs_fs_24 cs_semibold mb-0">Your Partner in Health and Wellness</h3>
           </div>
           <Spacing md="35" lg="35" xl="35" />
           <hr />
@@ -224,7 +205,7 @@ export default function Header({ logoSrc, variant }) {
           <SocialWidget />
         </div>
       </div>
-      <div className={`cs_header_search ${searchToggle ? 'active' : ''}`}>
+      <div className={`cs_header_search ${searchToggle ? "active" : ""}`}>
         <div className="cs_header_search_in">
           <div className="container">
             <div className="cs_header_search_box">
@@ -255,10 +236,7 @@ export default function Header({ logoSrc, variant }) {
             </div>
           </div>
         </div>
-        <div
-          className="cs_sidenav_overlay"
-          onClick={() => setSearchToggle(!searchToggle)}
-        />
+        <div className="cs_sidenav_overlay" onClick={() => setSearchToggle(!searchToggle)} />
       </div>
     </>
   );
