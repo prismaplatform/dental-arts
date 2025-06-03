@@ -1,7 +1,7 @@
-"use client"
-import React from 'react'
-import Header from '../ui/Header'
-import FooterStyle3 from '../ui/Footer/FooterStyle3'
+"use client";
+import React from "react";
+import Header from "../../ui/Header";
+import FooterStyle3 from "../../ui/Footer/FooterStyle3";
 
 export default function Layout({ children }) {
   return (
@@ -10,5 +10,5 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <FooterStyle3 />
     </>
-  )
+  );
 }

@@ -1,7 +1,27 @@
 {
+  "Header": {
+    "Home": "Kezdőlap",
+    "AboutUs": "Rólunk",
+    "Services": "Szolgáltatások",
+    "Cases": "Esetek",
+    "Contact": "Kapcsolat",
+    "Appointment": "Időpontfoglalás"
+  },
   "Home": {
     "Hero": {
       "title": "Dental Arts Praxis"
+    },
+    "WhyUs": {
+      "title": "Miért válaszd a Dental Arts Praxist"
+    },
+    "Services": {
+      "title": "Fő szolgáltatások"
+    },
+    "Feedback": {
+      "title": "Visszajelzések"
+    },
+    "Appointment": {
+      "title": "Időpontfoglalás"
     }
   }
 }
