@@ -9,7 +9,7 @@ const WhyChouseUs2 = () => {
 				<div className="lg:col-span-6 col-span-12">
 					<div className="text-end relative before:absolute before:w-[71%] before:h-full before:bg-primary before:-left-38 before:z-[-1] before:rotate-[5deg] before:top-[13%] mt-50 lg:mr-40 max-lg:before:hidden">
 						<figure className="overflow-hidden">
-							<img src="/assets/img/kep1.png" alt="img" className="w-full"/>
+							<img src="/assets/img/deltaArtsClinic1.png" alt="img" className="w-full"/>
 						</figure>
 						<div className="absolute xl:top-[-15%] xl:left-[-10%] lg:top-[-11%] lg:left-[-11%] top-[-12%] left-[-6%] xl:size-200 size-170 bg-white rounded-full flex items-center justify-center max-md:size-165">
 							<img alt="img" src="/assets/img/choose-us-logo.png" className="size-80 p-17 bg-primary rounded-full "/>

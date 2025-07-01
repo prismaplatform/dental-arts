@@ -62,7 +62,7 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 mb-40">
           {portfolioItems.map((item) => (
             <div key={item.id} className="group flex flex-col items-stretch">
               <div className="relative w-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -103,7 +103,7 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <div className="p-6 text-center bg-white flex-grow">
+              {/* <div className="p-6 text-center bg-white flex-grow">
                 <p className="text-primary text-sm font-semibold mb-2 uppercase">
                   {item.category}
                 </p>
@@ -121,9 +121,17 @@ const Portfolio = () => {
                 >
                   View Details <ArrowRight size={16} className="ml-2" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <a href="about.html" className="btn max-xxl:px-30">
+          <span className='flex gap-10'>
+                                Read More <ArrowRight size={20} />
+                              </span>
+          </a>
         </div>
       </div>
     </section>

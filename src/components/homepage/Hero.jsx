@@ -1,25 +1,19 @@
-'use client'; // This directive is necessary for client-side functionality like useState and useEffect
-
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link'; // Import Link from Next.js for client-side navigation
-import Image from 'next/image'; // Import Image from Next.js for optimized images
-import { ArrowRight, Heart } from 'lucide-react'; // Import Heart icon from Lucide
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight, Heart } from 'lucide-react'; 
 
 const Hero = () => {
-  // State for animated counters
   const [patientsCount, setPatientsCount] = useState(0);
   const [reportsCount, setReportsCount] = useState(0);
   const [specialistsCount, setSpecialistsCount] = useState(0);
-
-  // Refs for counter elements to observe their intersection
   const patientsRef = useRef(null);
   const reportsRef = useRef(null);
   const specialistsRef = useRef(null);
-
-  // Function to animate the counter
   const animateCounter = (target, setter, duration = 2000) => {
     let start = 0;
-    const increment = target / (duration / 16); // ~60fps
+    const increment = target / (duration / 16)
     const interval = setInterval(() => {
       start += increment;
       if (start >= target) {
@@ -30,13 +24,11 @@ const Hero = () => {
       }
     }, 16);
   };
-
-  // useEffect for Intersection Observer to trigger counters
   useEffect(() => {
     const observerOptions = {
-      root: null, // viewport
+      root: null,
       rootMargin: '0px',
-      threshold: 0.5, // Trigger when 50% of the element is visible
+      threshold: 0.5, 
     };
 
     const handleIntersection = (entries, observer) => {
@@ -52,25 +44,23 @@ const Hero = () => {
           } else if (targetElement === specialistsRef.current) {
             animateCounter(maxVal, setSpecialistsCount);
           }
-          observer.unobserve(targetElement); // Stop observing once animated
+          observer.unobserve(targetElement);
         }
       });
     };
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-    // Observe each counter element
     if (patientsRef.current) observer.observe(patientsRef.current);
     if (reportsRef.current) observer.observe(reportsRef.current);
     if (specialistsRef.current) observer.observe(specialistsRef.current);
 
-    // Cleanup observer on component unmount
     return () => {
       if (patientsRef.current) observer.unobserve(patientsRef.current);
       if (reportsRef.current) observer.unobserve(reportsRef.current);
       if (specialistsRef.current) observer.unobserve(specialistsRef.current);
     };
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   return (
     <>
@@ -185,7 +175,7 @@ const Hero = () => {
             <div className="lg:col-span-6 col-span-12">
               <div className="relative">
                 <Image
-                  src="/assets/img/heroImage.png"
+                  src="/assets/img/heroDental2.png"
                   alt="Hero Image"
                   width={800} 
                   height={800} 

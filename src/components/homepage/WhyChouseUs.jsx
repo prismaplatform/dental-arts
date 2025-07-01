@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import React from "react";
 
 const WhyChouseUs = () => {
@@ -42,15 +43,15 @@ const WhyChouseUs = () => {
                 </li>
               </ul>
               <a href="about.html" className="btn max-xxl:px-30">
-                <span>
-                  More About Us<i className="fa-solid fa-arrow-right"></i>
-                </span>
+               <span className='flex gap-10'>
+                      Read More <ArrowRight size={20} />
+                    </span>
               </a>
             </div>
             <div className="lg:col-span-6 col-span-12">
               <div className="relative">
                 <img
-                  src="assets/img/kep2.png"
+                  src="/assets/img/deltaArtsClinic2.png"
                   alt="img"
                   className="relative z-10"
                 />

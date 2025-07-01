@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -170,10 +171,9 @@ const Appointment = () => {
                           Processing...
                         </>
                       ) : (
-                        <>
-                          <span>Book An Appointment</span>
-                          <i className="fa-solid fa-arrow-right"></i>
-                        </>
+                       <span className='flex gap-10'>
+                      Read More <ArrowRight size={20} />
+                    </span>
                       )}
                     </button>
                   </div>
