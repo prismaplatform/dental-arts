@@ -74,19 +74,17 @@ const Hero = () => {
                   Solutions for Better Health
                 </span> */}
                 <div className="relative">
-                  <h1 className="xxl:text-7.5xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-secondary leading-[1.2]">
-                    Your <span className="text-primary">Health</span> Our
-                    Priority
+                  <h1 className="xxl:text-7xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-secondary leading-[1.2]">
+                  Mosolyt adunk<br /><span className="text-primary">szakértelemmel</span> és törődéssel
                   </h1>
                 </div>
                 <p className="xxl:text-xxl xl:text-xl text-lg leading-32 xl:leading-34 pb-45 text-gary font-normal">
-                  We are dedicated to putting your health at the forefront of
-                  everything we do. Our compassionate team of healthcare.
+                 Az EU‑konform Dental Arts modern, zöldövezeti rendelője fájdalommentes ellátást és személyre szabott kezelést kínál Fürdősor 12/B címen Sopron‑Balfon.
                 </p>
                 <div className="flex items-center gap-18 max-xl:flex-wrap">
                   <Link href="/about-us" className="btn">
                     <span className='flex gap-10'>
-                      Read More <ArrowRight size={20} />
+                      Tudj meg tobbet <ArrowRight size={20} />
                     </span>
                   </Link>
                   <ul className="flex ml-14 experience-team">
@@ -125,15 +123,15 @@ const Hero = () => {
                   </ul>
                   <div>
                     <h6 className="font-bold text-secondary font-sora text-base">
-                      2000+
+                      1000+
                     </h6>
                     <span className="text-secondary max-xxl:text-xs">
-                      Experience Team
+                      Elégedett 
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="flex xl:gap-60 sm:gap-40 gap-20 pt-50">
+              {/* <div className="flex xl:gap-60 sm:gap-40 gap-20 pt-50">
                 <div>
                   <h2
                     data-max="500" 
@@ -170,7 +168,7 @@ const Hero = () => {
                     Expert Specialists
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="lg:col-span-6 col-span-12">
               <div className="relative">

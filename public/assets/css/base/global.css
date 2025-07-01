@@ -160,3 +160,47 @@ input[type=number] {
 	100% 	{ transform: rotate(360deg); }
 }
 
+
+
+/* Add to your global CSS */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.lg-thumb-item {
+  width: 100px !important;
+  height: 80px !important;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.lg-thumb-item:hover, .lg-thumb-item.active {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.lg-toolbar {
+  background: rgba(0,0,0,0.45) !important;
+}
+
+.lg-sub-html {
+  background: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+}

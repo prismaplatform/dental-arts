@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <WhyChouseUs2 />
 
-      <WhyChouseUs />
+      {/* <WhyChouseUs /> */}
       <Services />
       <Gallery />
       <Feedback />

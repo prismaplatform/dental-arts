@@ -13,37 +13,37 @@ import "swiper/css/autoplay";
 const Feedback = () => {
   const testimonials = [
     {
-      id: 1,
-      rating: 5,
-      text: "He team at Md Nuristan Sheik went above and beyond during my treatment. From the doctors to the nurses, everyone was.",
-      image: "/assets/img/review-img-1.jpg",
-      name: "DR Md Kabir Khan",
-      position: "Senior Doctor",
-    },
-    {
-      id: 2,
-      rating: 5,
-      text: "He team at Md Nuristan Sheik went above and beyond during my treatment. From the doctors to the nurses, everyone was.",
-      image: "/assets/img/review-img-2.jpg",
-      name: "DR Tamim Hossin",
-      position: "Senior Doctor",
-    },
-    {
-      id: 3,
-      rating: 5,
-      text: "He team at Md Nuristan Sheik went above and beyond during my treatment. From the doctors to the nurses, everyone was.",
-      image: "/assets/img/team-1.png",
-      name: "DR Zakariya Islam",
-      position: "Senior Doctor",
-    },
-    {
-      id: 4,
-      rating: 5,
-      text: "He team at Md Nuristan Sheik went above and beyond during my treatment. From the doctors to the nurses, everyone was.",
-      image: "/assets/img/team-2.png",
-      name: "DR Tamim Hossin",
-      position: "Senior Doctor",
-    },
+  id: 1,
+  rating: 5,
+  text: "Az egész csapat rendkívül kedves és profi volt a kezelésem alatt. Mindenki maximálisan odafigyelt rám, így teljes biztonságban éreztem magam.",
+  image: "/assets/img/review-img-1.jpg",
+  name: "Kovács Anna",
+  position: "elégedett páciens",
+},
+{
+  id: 2,
+  rating: 5,
+  text: "Gyors és fájdalommentes kezelést kaptam, az orvosok és az asszisztensek is nagyon barátságosak voltak. Bátran ajánlom mindenkinek!",
+  image: "/assets/img/review-img-2.jpg",
+  name: "Szabó Péter",
+  position: "elégedett páciens",
+},
+{
+  id: 3,
+  rating: 5,
+  text: "A legmodernebb technológiát használják, és nagyon figyelnek a részletekre. Teljesen elégedett vagyok az eredménnyel és a szolgáltatással.",
+  image: "/assets/img/team-1.png",
+  name: "Nagy Réka",
+  position: "elégedett páciens",
+},
+{
+  id: 4,
+  rating: 5,
+  text: "Köszönöm a kedves és türelmes hozzáállást! A kezelések során mindig minden kérdésemre választ kaptam, ami megnyugtató volt számomra.",
+  image: "/assets/img/team-2.png",
+  name: "Tóth Gábor",
+  position: "elégedett páciens",
+},
   ];
 
   const renderStars = (rating) => {
@@ -65,10 +65,10 @@ const Feedback = () => {
         <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
           <div>
             <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-              # Testimonials
+             # Páciens Vélemények
             </span>
             <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-               Feedback That Inspires?
+                   Mosolyok, amik minket inspirálnak
             </h2>
           </div>
           
@@ -131,7 +131,7 @@ const Feedback = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="rounded-full w-16 h-16 object-cover"
+                    className="rounded-full w-50 h-50 object-cover"
                   />
                   <div>
                     <h5 className="md:text-base text-sm font-bold pb-4 font-sora text-secondary group-hover:text-white duration-500">

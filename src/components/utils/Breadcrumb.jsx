@@ -69,11 +69,11 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
           <div className="lg:w-1/2 w-full">
             <div>
               <img 
-                src="/assets/img/bannr-img-3.png" 
+                src="/assets/img/banner3.png" 
                 alt="img" 
                 className="w-[120%] xxl:max-w-[unset]"
               />
-              <ul className="shaps">
+              {/* <ul className="shaps">
                 <li className="absolute">
                   <img 
                     src="/assets/img/shaps-1.png" 
@@ -84,7 +84,7 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
                 
                
                 
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
