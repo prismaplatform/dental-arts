@@ -208,13 +208,13 @@ const SingleService = ({ slug }) => {
                     <i className="bg-primary xxl:size-60 xl:size-50 size-40 flex items-center justify-center hover:bg-secondary duration-500 rounded-full">
                       <ChevronLeft size={20} className="text-white" />
                     </i>
-                    All Services
+                    Összes szolgáltatás
                   </Link>
                   <Link
                     href="/appointment"
                     className="font-bold flex items-center gap-20 text-secondary hover:text-primary transition-colors"
                   >
-                    Book Appointment
+                    Időpontfoglalás
                     <i className="bg-primary xxl:size-60 xl:size-50 size-40 flex items-center justify-center hover:bg-secondary duration-500 rounded-full">
                       <ChevronRight size={20} className="text-white" />
                     </i>
