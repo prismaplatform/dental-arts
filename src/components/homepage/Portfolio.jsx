@@ -127,11 +127,11 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center">
-          <a href="/cases" className="btn max-xxl:px-30">
+          <Link href="/cases" className="btn max-xxl:px-30">
             <span className="flex gap-10">
               Összes eset <ArrowRight size={20} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

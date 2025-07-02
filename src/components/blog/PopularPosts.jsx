@@ -1,4 +1,5 @@
 // components/PopularPosts.jsx
+import Link from 'next/link';
 import React from 'react';
 
 const PopularPosts = ({ posts }) => {
@@ -13,7 +14,7 @@ const PopularPosts = ({ posts }) => {
             <img src={post.image} alt={post.title} className="w-16 h-16 object-cover rounded-md" />
             <div>
               <h5 className="text-lg font-bold text-secondary hover:text-primary duration-300">
-                <a href={`/blog/${post.id}`}>{post.title}</a>
+                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
               </h5>
               <p className="text-sm text-gray-600">{post.date} &bull; {post.views} views</p>
             </div>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Stethoscope } from 'lucide-react';
 import Map from './Map';
+import Link from 'next/link';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -206,9 +207,9 @@ const Form = () => {
                       />
                       <label htmlFor="gdprConsent" className="text-sm text-gray-700 leading-relaxed">
                         Elfogadom a személyes adataim kezelését az{' '}
-                        <a href="/terms" className="text-primary hover:underline">
+                        <Link href="/terms" className="text-primary hover:underline">
                           Adatvédelmi Szabályzat
-                        </a>{' '}
+                        </Link>{' '}
                         szerint, és hozzájárulok, hogy felvegyék velem a kapcsolatot időpontfoglalás ügyében.
                       </label>
                     </div>
@@ -243,24 +244,24 @@ const Form = () => {
                     <Mail size={16} />
                     Email cím
                   </span>
-                  <a 
+                  <Link 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
                     href="mailto:info123@gmail.com"
                   >
                     info123@gmail.com
-                  </a>
+                  </Link>
                 </li>
                 <li className="border-b border-[#304F74] pb-20 mb-20">
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <Phone size={16} />
                     Telefonszám
                   </span>
-                  <a 
+                  <Link 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
                     href="tel:0133542392132"
                   >
                     013 354 213 - 92132
-                  </a>
+                  </Link>
                 </li>
                 <li className="border-b border-[#304F74] pb-20 mb-20">
                   <span className="text-white pb-5 block flex items-center gap-2">
@@ -283,44 +284,44 @@ const Form = () => {
               </ul>
               <ul className="flex items-center gap-10 xxl:pt-48 pt-42">
                 <li>
-                  <a 
+                  <Link
                     href="https://www.facebook.com/" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Facebook size={18} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
+                  <Link
                     href="https://x.com/" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Twitter size={18} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
+                  <Link
                     href="https://www.instagram.com/" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Instagram size={18} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
+                  <Link
                     href="https://www.youtube.com/" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Youtube size={18} />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

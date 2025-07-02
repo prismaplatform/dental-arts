@@ -23,44 +23,44 @@ const Footer = () => {
                   </p>
                   <ul className="flex gap-x-10">
                     <li>
-                      <a
+                      <Link
                         href="https://www.facebook.com/"
                         className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Facebook/>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="https://x.com/"
                         className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Twitter/>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="https://www.instagram.com/"
                         className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Instagram/>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="https://www.youtube.com/"
                         className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Youtube/>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -175,24 +175,24 @@ const Footer = () => {
                         <Phone className="mr-5 text-secondary" size={16}/>
                         Telefon
                       </h6>
-                      <a
+                      <Link
                         className="font-bold font-urbanist text-secondary hover:text-primary duration-500"
                         href="tel:013354213-92132"
                       >
                         +36 99 531 015
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <h6 className="pb-6 capitalize font-urbanist text-secondary text-base font-medium leading-[1.2] flex items-center">
                         <Mail className="mr-5 text-secondary" size={16}/>
                         E-mail
                       </h6>
-                      <a
+                      <Link
                         className="font-bold font-urbanist text-secondary hover:text-primary duration-500"
                         href="mailto:info123@gmail.com"
                       >
                         info123@gmail.com
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

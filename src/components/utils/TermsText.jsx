@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const TermsText = () => {
@@ -66,9 +67,9 @@ const TermsText = () => {
                     GDPR-nak megfelelően végzi. Az adatgyűjtés, -tárolás és
                     -felhasználás részleteiről, valamint az Ön adatvédelmi
                     jogairól az átfogó és részletes
-                    <a href="/adatvedelmi-tajekoztato" className="text-primary-600 hover:underline font-medium ml-1">
+                    <Link href="/terms" className="text-primary-600 hover:underline font-medium ml-1">
                       Adatvédelmi Tájékoztatónkban
-                    </a>
+                    </Link>
                     tájékozódhat, amely weboldalunkon elérhető.
                   </p>
                 </li>
@@ -117,9 +118,9 @@ const TermsText = () => {
                     ne habozzon felvenni velünk a kapcsolatot. Szívesen
                     válaszolunk minden felmerülő kérdésre. Elérhet minket az
                     alábbi e-mail címen:{" "}
-                    <a href="mailto:info@dentalarts.hu" className="text-primary-600 hover:underline font-medium">
+                    <Link href="mailto:info@dentalarts.hu" className="text-primary-600 hover:underline font-medium">
                       info@dentalarts.hu
-                    </a>
+                    </Link>
                     .
                   </p>
                 </li>

@@ -234,24 +234,24 @@ const SingleService = ({ slug }) => {
                       <Mail size={16} />
                       E-mail cím
                     </span>
-                    <a
+                    <Link
                       className="text-white block font-bold font-sora hover:text-primary duration-500"
                       href="mailto:info123@gmail.com"
                     >
                       info123@gmail.com
-                    </a>
+                    </Link>
                   </li>
                   <li className="border-b border-[#304F74] pb-20 mb-20">
                     <span className="text-white pb-5 block flex items-center gap-2">
                       <Phone size={16} />
                       Telefonszám
                     </span>
-                    <a
+                    <Link
                       className="text-white block font-bold font-sora hover:text-primary duration-500"
                       href="tel:0133542392132"
                     >
                       +36 99 531 015
-                    </a>
+                    </Link>
                   </li>
                   <li className="border-b border-[#304F74] pb-20 mb-20">
                     <span className="text-white pb-5 block flex items-center gap-2">
@@ -274,44 +274,44 @@ const SingleService = ({ slug }) => {
                 </ul>
                 <ul className="flex items-center gap-10 xxl:pt-48 pt-42">
                   <li>
-                    <a
+                    <Link
                       href="https://www.facebook.com/"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Facebook size={18} />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="https://x.com/"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Twitter size={18} />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="https://www.instagram.com/"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Instagram size={18} />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="https://www.youtube.com/"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Youtube size={18} />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const WhyChouseUs = () => {
@@ -42,11 +43,11 @@ const WhyChouseUs = () => {
                   Sustainability in Care
                 </li>
               </ul>
-              <a href="/about-us" className="btn max-xxl:px-30">
+              <Link href="/about-us" className="btn max-xxl:px-30">
                 <span className="flex gap-10">
                   Tovább olvasok <ArrowRight size={20} />
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="lg:col-span-6 col-span-12">
               <div className="relative">
