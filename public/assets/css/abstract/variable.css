@@ -1,7 +1,29 @@
-:root{
-	--common-colour: #111827;
-	--theme-colour : #5C91C1;
-	--color-gary: #646464;
-	--color-lightgary:#cbd5e1;
-	--color-yellow: #D8B05D;
+:root {
+  --common-colour: #111827;
+  --theme-colour: #5c91c1;
+  --color-gary: #646464;
+  --color-lightgary: #cbd5e1;
+  --color-yellow: #d8b05d;
+  --font-geist-sans: var(
+    --font-geist-sans,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif
+  );
+  --font-geist-mono: var(
+    --font-geist-mono,
+    ui-monospace,
+    SFMono-Regular,
+    "SF Mono",
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace
+  );
 }

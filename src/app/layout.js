@@ -1,18 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { sora,urbanist } from "@/lib/fonts";
 import Footer from "@/components/utils/Footer";
 import "./globals.css";
 import Header from "@/components/utils/Header";
 import ScrollToTop from "@/components/utils/ScrollToTop";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: {
@@ -209,7 +199,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${urbanist.variable} ${sora.variable} antialiased`}
       >
         <Header />
         {children}

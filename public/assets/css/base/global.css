@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  font-family: 'Urbanist';
+  font-family: var(--font-geist-sans);
   font-size: 16px;
   font-weight: 400;
   color: #212529;
