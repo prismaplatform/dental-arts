@@ -13,7 +13,7 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
         <div className="row items-center">
           <div className="lg:w-1/2 w-full">
             <div className="relative max-md:text-center">
-              <h2 className="xxl:text-7.7xl xl:text-6.3xl md:text-5.2xl sm:text-4.75xl text-4.6xl font-bold capitalize font-sora text-secondary leading-[1.2]">
+              <h2 className="xxl:text-5.5xl xl:text-5.5xl md:text-5.2xl sm:text-4.75xl text-4.6xl font-bold capitalize font-sora text-secondary leading-[1.2]">
                 {title}
               </h2>
               
@@ -48,7 +48,7 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
                 // Régi statikus breadcrumb (backward compatibility)
                 <>
                   <li className="xxl:text-xxl md:text-xl text-sm text-secondary font-sora capitalize hover:text-primary transition-colors">
-                    <Link href="/"> Home </Link>
+                    <Link href="/"> Főoldal</Link>
                   </li>
                   {middletitle && (
                     <li className="xxl:text-xxl md:text-xl text-sm text-secondary font-sora capitalize hover:text-primary transition-colors before:content-['-'] before:float-left before:text-gary before:px-10">

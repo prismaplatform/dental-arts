@@ -2,7 +2,7 @@ import React from "react";
 import { Stethoscope, HeartHandshake, ArrowRight } from "lucide-react"; // Importáld a Lucid ikonokat
 import Link from "next/link";
 
-const WhyChouseUs2 = () => {
+const WhyChouseUs2About = () => {
   return (
     <>
            
@@ -89,11 +89,7 @@ const WhyChouseUs2 = () => {
                 </div>
               </div>
                
-              <Link href="/about-us" className="btn max-xxl:px-30 mt-40">
-                <span className="flex gap-10">
-                  Foglalj időpontot <ArrowRight size={20} />
-                </span>
-              </Link>
+             
             </div>
              
           </div>
@@ -104,4 +100,4 @@ const WhyChouseUs2 = () => {
   );
 };
 
-export default WhyChouseUs2;
+export default WhyChouseUs2About;

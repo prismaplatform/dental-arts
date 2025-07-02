@@ -2,6 +2,7 @@
 import { ArrowRight, User, MessageCircle } from 'lucide-react'; // Import User and MessageCircle icons
 import React from 'react';
 import Image from 'next/image'; // Assuming you might want to use Next.js Image component for optimization
+import Link from 'next/link';
 
 const BlogPostCard = ({ post }) => {
   const { image, date, author, comments, title, category } = post;
@@ -34,40 +35,40 @@ const BlogPostCard = ({ post }) => {
           />
         </figure>
         <h6 className="text-secondary font-sora font-bold">
-          <a
-            href={`/blog/${post.id}`} // Dynamic link to individual blog post
+          <Link
+            href={`/blog/${post.slug}`} // Dynamic link to individual blog post
             className="absolute xxl:text-[33px] text-lg leading-25 max-xxl:size-90 size-110 rounded-full text-center xl:p-32 p-5 md:p-6 text-bold right-2 md:right-5 top-2 md:top-5 shadow-[0px_7px_31px_-6px_rgba(0,0,0,0.15)] font-sora group-hover:bg-primary group-hover:text-white duration-500 text-secondary bg-white"
           >
             {day} <span className="text-2sm text-primary group-hover:text-white duration-500">{month}</span>
-          </a>
+          </Link>
         </h6>
       </div>
       <div className="flex items-center gap-x-4 mb-3">
         <div className="inline">
-          <a
-            href={`/blog/${post.id}`}
+          <Link
+            href={`/blog/${post.slug}`}
             className="text-gray-600 inline-flex items-center gap-x-1 font-sora text-sm md:text-base hover:text-primary duration-500"
           >
             <User size={15} color="#646464" /> {/* Lucide User icon */}
             By {author}
-          </a>
+          </Link>
         </div>
         <div className="inline">
-          <a
-            href={`/blog/${post.id}`}
+          <Link
+            href={`/blog/${post.slug}`}
             className="text-gray-600 inline-flex items-center gap-x-1 font-sora text-sm md:text-base hover:text-primary duration-500"
           >
             <MessageCircle size={15} color="#646464" /> {/* Lucide MessageCircle icon */}
             {comments.toString().padStart(2, '0')} Comment
-          </a>
+          </Link>
         </div>
       </div>
       <h3 className="xxl:text-2xl xl:text-xxl text-xl leading-34 font-bold pb-5 pt-2 text-secondary font-sora hover:text-primary duration-500">
-        <a href={`/blog/${post.id}`}>{title}</a>
+        <Link href={`/blog/${post.slug}`}>{title}</Link>
       </h3>
-      <a href={`/blog/${post.id}`} className="btn two inline-flex items-center gap-x-2 text-primary hover:text-white duration-500">
-        <span>Read More </span>
-      </a>
+      <Link href={`/blog/${post.slug}`} className="btn two inline-flex items-center gap-x-2 text-primary hover:text-white duration-500">
+        <span>Tovább olvasok </span>
+      </Link>
     </div>
   );
 };

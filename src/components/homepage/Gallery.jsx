@@ -8,6 +8,7 @@ import "lightgallery/css/lg-zoom.css";
 // LightGallery plugin importok
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import { ArrowRight } from "lucide-react";
 
 const Gallery = () => {
   const images = [
@@ -123,6 +124,13 @@ const Gallery = () => {
               </a>
             ))}
           </LightGallery>
+          <div className="text-center mt-40">
+            <a href="/gallery" className="btn max-xxl:px-30">
+              <span className="flex gap-10">
+                További képek <ArrowRight size={20} />
+              </span>
+            </a>
+          </div>
         </div>
       </section>
     </>

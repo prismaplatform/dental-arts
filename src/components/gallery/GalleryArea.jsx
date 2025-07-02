@@ -111,10 +111,10 @@ const GalleryPage = () => {
         <div className="container mx-auto px-4">
           <div className="mb-10 w-[fit-content]">
             <span className="black font-sora font-semibold capitalize xxl:text-xxl xl:text-xl sm:text-lg leading-50 text-primary">
-              # Testimonials
+              # Galéria
             </span>
             <h2 className="xxl:text-5xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold font-sora text-secondary leading-[1.2]">
-              Feedback That Inspires?
+             Pillanatok a rendelő mindennapjaiból
             </h2>
           </div>
           

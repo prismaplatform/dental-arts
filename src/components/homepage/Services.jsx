@@ -28,7 +28,7 @@ const Services = () => {
       icon: Stethoscope,
       bgColor: "bg-[#58CBF2]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(88,203,242,0.4)]",
-      link: "/szolgaltatasok/altalanos-fogaszat",
+      link: "/services/altalanos-fogaszat",
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ const Services = () => {
       icon: Smile,
       bgColor: "bg-[#F05DA8]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(240,93,168,0.4)]",
-      link: "/szolgaltatasok/esztetikai-fogaszat",
+      link: "/services/esztetikai-fogaszat",
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const Services = () => {
       icon: FileText,
       bgColor: "bg-[#9B52E1]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(155,82,225,0.4)]",
-      link: "/szolgaltatasok/implantatum-fogpotlas",
+      link: "/services/implantatum-fogpotlas",
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ const Services = () => {
       icon: Brain,
       bgColor: "bg-[#69b741]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(105,183,65,0.4)]",
-      link: "/szolgaltatasok/szajsebeszet",
+      link: "/services/szajsebeszet",
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ const Services = () => {
       icon: Smile,
       bgColor: "bg-[#FFC107]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(255,193,7,0.4)]",
-      link: "/szolgaltatasok/gyermekfogaszat",
+      link: "/services/gyermekfogaszat",
     },
     {
       id: 6,
@@ -78,7 +78,7 @@ const Services = () => {
       icon: Stethoscope,
       bgColor: "bg-[#00BCD4]",
       shadowColor: "shadow-[0px_0px_24px_0px_rgba(0,188,212,0.4)]",
-      link: "/szolgaltatasok/digitalis-diagnosztika",
+      link: "/services/digitalis-diagnosztika",
     },
   ];
 
@@ -140,7 +140,7 @@ const Services = () => {
               const IconComponent = service.icon;
               return (
                 <SwiperSlide key={service.id} className="group h-full">
-                  <div className="services-box flex flex-col justify-between h-full min-h-[400px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30 xxl:m-15 m-10 before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500">
+                  <div className="services-box flex flex-col justify-between h-full min-h-[400px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30  before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500">
                     <i
                       className={`${service.bgColor} group-hover:bg-white size-90 flex items-center justify-center mb-25 relative ${service.shadowColor} rounded-full`}
                     >
@@ -168,7 +168,7 @@ const Services = () => {
                       href={service.link}
                       className="relative font-bold text-secondary font-sora group-hover:text-white duration-500 inline-flex items-center hover:underline"
                     >
-                      Read More
+                      Tovább olvasok
                       <ArrowRight size={16} className="ml-3 relative" />
                     </Link>
                   </div>
@@ -177,6 +177,13 @@ const Services = () => {
             })}
           </Swiper>
         </div>
+        <div className="text-center mt-40">
+                  <a href="/services" className="btn max-xxl:px-30">
+                    <span className="flex gap-10">
+                      Szolgáltatásaink <ArrowRight size={20} />
+                    </span>
+                  </a>
+                </div>
       </div>
     </section>
   );

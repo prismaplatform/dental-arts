@@ -65,7 +65,7 @@ const Hero = () => {
   return (
     <>
       <section className="bg-[#DCE9F4] pt-100 overflow-hidden">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-md-4">
           <div className="grid grid-cols-12 items-center">
             <div className="lg:col-span-6 col-span-12">
               <div className="relative">
@@ -74,8 +74,8 @@ const Hero = () => {
                   Solutions for Better Health
                 </span> */}
                 <div className="relative">
-                  <h1 className="xxl:text-7xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-secondary leading-[1.2]">
-                  Mosolyt adunk<br /><span className="text-primary">szakértelemmel</span> és törődéssel
+                  <h1 className="xxl:text-6xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-secondary leading-[1.2]">
+                  Mosolyt adunk <span className="text-primary">szakértelemmel</span> és törődéssel
                   </h1>
                 </div>
                 <p className="xxl:text-xxl xl:text-xl text-lg leading-32 xl:leading-34 pb-45 text-gary font-normal">
@@ -121,7 +121,7 @@ const Hero = () => {
                       </Link>
                     </li>
                   </ul>
-                  <div>
+                  <div className='hidden md:block '>
                     <h6 className="font-bold text-secondary font-sora text-base">
                       1000+
                     </h6>

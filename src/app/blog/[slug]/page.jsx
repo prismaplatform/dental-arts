@@ -21,7 +21,7 @@ const page = ({ params }) => {
     <Breadcrumb
       title={formattedTitle}
       breadcrumbs={[
-        { label: "Home", href: "/" },
+        { label: "Főoldal", href: "/" },
         { label: "Blog", href: "/blog" },
         { label: formattedTitle, href: "/blog/my-blog-post", current: true },
       ]}

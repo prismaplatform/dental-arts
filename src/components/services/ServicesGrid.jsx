@@ -1,19 +1,18 @@
 'use client'
-
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import ServiceCard from './ServiceCard'
 import ServicesPagination from './ServicesPagination'
 import { servicesData, SERVICES_PER_PAGE } from '../../data/services'
 
-const ServicesGrid = ({ 
-  title = "Our Services",
-  subtitle = "# What We Offer",
+const ServicesGrid = ({
+  title = "Szolgáltatásaink",
+  subtitle = "# Amit Kínálunk",
   showPagination = true,
   itemsPerPage = SERVICES_PER_PAGE,
-  category = null 
+  category = null
 }) => {
   const [currentPage, setCurrentPage] = useState(1)
-
+  
   // Filter services by category if provided
   const filteredServices = useMemo(() => {
     if (category) {
@@ -21,22 +20,28 @@ const ServicesGrid = ({
     }
     return servicesData
   }, [category])
-
+  
   // Calculate pagination
   const totalPages = Math.ceil(filteredServices.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage
   const paginatedServices = filteredServices.slice(startIndex, startIndex + itemsPerPage)
-
+  
   const handlePageChange = (page) => {
     setCurrentPage(page)
-    // Scroll to top of services section
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    const sectionElement = document.querySelector('.services-grid-section');
+    if (sectionElement) {
+      window.scrollTo({
+        top: sectionElement.offsetTop,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
-
+  
   return (
-    <section className="lg:py-120 md:py-100 sm:py-80 py-60">
+    <section className="lg:py-120 md:py-100 sm:py-80 py-60 services-grid-section">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-60">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
             {subtitle}
@@ -45,22 +50,19 @@ const ServicesGrid = ({
             {title}
           </h2>
         </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-12 gap-4">
+        
+        <div className="grid grid-cols-12 xxl:gap-20 lg:gap-12 gap-8">
           {paginatedServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
-
-        {/* Empty State */}
+        
         {filteredServices.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gary text-lg">No services found.</p>
+            <p className="text-gary text-lg">Nincs találat.</p>
           </div>
         )}
-
-        {/* Pagination */}
+        
         {showPagination && totalPages > 1 && (
           <ServicesPagination
             currentPage={currentPage}
@@ -68,12 +70,11 @@ const ServicesGrid = ({
             onPageChange={handlePageChange}
           />
         )}
-
-        {/* Services Count Info */}
+        
         {filteredServices.length > 0 && (
           <div className="text-center mt-8">
             <p className="text-gary text-sm">
-              Showing {startIndex + 1}-{Math.min(startIndex + itemsPerPage, filteredServices.length)} of {filteredServices.length} services
+              Megjelenítve: {startIndex + 1}-{Math.min(startIndex + itemsPerPage, filteredServices.length)} / {filteredServices.length} szolgáltatás
             </p>
           </div>
         )}

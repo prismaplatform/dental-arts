@@ -27,29 +27,29 @@ import {
 // Dummy FAQ data for demonstration
 const faqData = [
   {
-    question: "How often should I visit the dentist?",
+    question: "Milyen gyakran érdemes foghigiéniai kezelést végeztetni?",
     answer:
-      "It is generally recommended to visit the dentist every six months for a routine check-up and cleaning. However, your dentist might recommend more frequent visits based on your oral health needs.",
+      "Általában félévente javasolt részt venni professzionális fogtisztításon, de ha Ön hajlamos a fogkőképződésre vagy ínygyulladásra, akkor gyakoribb kezelés is indokolt lehet.",
   },
   {
-    question: "Do you offer emergency dental services?",
+    question: "Fájdalmas a fogkőeltávolítás?",
     answer:
-      "Yes, we provide prompt care for dental emergencies, including severe toothaches, broken teeth, and dental injuries. Contact us immediately if you need urgent care.",
+      "A fogkőeltávolítás legtöbbször fájdalommentes, de enyhe érzékenység előfordulhat. Szükség esetén érzéstelenítést alkalmazunk, hogy a beavatkozás minél kényelmesebb legyen.",
   },
   {
-    question: "How can I improve my oral hygiene at home?",
+    question: "Mennyi ideig tart egy fogtisztítás?",
     answer:
-      "To maintain excellent oral hygiene at home, brush your teeth twice a day for two minutes with fluoride toothpaste, floss daily, and use an antiseptic mouthwash. Limiting sugary foods and drinks also helps.",
+      "A kezelés általában 30–60 percig tart, a fogkő mennyiségétől és a páciens egyéni állapotától függően.",
   },
   {
-    question: "What insurance plans do you accept?",
+    question: "Kell-e külön készülnöm a kezelésre?",
     answer:
-      "We accept a wide range of dental insurance plans. Please contact our office with your insurance details, and our team will be happy to verify your coverage and explain your benefits.",
+      "Nem szükséges külön előkészület. Javasoljuk, hogy érkezés előtt mosson fogat, és jelezze, ha bármilyen panaszt vagy érzékenységet tapasztal.",
   },
   {
-    question: "What should I do if I experience dental anxiety?",
+    question: "Gyerekeknek is ajánlott a foghigiéniai kezelés?",
     answer:
-      "We understand that dental anxiety is common. Please let our team know about your concerns, and we can discuss various options to help you feel more comfortable, such as sedation dentistry or relaxation techniques.",
+      "Igen, a gyermekek számára is fontos a rendszeres professzionális tisztítás, főként a maradó fogak megjelenése után. A kezelés segít megelőzni a szuvasodást és kialakítani a helyes szájápolási szokásokat.",
   },
 ];
 
@@ -101,41 +101,36 @@ const SingleService = ({ slug }) => {
             <div className="lg:col-span-8 col-span-12">
               <div className="prose max-w-none">
                 <h2 className="pt-20 pb-10 xxl:text-5.2xl xl:text-4.65xl lg:text-3.8xl md:text-3.8xl sm:text-3xl text-2.5xl font-bold font-sora text-secondary">
-                  About {service.title}
+                  {service.title}
                 </h2>
                 <p className="text-base xxl:leading-30 xl:leading-28 leading-26 text-gary font-normal">
                   {service.fullDescription || service.description}
                 </p>
                 <h3 className="xxl:text-2.3xl xl:text-2.5xl sm:text-2xl text-xxl max-sm:leading-32 font-bold font-sora text-secondary pt-40 max-xl:pt-30 pb-10">
-                  Fluoride Treatments
+                  Foghigiéniai kezelés
                 </h3>
                 <p className="text-base xxl:leading-30 xl:leading-28 leading-26 text-gary font-normal">
-                  Strengthen your enamel and protect your teeth from decay with
-                  safe and effective fluoride applications. Dental Sealants A
-                  protective coating applied to the chewing surfaces of molars
-                  to prevent cavities, especially in children and teenagers Oral
-                  Cancer Screenings Early detection of oral cancer can save
-                  lives. We conduct thorough screenings during routine exams to
-                  ensure your health and safety.
+                  A rendszeres foghigiéniai kezelések elengedhetetlenek az
+                  egészséges és esztétikus mosoly megőrzéséhez. Klinikánkon
+                  professzionális fogtisztítást végzünk, amely során ultrahangos
+                  eszközzel eltávolítjuk a fogkövet és lepedéket, csökkentve
+                  ezzel a fogínygyulladás és a fogszuvasodás kockázatát.
                 </p>
                 <div className="w-full group xxl:py-50 py-40">
                   <figure className="overflow-hidden">
                     <img
                       src="/assets/img/services-details.jpg"
-                      alt="services-details"
+                      alt="foghigiéniai kezelés"
                       className="w-full group-hover:scale-[1.1] group-hover:rotate-[3deg] duration-500"
                     />
                   </figure>
                 </div>
                 <p className="text-base xxl:leading-30 xl:leading-28 leading-26 text-gary font-normal">
-                  We provide tailored advice on brushing, flossing, and dietary
-                  habits to help you maintain excellent oral hygiene at home.
-                  X-Rays and Imaging Advanced digital X-rays help us detect
-                  hidden dental issues, such as cavities, bone loss, or impacted
-                  teeth, before they cause problems.
+                  A kezelés során személyre szabott tanácsokat adunk az otthoni
+                  szájápolási szokásairól is, beleértve a helyes fogmosási
+                  technikákat, a fogselyem és szájvíz használatát, valamint a
+                  táplálkozási ajánlásokat.
                 </p>
-
-                
 
                 {/* Service Image */}
                 {service.image && (
@@ -153,10 +148,10 @@ const SingleService = ({ slug }) => {
                 )}
 
                 <p className="text-base xxl:leading-30 xl:leading-28 leading-26 text-gary font-normal mb-8">
-                  Our experienced team is dedicated to providing you with the
-                  highest quality {service.title.toLowerCase()} services. We use
-                  the latest technology and techniques to ensure optimal results
-                  and patient comfort.
+                  Tapasztalt csapatunk elkötelezett amellett, hogy a legmagasabb
+                  szintű foghigiéniai kezelést nyújtsa Önnek. A legmodernebb
+                  technológiákat és eljárásokat alkalmazzuk a hatékony
+                  eredmények és a páciensek kényelme érdekében.
                 </p>
 
                 {/* FAQ Section */}
@@ -188,7 +183,9 @@ const SingleService = ({ slug }) => {
 
                       <div
                         className={`content overflow-hidden transition-all duration-300 ease-in-out ${
-                          openAccordion === index ? "max-h-screen pb-24" : "max-h-0"
+                          openAccordion === index
+                            ? "max-h-screen pb-24"
+                            : "max-h-0"
                         }`}
                         style={{
                           display: openAccordion === index ? "block" : "none", // This line can be removed if using max-h for transition
@@ -226,17 +223,16 @@ const SingleService = ({ slug }) => {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-4 col-span-12 max-lg:mt-40">
               <div className="w-full ml-auto xxl:p-50 xl:p-42 sm:p-40 p-30 bg-primary">
                 <h3 className="text-white xxl:text-2.3xl sm:text-2xxl text-xl font-semibold sm:pb-30 pb-25 font-sora">
-                  Contact Information :
+                  Kapcsolati adatok:
                 </h3>
                 <ul>
                   <li className="border-b border-[#304F74] pb-20 mb-20">
                     <span className="text-white pb-5 block flex items-center gap-2">
                       <Mail size={16} />
-                      Email Address
+                      E-mail cím
                     </span>
                     <a
                       className="text-white block font-bold font-sora hover:text-primary duration-500"
@@ -248,31 +244,31 @@ const SingleService = ({ slug }) => {
                   <li className="border-b border-[#304F74] pb-20 mb-20">
                     <span className="text-white pb-5 block flex items-center gap-2">
                       <Phone size={16} />
-                      Contact Us
+                      Telefonszám
                     </span>
                     <a
                       className="text-white block font-bold font-sora hover:text-primary duration-500"
                       href="tel:0133542392132"
                     >
-                      013 354 213 - 92132
+                      +36 99 531 015
                     </a>
                   </li>
                   <li className="border-b border-[#304F74] pb-20 mb-20">
                     <span className="text-white pb-5 block flex items-center gap-2">
                       <MapPin size={16} />
-                      Address
+                      Cím
                     </span>
                     <h6 className="text-white block font-bold font-sora">
-                      1901 Thornridge Cir. Shiloh
+                      Balf, Sopron, Fürdő sor 12, 9494 Magyarország
                     </h6>
                   </li>
                   <li>
                     <span className="text-white pb-5 block flex items-center gap-2">
                       <Stethoscope size={16} />
-                      Subject
+                      Szakterület
                     </span>
                     <h6 className="text-white block font-bold font-sora">
-                      Medical and Dentist
+                      Orvosi és fogászati ellátás
                     </h6>
                   </li>
                 </ul>
@@ -323,54 +319,6 @@ const SingleService = ({ slug }) => {
           </div>
         </div>
       </section>
-
-      {/* Related Services */}
-      {relatedServices.length > 0 && (
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-sora text-secondary mb-4">
-                Related Services
-              </h2>
-              <p className="text-gary">
-                Explore other services that might interest you
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedServices.map((relatedService) => (
-                <div
-                  key={relatedService.id}
-                  className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="mb-4">
-                    {/* You'll need to update how relatedService.icon is rendered if it's currently an SVG string from Font Awesome. If it's a Lucide icon component, this will work. */}
-                    {/* For now, assuming relatedService.icon is a component or a string that can be rendered directly if it's already a Lucide icon */}
-                    {relatedService.icon && (
-                      <div className="w-12 h-12 text-primary mb-4 flex items-center justify-center">
-                        {/* Assuming relatedService.icon is a Lucide React component directly */}
-                        {React.createElement(relatedService.icon, { size: 48 })}
-                      </div>
-                    )}
-                    <h3 className="text-xl font-bold text-secondary mb-2">
-                      {relatedService.title}
-                    </h3>
-                    <p className="text-gary text-sm">
-                      {relatedService.description}
-                    </p>
-                  </div>
-                  <Link
-                    href={`/services/${relatedService.slug}`}
-                    className="text-primary font-bold hover:text-secondary transition-colors duration-300"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </>
   );
 };

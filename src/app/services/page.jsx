@@ -1,18 +1,21 @@
-import ServicesGrid from '@/components/services/ServicesGrid'
-import Breadcrumb from '@/components/utils/Breadcrumb'
-import React from 'react'
+import ServicesGrid from "@/components/services/ServicesGrid";
+import Breadcrumb from "@/components/utils/Breadcrumb";
+import React from "react";
 
 const ServicesPage = () => {
   return (
     <>
-    <Breadcrumb title="Services" subtitle="Services"/>
-     <ServicesGrid 
-        title="Complete Healthcare Solutions"
-        subtitle="# Our Expertise"
+      <Breadcrumb
+        title="Szolgáltatások"
+        subtitle="Szolgáltatások"
+      />
+      <ServicesGrid
+        title="Professzionális fogászati Szolgáltatások"
+        subtitle="# Szolgáltatások"
         showPagination={true}
       />
     </>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;

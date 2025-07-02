@@ -29,20 +29,20 @@ const Appointment = () => {
     e.preventDefault()
     
     if (!gdprAccepted) {
-      alert('Please accept the privacy policy to continue.')
+      alert('Kérjük, fogadd el az adatvédelmi szabályzatot a folytatáshoz.')
       return
     }
 
     setIsSubmitting(true)
     
     try {
-      // Form submission logic here
-      console.log('Form submitted:', { ...formData, gdprAccepted })
+      // Itt jönne a form elküldése backendnek
+      console.log('Elküldött űrlap adatok:', { ...formData, gdprAccepted })
       
-      // Simulate API call
+      // Szimulált API hívás
       await new Promise(resolve => setTimeout(resolve, 1000))
       
-      // Reset form after successful submission
+      // Űrlap visszaállítása sikeres elküldés után
       setFormData({
         name: '',
         email: '',
@@ -52,11 +52,11 @@ const Appointment = () => {
       })
       setGdprAccepted(false)
       
-      alert('Appointment request submitted successfully!')
+      alert('Időpontfoglalási kérelmed sikeresen elküldve!')
       
     } catch (error) {
-      console.error('Error submitting form:', error)
-      alert('There was an error submitting your request. Please try again.')
+      console.error('Hiba az űrlap elküldésekor:', error)
+      alert('Hiba történt a kérés elküldésekor. Kérjük, próbáld újra.')
     } finally {
       setIsSubmitting(false)
     }
@@ -70,10 +70,10 @@ const Appointment = () => {
             <div className="lg:w-1/2 w-full">
               <div className="lg:pb-50 pb-30 w-fit">
                 <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-                  # Get In Touch
+                  # Kapcsolatfelvétel
                 </span>
                 <h2 className="xxl:text-5xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold font-sora text-secondary leading-[1.2]">
-                  Make An Appointment
+                  Időpontfoglalás
                 </h2>
               </div>
               
@@ -86,7 +86,7 @@ const Appointment = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your Name"
+                      placeholder="Neved"
                       required
                     />
                   </div>
@@ -97,7 +97,7 @@ const Appointment = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your Email"
+                      placeholder="E-mail címed"
                       required
                     />
                   </div>
@@ -108,7 +108,7 @@ const Appointment = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="Phone Number"
+                      placeholder="Telefonszám"
                       required
                     />
                   </div>
@@ -120,7 +120,7 @@ const Appointment = () => {
                       onChange={handleInputChange}
                       required
                     >
-                      <option value="">Select Doctor</option>
+                      <option value="">Orvos kiválasztása</option>
                       <option value="dr-john">Dr. Include John</option>
                       <option value="dr-david">Dr. David</option>
                       <option value="dr-robert">Dr. Robert</option>
@@ -132,7 +132,7 @@ const Appointment = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required 
-                      placeholder="Write A Message..." 
+                      placeholder="Írj egy üzenetet..." 
                       className="w-full h-180 p-20 border border-[#D8D8D8] mb-24 rounded-[10px] outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
                     />
                   </div>
@@ -148,12 +148,12 @@ const Appointment = () => {
                         className="w-20 h-20 text-blue-600 bg-gray-100 border-gray-300 rounded-sm "
                         required
                       />
-                      <label htmlFor="gdpr-consent" className="text-sm text-gary font-sora leading-relaxed">
-                        I agree to the{' '}
-                        <Link href="/privacy-policy" className="text-primary hover:underline">
-                          Privacy Policy
+                      <label htmlFor="gdpr-consent" className="text-sm text-gray-700 font-sora leading-relaxed">
+                        Elfogadom az{' '}
+                        <Link href="/terms" className="text-primary hover:underline">
+                          Adatvédelmi Szabályzatot
                         </Link>{' '}
-                        and consent to the processing of my personal data for appointment scheduling and communication purposes. 
+                        és hozzájárulok személyes adataim kezeléséhez az időpontfoglalás és kommunikáció céljából. 
                         <span className="text-red-500">*</span>
                       </label>
                     </div>
@@ -168,11 +168,11 @@ const Appointment = () => {
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Processing...
+                          Feldolgozás...
                         </>
                       ) : (
                        <span className='flex gap-10'>
-                      Read More <ArrowRight size={20} />
+                      Elküldöm <ArrowRight size={20} />
                     </span>
                       )}
                     </button>
@@ -184,8 +184,8 @@ const Appointment = () => {
             <div className="lg:w-1/2 w-full self-end">
               <div className="relative before:absolute before:size-full before:bg-primary before:[clip-path:polygon(22%_14%,100%_45%,100%_100%,_0%_100%)] before:left-0">
                 <Image 
-                  alt="Appointment consultation" 
-                  src="/assets/img/appiontment.png" 
+                  alt="Időpontfoglalás konzultáció" 
+                  src="/assets/img/heroImage.png" 
                   width={600}
                   height={700}
                   className="relative z-[11] w-full h-auto"
@@ -198,9 +198,9 @@ const Appointment = () => {
                     </svg>
                   </div>
                   <div> 
-                    <span className="block text-gary pb-3">Emergency Call</span>
+                    <span className="block text-gray-700 pb-3">Sürgős hívás</span>
                     <Link className="font-bold text-secondary hover:text-primary duration-300" href="tel:013354213-92132">
-                      013 354 213 - 92132
+                     +36 99 531 015
                     </Link>
                   </div>
                 </div>

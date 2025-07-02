@@ -55,10 +55,10 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         <div className="xl:pb-50 lg:pb-40 pb-30 text-center">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-            # Medical Portfolio
+            # Esettanulmányok
           </span>
           <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-            Interactive Before & Afters.
+             Látványos változások – előtte és utána.
           </h2>
         </div>
 
@@ -125,12 +125,12 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="text-center">
-          <a href="about.html" className="btn max-xxl:px-30">
-          <span className='flex gap-10'>
-                                Read More <ArrowRight size={20} />
-                              </span>
+          <a href="/cases" className="btn max-xxl:px-30">
+            <span className="flex gap-10">
+              Összes eset <ArrowRight size={20} />
+            </span>
           </a>
         </div>
       </div>

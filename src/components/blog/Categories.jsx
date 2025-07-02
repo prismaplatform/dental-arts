@@ -4,7 +4,9 @@ import React from 'react';
 const Categories = ({ categories, onSelectCategory, selectedCategory }) => {
   return (
     <div className="xl:p-30 p-20 border border-[#D8D8D8] mb-24">
-      <h4 className="xl:text-2xl text-xl font-semibold pb-20 text-secondary capitalize font-sora">Categories</h4>
+      <h4 className="xl:text-2xl text-xl font-semibold pb-20 text-secondary capitalize font-sora">
+        Kategóriák
+      </h4>
       <ul className="space-y-10">
         <li className="mb-10">
           <button
@@ -13,7 +15,7 @@ const Categories = ({ categories, onSelectCategory, selectedCategory }) => {
               selectedCategory === null ? 'bg-primary text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
             }`}
           >
-            All
+            Összes
           </button>
         </li>
         {categories.map(category => (

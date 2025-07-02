@@ -18,10 +18,10 @@ const Form = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const doctors = [
-    { value: '', label: 'Select Doctor' },
+    { value: '', label: 'Orvos kiválasztása' },
     { value: '1', label: 'Dr. Include John' },
-    { value: '2', label: 'Dr. David' },
-    { value: '3', label: 'Dr. Robert' }
+    { value: '2', label: 'Dr. Dávid' },
+    { value: '3', label: 'Dr. Róbert' }
   ];
 
   const handleInputChange = (e) => {
@@ -30,8 +30,7 @@ const Form = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-    
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -44,29 +43,29 @@ const Form = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Név megadása kötelező';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Email cím megadása kötelező';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = 'Érvényes email címet adjon meg';
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = 'Telefonszám megadása kötelező';
     }
 
     if (!formData.doctor) {
-      newErrors.doctor = 'Please select a doctor';
+      newErrors.doctor = 'Kérjük válasszon orvost';
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Írjon üzenetet';
     }
 
     if (!formData.gdprConsent) {
-      newErrors.gdprConsent = 'Please accept the privacy policy';
+      newErrors.gdprConsent = 'Elfogadása kötelező az adatvédelmi tájékoztatónak';
     }
 
     return newErrors;
@@ -74,7 +73,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const formErrors = validateForm();
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
@@ -82,15 +81,12 @@ const Form = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      // Here you would normally send the form data to your backend
-      console.log('Form Data:', formData);
-      
-      // Simulate API call
+      console.log('Beküldött adatok:', formData);
+
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Reset form on success
+
       setFormData({
         name: '',
         email: '',
@@ -99,12 +95,11 @@ const Form = () => {
         message: '',
         gdprConsent: false
       });
-      
-      alert('Appointment booked successfully!');
-      
+
+      alert('Időpontfoglalás sikeres!');
     } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error booking your appointment. Please try again.');
+      console.error('Hiba a beküldés során:', error);
+      alert('Hiba történt az időpontfoglalás során. Kérjük, próbálja újra.');
     } finally {
       setIsSubmitting(false);
     }
@@ -120,13 +115,13 @@ const Form = () => {
           <div className="lg:col-span-6 col-span-12">
             <div className="w-[fit-content] pb-24">
               <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-                # Get In Touch
+                # Kapcsolatfelvétel
               </span>
               <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                Stay Connected for Better Health.
+                Maradj kapcsolatban az egészséged érdekében.
               </h2>
             </div>
-            
+
             <form onSubmit={handleSubmit} className="bg-white">
               <div className="grid grid-cols-12 sm:gap-x-30">
                 <div className="lg:col-span-6 col-span-12">
@@ -136,12 +131,12 @@ const Form = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Your Name"
+                    placeholder="Neved"
                   />
                   {errors.name && <p className="text-red-500 text-sm mb-20">{errors.name}</p>}
                   {!errors.name && <div className="mb-20"></div>}
                 </div>
-                
+
                 <div className="lg:col-span-6 col-span-12">
                   <input
                     className={`w-full h-50 pl-20 border ${errors.email ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors`}
@@ -149,12 +144,12 @@ const Form = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Your Email"
+                    placeholder="Email címed"
                   />
                   {errors.email && <p className="text-red-500 text-sm mb-20">{errors.email}</p>}
                   {!errors.email && <div className="mb-20"></div>}
                 </div>
-                
+
                 <div className="lg:col-span-6 col-span-12">
                   <input
                     className={`w-full h-50 pl-20 border ${errors.phone ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors`}
@@ -162,12 +157,12 @@ const Form = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Phone Number"
+                    placeholder="Telefonszámod"
                   />
                   {errors.phone && <p className="text-red-500 text-sm mb-20">{errors.phone}</p>}
                   {!errors.phone && <div className="mb-20"></div>}
                 </div>
-                
+
                 <div className="lg:col-span-6 col-span-12">
                   <select
                     className={`w-full h-50 pl-20 border ${errors.doctor ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors bg-white`}
@@ -184,19 +179,19 @@ const Form = () => {
                   {errors.doctor && <p className="text-red-500 text-sm mb-20">{errors.doctor}</p>}
                   {!errors.doctor && <div className="mb-20"></div>}
                 </div>
-                
+
                 <div className="col-span-12">
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Write A Message..."
+                    placeholder="Írj üzenetet..."
                     className={`w-full h-180 p-20 border ${errors.message ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors resize-none`}
                   />
                   {errors.message && <p className="text-red-500 text-sm mb-18">{errors.message}</p>}
                   {!errors.message && <div className="mb-18"></div>}
                 </div>
-                
+
                 {/* GDPR Consent Section */}
                 <div className="col-span-12">
                   <div className="mb-24">
@@ -210,17 +205,17 @@ const Form = () => {
                         className="w-20 h-20 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
                       />
                       <label htmlFor="gdprConsent" className="text-sm text-gray-700 leading-relaxed">
-                        I agree to the processing of my personal data in accordance with the{' '}
-                        <a href="/privacy-policy" className="text-primary hover:underline">
-                          Privacy Policy
+                        Elfogadom a személyes adataim kezelését az{' '}
+                        <a href="/terms" className="text-primary hover:underline">
+                          Adatvédelmi Szabályzat
                         </a>{' '}
-                        and consent to being contacted regarding my appointment request.
+                        szerint, és hozzájárulok, hogy felvegyék velem a kapcsolatot időpontfoglalás ügyében.
                       </label>
                     </div>
                     {errors.gdprConsent && <p className="text-red-500 text-sm mt-2">{errors.gdprConsent}</p>}
                   </div>
                 </div>
-                
+
                 <div className="col-span-12">
                   <button
                     type="submit"
@@ -228,7 +223,7 @@ const Form = () => {
                     className={`btn w-full flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
                     <span className="flex items-center gap-2">
-                      {isSubmitting ? 'Booking...' : 'Book An Appointment'}
+                      {isSubmitting ? 'Foglalás folyamatban...' : 'Időpont foglalása'}
                       <ArrowRight size={16} />
                     </span>
                   </button>
@@ -236,17 +231,17 @@ const Form = () => {
               </div>
             </form>
           </div>
-          
+
           <div className="lg:col-span-6 col-span-12 max-lg:mt-40">
             <div className="w-full ml-auto xxl:p-50 xl:p-42 sm:p-40 p-30 bg-secondary">
               <h3 className="text-white xxl:text-2.3xl sm:text-2xxl text-xl font-semibold sm:pb-30 pb-25 font-sora">
-                Contact Information :
+                Dental Arts Kapcsolat:
               </h3>
               <ul>
                 <li className="border-b border-[#304F74] pb-20 mb-20">
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <Mail size={16} />
-                    Email Address
+                    Email cím
                   </span>
                   <a 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
@@ -258,7 +253,7 @@ const Form = () => {
                 <li className="border-b border-[#304F74] pb-20 mb-20">
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <Phone size={16} />
-                    Contact Us
+                    Telefonszám
                   </span>
                   <a 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
@@ -270,7 +265,7 @@ const Form = () => {
                 <li className="border-b border-[#304F74] pb-20 mb-20">
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <MapPin size={16} />
-                    Address
+                    Cím
                   </span>
                   <h6 className="text-white block font-bold font-sora">
                     1901 Thornridge Cir. Shiloh
@@ -279,10 +274,10 @@ const Form = () => {
                 <li>
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <Stethoscope size={16} />
-                    Subject
+                    Téma
                   </span>
                   <h6 className="text-white block font-bold font-sora">
-                    Medical and Dentist
+                    Orvosi és Fogászati szolgáltatások
                   </h6>
                 </li>
               </ul>

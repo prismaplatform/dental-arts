@@ -18,8 +18,8 @@ const page = ({ params }) => {
       <Breadcrumb
         title={formattedTitle}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+          { label: "Főoldal", href: "/" },
+          { label: "Szolgáltatások", href: "/services" },
           { label: formattedTitle, href: `/services/${slug}`, current: true },
         ]}
       />
@@ -27,5 +27,6 @@ const page = ({ params }) => {
     </>
   );
 };
+
 
 export default page;

@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/utils/Breadcrumb'
 const AppointmentPage = () => {
   return (
   <>
-    <Breadcrumb title="Appointment" subtitle="Appointment"/>
+    <Breadcrumb title="Időpontfoglalás" subtitle="Időpontfoglalás"/>
     <Appointment/> 
   </>
   )

@@ -6,7 +6,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-    <Breadcrumb title="Contact Us" subtitle="Contact Us"/>
+    <Breadcrumb title="Kapcsolat" subtitle="Kapcsolat"/>
     <Form/>
     </>
   )

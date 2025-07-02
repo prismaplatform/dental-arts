@@ -5,7 +5,7 @@ import React from 'react'
 const Gallery = () => {
   return (
      <>
-    <Breadcrumb title="Gallery" subtitle="Gallery"/>
+    <Breadcrumb title="Galéria" subtitle="Galéria"/>
     <GalleryPage/>
     </>
   )
