@@ -370,7 +370,7 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            <div className="mt-8 pt-4 absolute bottom-10">
+            <div className="mt-8 pt-4 absolute bottom-30 w-[85%]">
               <Link 
                 href="/appointment" 
                 onClick={handleMobileNavClose}
