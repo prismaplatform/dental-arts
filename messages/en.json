@@ -1,0 +1,23 @@
+{
+  "Header": {
+    "languageSelectAria": "Select Language",
+    "mobileMenuToggleAria": "Toggle Mobile Menu",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "allServices": "All Services",
+    "serviceDetails": "Service Details",
+    "cases": "Cases",
+    "blog": "Blog",
+    "allBlogs": "All Blogs",
+    "blogDetails": "Blog Details",
+    "contact": "Contact",
+    "appointment": "Book Appointment",
+    "language": {
+      "hu": "Magyar",
+      "en": "English",
+      "ro": "Română",
+      "de": "Deutsch",
+      "at": "Österreichisch"
+    }
+  }
+}

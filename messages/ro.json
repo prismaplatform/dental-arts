@@ -1,0 +1,23 @@
+{
+  "Header": {
+    "languageSelectAria": "Selectează limba",
+    "mobileMenuToggleAria": "Comutare meniu mobil",
+    "aboutUs": "Despre noi",
+    "services": "Servicii",
+    "allServices": "Toate serviciile",
+    "serviceDetails": "Detalii serviciu",
+    "cases": "Cazuri",
+    "blog": "Blog",
+    "allBlogs": "Toate blogurile",
+    "blogDetails": "Detalii blog",
+    "contact": "Contact",
+    "appointment": "Programare",
+    "language": {
+      "hu": "Magyar",
+      "en": "English",
+      "ro": "Română",
+      "de": "Deutsch",
+      "at": "Österreichisch"
+    }
+  }
+}

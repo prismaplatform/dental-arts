@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl"; // Hooks for locale and translations
 import { Menu, Search, ArrowRight, X, ChevronDown, Home, Globe } from "lucide-react";
 
 const Header = () => {
@@ -11,17 +13,21 @@ const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [mobileLangDropdownOpen, setMobileLangDropdownOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('hu');
   const headerRef = useRef(null);
   const mobileNavRef = useRef(null);
   const languageRef = useRef(null);
 
+  const t = useTranslations("Header"); // Translations for the Header namespace
+  const locale = useLocale(); // Current locale
+  const router = useRouter(); // next-intl router for locale switching
+  const pathname = usePathname(); // Current pathname without locale
+
   const languages = [
-    { code: 'hu', name: 'Magyar', flag: '/assets/img/flags/hu.png' },
-    { code: 'en', name: 'English', flag: '/assets/img/flags/en.webp' },
-    { code: 'ro', name: 'Română', flag: '/assets/img/flags/ro.png' },
-    { code: 'de', name: 'Deutsch', flag: '/assets/img/flags/de.webp' },
-    { code: 'at', name: 'Österreichisch', flag: '/assets/img/flags/at.png' }
+    { code: "hu", flag: "/assets/img/flags/hu.png" },
+    { code: "en", flag: "/assets/img/flags/en.webp" },
+    { code: "ro", flag: "/assets/img/flags/ro.png" },
+    { code: "de", flag: "/assets/img/flags/de.webp" },
+    { code: "at", flag: "/assets/img/flags/at.png" },
   ];
 
   const handleMobileMenuToggle = () => {
@@ -42,7 +48,8 @@ const Header = () => {
   };
 
   const handleLanguageChange = (langCode) => {
-    setCurrentLanguage(langCode);
+    // Switch locale by pushing the same pathname with the new locale
+    router.push(pathname, { locale: langCode });
     setLanguageDropdownOpen(false);
     setMobileLangDropdownOpen(false);
   };
@@ -75,7 +82,7 @@ const Header = () => {
       ) {
         handleMobileNavClose();
       }
-      
+
       if (
         languageDropdownOpen &&
         languageRef.current &&
@@ -104,12 +111,7 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                   <div className="logo">
                     <Link href="/">
-                      <Image
-                        alt="logo"
-                        src="/assets/img/logo.svg"
-                        width={250}
-                        height={80}
-                      />
+                      <Image alt="logo" src="/assets/img/logo.svg" width={250} height={80} />
                     </Link>
                   </div>
                 </div>
@@ -118,15 +120,15 @@ const Header = () => {
                 <div className="relative">
                   <button
                     onClick={() => setMobileLangDropdownOpen(!mobileLangDropdownOpen)}
-                    className="flex items-center gap-2 px-3 py-2 "
-                    aria-label="Nyelv választása"
+                    className="flex items-center gap-2 px-3 py-2"
+                    aria-label={t("languageSelectAria")}
                   >
                     <Image
-                      src={languages.find(lang => lang.code === currentLanguage)?.flag}
-                      alt={languages.find(lang => lang.code === currentLanguage)?.name}
+                      src={languages.find((lang) => lang.code === locale)?.flag}
+                      alt={t(`language.${locale}`)}
                       width={20}
                       height={15}
-                      className="object-cover "
+                      className="object-cover"
                     />
                     <ChevronDown
                       size={16}
@@ -143,20 +145,20 @@ const Header = () => {
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
                             className={`w-full text-left px-4 py-3 hover:bg-blue-50 transition-all duration-200 flex items-center gap-3 text-sm group customlang ${
-                              currentLanguage === lang.code ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
-                            } ${index !== languages.length - 1 ? 'border-b border-gray-100' : ''}`}
+                              locale === lang.code ? "bg-blue-50 text-blue-700" : "text-gray-700"
+                            } ${index !== languages.length - 1 ? "border-b border-gray-100" : ""}`}
                           >
                             <Image
                               src={lang.flag}
-                              alt={lang.name}
+                              alt={t(`language.${lang.code}`)}
                               width={18}
                               height={14}
-                              className="object-cover "
+                              className="object-cover"
                             />
                             <span className="font-medium group-hover:text-blue-700 transition-colors">
-                              {lang.name}
+                              {t(`language.${lang.code}`)}
                             </span>
-                            {currentLanguage === lang.code && (
+                            {locale === lang.code && (
                               <div className="ml-auto w-2 h-2 bg-blue-500 rounded-full"></div>
                             )}
                           </button>
@@ -168,7 +170,7 @@ const Header = () => {
                 <button
                   onClick={handleMobileMenuToggle}
                   className={`menu-start ${mobileNavOpen ? "open" : ""}`}
-                  aria-label="Mobil menü váltása"
+                  aria-label={t("mobileMenuToggleAria")}
                 >
                   {mobileNavOpen ? <X size={30} /> : <Menu size={30} />}
                 </button>
@@ -177,11 +179,11 @@ const Header = () => {
               <nav className="navbar lg:block hidden">
                 <ul className="navbar-links">
                   <li className="navbar-dropdown">
-                    <Link href="/about-us">Rólunk</Link>
+                    <Link href="/about-us">{t("aboutUs")}</Link>
                   </li>
                   <li className="navbar-dropdown menu-item-children group relative">
                     <Link href="/services" className="flex items-center">
-                      Szolgáltatások
+                      {t("services")}
                       <ChevronDown
                         size={16}
                         className="ml-1 group-hover:rotate-180 transition-transform duration-200"
@@ -189,19 +191,19 @@ const Header = () => {
                     </Link>
                     <ul className="sub-menu absolute hidden group-hover:block bg-white shadow-lg py-2 rounded-md">
                       <li>
-                        <Link href="/services">Minden szolgáltatás</Link>
+                        <Link href="/services">{t("allServices")}</Link>
                       </li>
                       <li>
-                        <Link href="/services/altalanos-fogaszat">Szolgáltatás részletei</Link>
+                        <Link href="/services/altalanos-fogaszat">{t("serviceDetails")}</Link>
                       </li>
                     </ul>
                   </li>
                   <li className="navbar-dropdown">
-                    <Link href="/cases">Esetek</Link>
+                    <Link href="/cases">{t("cases")}</Link>
                   </li>
                   <li className="navbar-dropdown menu-item-children group relative">
                     <Link href="/blog" className="flex items-center">
-                      Blog
+                      {t("blog")}
                       <ChevronDown
                         size={16}
                         className="ml-1 group-hover:rotate-180 transition-transform duration-200"
@@ -209,15 +211,17 @@ const Header = () => {
                     </Link>
                     <ul className="sub-menu absolute hidden group-hover:block bg-white shadow-lg py-2 rounded-md">
                       <li>
-                        <Link href="/blog">Összes blog</Link>
+                        <Link href="/blog">{t("allBlogs")}</Link>
                       </li>
                       <li>
-                        <Link href="/blog/5-tipp-a-fogko-megelozesehez-otthon">Blog részletei</Link>
+                        <Link href="/blog/5-tipp-a-fogko-megelozesehez-otthon">
+                          {t("blogDetails")}
+                        </Link>
                       </li>
                     </ul>
                   </li>
                   <li className="navbar-dropdown">
-                    <Link href="/contact-us">Kapcsolat</Link>
+                    <Link href="/contact-us">{t("contact")}</Link>
                   </li>
                 </ul>
               </nav>
@@ -225,18 +229,18 @@ const Header = () => {
                 <div className="relative" ref={languageRef}>
                   <button
                     onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
-                    className="flex items-center gap-3 px-4 py-2.5 "
-                    aria-label="Nyelv választása"
+                    className="flex items-center gap-3 px-4 py-2.5"
+                    aria-label={t("languageSelectAria")}
                   >
                     <Image
-                      src={languages.find(lang => lang.code === currentLanguage)?.flag}
-                      alt={languages.find(lang => lang.code === currentLanguage)?.name}
+                      src={languages.find((lang) => lang.code === locale)?.flag}
+                      alt={t(`language.${locale}`)}
                       width={22}
                       height={16}
                       className="object-cover"
                     />
                     <span className="text-sm font-semibold text-gray-700">
-                      {languages.find(lang => lang.code === currentLanguage)?.name}
+                      {t(`language.${locale}`)}
                     </span>
                     <ChevronDown
                       size={16}
@@ -253,20 +257,20 @@ const Header = () => {
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
                             className={`w-full text-left px-5 py-3 hover:bg-blue-50 transition-all duration-200 flex items-center gap-3 text-sm group customlang ${
-                              currentLanguage === lang.code ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
-                            } ${index !== languages.length - 1 ? 'border-b border-gray-100' : ''}`}
+                              locale === lang.code ? "bg-blue-50 text-blue-700" : "text-gray-700"
+                            } ${index !== languages.length - 1 ? "border-b border-gray-100" : ""}`}
                           >
                             <Image
                               src={lang.flag}
-                              alt={lang.name}
+                              alt={t(`language.${lang.code}`)}
                               width={20}
                               height={15}
                               className="object-cover"
                             />
                             <span className="font-medium group-hover:text-blue-700 transition-colors">
-                              {lang.name}
+                              {t(`language.${lang.code}`)}
                             </span>
-                            {currentLanguage === lang.code && (
+                            {locale === lang.code && (
                               <div className="ml-auto">
                                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                               </div>
@@ -278,9 +282,7 @@ const Header = () => {
                   )}
                 </div>
                 <Link href="/appointment" className="btn">
-                  <span className="flex items-center gap-2">
-                    Időpontfoglalás
-                  </span>
+                  <span className="flex items-center gap-2">{t("appointment")}</span>
                 </Link>
               </div>
             </div>
@@ -300,7 +302,7 @@ const Header = () => {
             <ul>
               <li>
                 <Link href="/about-us" onClick={handleMobileNavClose}>
-                  Rólunk
+                  {t("aboutUs")}
                 </Link>
               </li>
               <li
@@ -310,7 +312,7 @@ const Header = () => {
                 onClick={(e) => handleMobileSubMenuToggle("research", e)}
               >
                 <Link href="/services" className="flex items-center justify-between">
-                  Szolgáltatások
+                  {t("services")}
                   <ChevronDown
                     size={16}
                     className={`transition-transform duration-200 ${
@@ -319,21 +321,23 @@ const Header = () => {
                   />
                 </Link>
                 <ul
-                  className={`sub-menu ${
-                    activeMobileSubMenu === "research" ? "block" : "hidden"
-                  }`}
+                  className={`sub-menu ${activeMobileSubMenu === "research" ? "block" : "hidden"}`}
                 >
                   <li>
-                    <Link href="/services" onClick={handleMobileNavClose}>Minden szolgáltatás</Link>
+                    <Link href="/services" onClick={handleMobileNavClose}>
+                      {t("allServices")}
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/services/altalanos-fogaszat" onClick={handleMobileNavClose}>Szolgáltatás részletei</Link>
+                    <Link href="/services/altalanos-fogaszat" onClick={handleMobileNavClose}>
+                      {t("serviceDetails")}
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
                 <Link href="/cases" onClick={handleMobileNavClose}>
-                  Esetek
+                  {t("cases")}
                 </Link>
               </li>
               <li
@@ -343,7 +347,7 @@ const Header = () => {
                 onClick={(e) => handleMobileSubMenuToggle("blog", e)}
               >
                 <Link href="/blog" className="flex items-center justify-between">
-                  Blog
+                  {t("blog")}
                   <ChevronDown
                     size={16}
                     className={`transition-transform duration-200 ${
@@ -351,34 +355,33 @@ const Header = () => {
                     }`}
                   />
                 </Link>
-                <ul
-                  className={`sub-menu ${
-                    activeMobileSubMenu === "blog" ? "block" : "hidden"
-                  }`}
-                >
+                <ul className={`sub-menu ${activeMobileSubMenu === "blog" ? "block" : "hidden"}`}>
                   <li>
-                    <Link href="/blog" onClick={handleMobileNavClose}>Összes blog</Link>
+                    <Link href="/blog" onClick={handleMobileNavClose}>
+                      {t("allBlogs")}
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/blog/5-tipp-a-fogko-megelozesehez-otthon" onClick={handleMobileNavClose}>Blog részletei</Link>
+                    <Link
+                      href="/blog/5-tipp-a-fogko-megelozesehez-otthon"
+                      onClick={handleMobileNavClose}
+                    >
+                      {t("blogDetails")}
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link href="/contact-us" onClick={handleMobileNavClose}>
-                  Kapcsolat
-                </Link>
+                <Link href="/contact-us">{t("contact")}</Link>
               </li>
             </ul>
             <div className="mt-8 pt-4 absolute bottom-30 w-[85%]">
-              <Link 
-                href="/appointment" 
+              <Link
+                href="/appointment"
                 onClick={handleMobileNavClose}
                 className="btn w-full block text-center"
               >
-                <span className="flex items-center justify-center gap-2">
-                  Időpontfoglalás
-                </span>
+                <span className="flex items-center justify-center gap-2">{t("appointment")}</span>
               </Link>
             </div>
           </div>

@@ -1,0 +1,23 @@
+{
+  "Header": {
+    "languageSelectAria": "Nyelv választása",
+    "mobileMenuToggleAria": "Mobil menü váltása",
+    "aboutUs": "Rólunk",
+    "services": "Szolgáltatások",
+    "allServices": "Minden szolgáltatás",
+    "serviceDetails": "Szolgáltatás részletei",
+    "cases": "Esetek",
+    "blog": "Blog",
+    "allBlogs": "Összes blog",
+    "blogDetails": "Blog részletei",
+    "contact": "Kapcsolat",
+    "appointment": "Időpontfoglalás",
+    "language": {
+      "hu": "Magyar",
+      "en": "English",
+      "ro": "Română",
+      "de": "Deutsch",
+      "at": "Österreichisch"
+    }
+  }
+}
