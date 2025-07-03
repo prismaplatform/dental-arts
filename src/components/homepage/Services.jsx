@@ -83,107 +83,105 @@ const Services = () => {
   ];
 
   return (
-    <section className="">
-      <div className="container mx-auto px-4">
-        <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
-          <div>
-            <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-              # Szolgáltatásaink
-            </span>
-            <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-               Professzionális fogászati ellátás minden korosztálynak.
-            </h2>
-          </div>
-
-          {/* Navigation Buttons next to title */}
-          <div className="flex gap-4">
-            <div className="services-swiper-button-prev w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
-              <ChevronLeft size={24} />
-            </div>
-            <div className="services-swiper-button-next w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
-              <ChevronRight size={24} />
-            </div>
-          </div>
+    <section className="container">
+      <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
+        <div>
+          <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
+            # Szolgáltatásaink
+          </span>
+          <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
+            Professzionális fogászati ellátás minden korosztálynak.
+          </h2>
         </div>
 
-        <div className="relative">
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={1}
-            slidesPerView={1}
-            loop={true}
-            navigation={{
-              nextEl: ".services-swiper-button-next",
-              prevEl: ".services-swiper-button-prev",
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-              1280: {
-                slidesPerView: 4,
-                spaceBetween: 10,
-              },
-            }}
-            className="services-slider"
-          >
-            {services.map((service) => {
-              const IconComponent = service.icon;
-              return (
-                <SwiperSlide key={service.id} className="group h-full">
-                  <div className="services-box flex flex-col justify-between h-full min-h-[400px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30  before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500">
-                    <i
-                      className={`${service.bgColor} group-hover:bg-white size-90 flex items-center justify-center mb-25 relative ${service.shadowColor} rounded-full`}
-                    >
-                      <IconComponent
-                        size={45}
-                        className="text-white group-hover:text-gray-800 transition-colors duration-300"
-                        strokeWidth={1.5}
-                      />
-                    </i>
+        {/* Navigation Buttons next to title */}
+        <div className="flex gap-4">
+          <div className="services-swiper-button-prev w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
+            <ChevronLeft size={24} />
+          </div>
+          <div className="services-swiper-button-next w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
+            <ChevronRight size={24} />
+          </div>
+        </div>
+      </div>
 
-                    <h4 className="xl:text-xl font-sora text-secondary font-medium leading-[1.2]">
-                      <Link
-                        href={service.link}
-                        className="xxl:text-2xl text-xl font-bold font-sora relative text-secondary group-hover:text-white duration-500 hover:underline"
-                      >
-                        {service.title}
-                      </Link>
-                    </h4>
+      <div className="relative">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={1}
+          slidesPerView={1}
+          loop={true}
+          navigation={{
+            nextEl: ".services-swiper-button-next",
+            prevEl: ".services-swiper-button-prev",
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+          className="services-slider"
+        >
+          {services.map((service) => {
+            const IconComponent = service.icon;
+            return (
+              <SwiperSlide key={service.id} className="group h-full">
+                <div className="services-box flex flex-col justify-between h-full min-h-[400px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30  before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500">
+                  <i
+                    className={`${service.bgColor} group-hover:bg-white size-90 flex items-center justify-center mb-25 relative ${service.shadowColor} rounded-full`}
+                  >
+                    <IconComponent
+                      size={45}
+                      className="text-white group-hover:text-gray-800 transition-colors duration-300"
+                      strokeWidth={1.5}
+                    />
+                  </i>
 
-                    <p className="pt-10 pb-20 relative text-base leading-32 text-[#6f6f6f] font-normal group-hover:text-white duration-500">
-                      {service.description}
-                    </p>
-
+                  <h4 className="xl:text-xl font-sora text-secondary font-medium leading-[1.2]">
                     <Link
                       href={service.link}
-                      className="relative font-bold text-secondary font-sora group-hover:text-white duration-500 inline-flex items-center hover:underline"
+                      className="xxl:text-2xl text-xl font-bold font-sora relative text-secondary group-hover:text-white duration-500 hover:underline"
                     >
-                      Tovább olvasok
-                      <ArrowRight size={16} className="ml-3 relative" />
+                      {service.title}
                     </Link>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-        <div className="text-center mt-40">
-                  <a href="/services" className="btn max-xxl:px-30">
-                    <span className="flex gap-10">
-                      Szolgáltatásaink <ArrowRight size={20} />
-                    </span>
-                  </a>
+                  </h4>
+
+                  <p className="pt-10 pb-20 relative text-base leading-32 text-[#6f6f6f] font-normal group-hover:text-white duration-500">
+                    {service.description}
+                  </p>
+
+                  <Link
+                    href={service.link}
+                    className="relative font-bold text-secondary font-sora group-hover:text-white duration-500 inline-flex items-center hover:underline"
+                  >
+                    Tovább olvasok
+                    <ArrowRight size={16} className="ml-3 relative" />
+                  </Link>
                 </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="text-center mt-40">
+        <a href="/services" className="btn max-xxl:px-30">
+          <span className="flex gap-10">
+            Szolgáltatásaink <ArrowRight size={20} />
+          </span>
+        </a>
       </div>
     </section>
   );

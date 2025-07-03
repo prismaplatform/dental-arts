@@ -65,7 +65,7 @@ const Appointment = () => {
   return (
     <>
       <section className="appiontment-section bg-no-repeat bg-right lg:py-120 md:py-80 py-60">
-        <div className="container mx-auto px-4"> 
+        <div className="container "> 
           <div className="flex flex-wrap items-end">
             <div className="lg:w-1/2 w-full">
               <div className="lg:pb-50 pb-30 w-fit">

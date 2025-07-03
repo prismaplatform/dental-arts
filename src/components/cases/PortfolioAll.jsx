@@ -120,7 +120,7 @@ const PortfolioAll = () => {
 
   return (
     <section className="lg:py-120 md:py-80 py-60">
-      <div className="container mx-auto px-4">
+      <div className="container ">
         <div className="xl:pb-50 lg:pb-40 pb-30 text-center">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
             # Esettanulmányok

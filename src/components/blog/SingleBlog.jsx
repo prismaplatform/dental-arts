@@ -9,7 +9,7 @@ const SingleBlog = () => {
   return (
     <>
       <section className="xxl:py-120 lg:py-100 md:py-80 py-60">
-        <div className="container mx-auto px-4">
+        <div className="container ">
           <div className="max-w-4xl mx-auto">
             <div className="relative group">
               <h2 className="xxl:text-5.2xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-bold py-20 font-sora text-secondary leading-[1.2] text-center">

@@ -192,3 +192,16 @@
 
 /* PAGES CSS */
 @import "../../public/assets/css/pages/index.css";
+
+header .mobile-nav {
+	 padding-top: calc(var(--spacing) * 30);
+}
+.customlang{
+	
+    border-style: var(--tw-border-style);
+
+    padding-block: calc(var(--spacing) * 15);
+    padding-left: calc(var(--spacing) * 25);
+   
+
+}

@@ -65,9 +65,9 @@ const Hero = () => {
   return (
     <>
       <section className="bg-[#DCE9F4] pt-100 overflow-hidden">
-        <div className="container mx-auto px-md-4">
+        <div className="container">
           <div className="grid grid-cols-12 items-center">
-            <div className="lg:col-span-6 col-span-12">
+            <div className="lg:col-span-6 col-span-12 pb-50 md:pb-0">
               <div className="relative">
                 {/* <span className="xxl:text-xxl sm:text-lg text-sm uppercase font-bold text-secondary flex items-center">
                   <Heart size={20} className="pr-2 text-[#FC4F4F]" /> 
@@ -170,7 +170,7 @@ const Hero = () => {
                 </div>
               </div> */}
             </div>
-            <div className="lg:col-span-6 col-span-12">
+            <div className="lg:col-span-6 col-span-12 hidden md:block">
               <div className="relative">
                 <Image
                   src="/assets/img/heroDental2.png"

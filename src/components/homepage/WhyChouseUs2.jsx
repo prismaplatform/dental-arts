@@ -5,7 +5,6 @@ import Link from "next/link";
 const WhyChouseUs2 = () => {
   return (
     <>
-           
       <section className="lg:pt-120 md:pt-80 pt-60 relative section-about-two">
         <div className="container">
           <div className="grid grid-cols-12 gap-25">
@@ -99,7 +98,6 @@ const WhyChouseUs2 = () => {
           </div>
         </div>
       </section>
-           {" "}
     </>
   );
 };

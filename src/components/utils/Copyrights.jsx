@@ -4,33 +4,37 @@ import React from "react";
 const Copyrights = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="copyright py-20 max-md:flex-wrap flex md:justify-between justify-center border-t border-[#d7d7d7]">
-      <div className="flex flex-col items-center md:items-start"> {/* Added a div for stacking and aligned text */}
-        <p className="text-base leading-30 text-gary font-normal mb-2 md:mb-0"> {/* Added margin-bottom for spacing */}
-          Copyright © {currentYear}. Minden jog fenntartva | <Link href="/" className="text-primary font-bold">Dental Arts</Link>
-        </p>
-        <p className="text-base leading-30 text-gary font-normal">
-          Készült és fejlesztve: <Link href="https://prismasolutions.ro" className="text-primary font-bold">Prisma Solutions</Link>
-        </p>
-      </div>
-      <ul className="flex gap-x-25 mt-4 md:mt-0"> {/* Added margin-top for spacing on smaller screens */}
+    <div className="copyright py-20 flex flex-col md:flex-row md:justify-between justify-start border-t border-[#d7d7d7]">
+      {/* Links section - felül mobilon */}
+      <ul className="flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-25 mb-40 md:mb-0 md:order-2">
         <li>
           <Link
             href="/terms"
-            className="text-gary text-base font-Urbanist hover:text-primary duration-500"
+            className="text-gary text-base font-Urbanist hover:text-primary duration-500 text-left"
           >
-            Felhasználási feltételek {/* Translated text */}
+            Felhasználási feltételek
           </Link>
         </li>
         <li>
           <Link
             href="/terms"
-            className="text-gary text-base font-Urbanist hover:text-primary duration-500"
+            className="text-gary text-base font-Urbanist hover:text-primary duration-500 text-left"
           >
-            Adatvédelmi irányelvek {/* Translated text */}
+            Adatvédelmi irányelvek
           </Link>
         </li>
       </ul>
+      
+      {/* Copyright section - alul mobilon */}
+      <div className="flex flex-col items-start md:order-1">
+        <p className="text-base leading-30 text-gary font-normal mb-2 text-left">
+          Copyright © {currentYear}. 
+          <br></br>Minden jog fenntartva | <Link href="/" className="text-primary font-bold">Dental Arts</Link>
+        </p>
+        <p className="text-base leading-30 text-gary font-normal text-left">
+          Készült és fejlesztve: <Link href="https://prismasolutions.ro" className="text-primary font-bold">Prisma Solutions</Link>
+        </p>
+      </div>
     </div>
   );
 };

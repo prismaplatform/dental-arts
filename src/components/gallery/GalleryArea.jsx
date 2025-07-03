@@ -108,7 +108,7 @@ const GalleryPage = () => {
   return (
     <>
       <section className="lg:pt-120 md:pt-80 pt-60 relative section-about-two">
-        <div className="container mx-auto px-4">
+        <div className="container ">
           <div className="mb-10 w-[fit-content]">
             <span className="black font-sora font-semibold capitalize xxl:text-xxl xl:text-xl sm:text-lg leading-50 text-primary">
               # Galéria

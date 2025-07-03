@@ -61,7 +61,7 @@ const Feedback = () => {
 
   return (
     <section className="lg:py-120 md:py-80 py-60">
-      <div className="container mx-auto px-4">
+      <div className="container ">
         <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
           <div>
             <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">

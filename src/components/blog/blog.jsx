@@ -59,7 +59,7 @@ const Blog = () => {
   return (
     <>
       <section className="relative lg:py-24 md:py-16 py-12 section-blog bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container ">
           <div className="grid grid-cols-12 gap-8">
             {/* Main Blog Content */}
             <div className="lg:col-span-8 col-span-12">

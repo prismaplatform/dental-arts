@@ -61,7 +61,7 @@ const SingleService = ({ slug }) => {
   if (!service) {
     return (
       <section className="xxl:py-120 lg:py-100 md:py-80 py-60">
-        <div className="container mx-auto px-4">
+        <div className="container ">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-secondary mb-4">
               Service Not Found
@@ -95,7 +95,7 @@ const SingleService = ({ slug }) => {
     <>
       {/* Main Content */}
       <section className="xxl:py-120 lg:py-100 md:py-80 py-60">
-        <div className="container mx-auto px-4">
+        <div className="container ">
           <div className="grid grid-cols-12 gap-8">
             {/* Content */}
             <div className="lg:col-span-8 col-span-12">

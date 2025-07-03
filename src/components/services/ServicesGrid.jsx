@@ -41,7 +41,7 @@ const ServicesGrid = ({
   
   return (
     <section className="lg:py-120 md:py-100 sm:py-80 py-60 services-grid-section">
-      <div className="container mx-auto px-4">
+      <div className="container ">
         <div className="text-center mb-60">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
             {subtitle}
