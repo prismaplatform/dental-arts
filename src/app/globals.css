@@ -205,3 +205,7 @@ header .mobile-nav {
    
 
 }
+
+.sticky-header.is-fixed .header-menu-right .textLanguage{
+	color: #111827 !important;
+}

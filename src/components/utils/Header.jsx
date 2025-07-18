@@ -293,7 +293,7 @@ const Header = () => {
                       height={16}
                       className="object-cover"
                     />
-                    <span className={`text-sm font-semibold ${textColor}`}>
+                    <span className={`text-sm font-semibold textLanguage ${textColor}`}>
                       {t(`language.${locale}`)}
                     </span>
                     <ChevronDown
