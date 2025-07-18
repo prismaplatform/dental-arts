@@ -1,6 +1,5 @@
 // data/services.js
 import {
-
   Ambulance,
   Braces,
   Heart,
@@ -8,162 +7,257 @@ import {
   Plus,
   Shield,
   Smile,
-  Syringe
-} from 'lucide-react'; // Frissített Lucide ikon importok
+  Syringe,
+} from "lucide-react"; // Frissített Lucide ikon importok
 
 export const servicesData = [
   {
     id: 1,
-    slug: 'altalanos-fogaszat',
-    title: 'Általános Fogászat',
-    description: 'Átfogó fogászati szolgáltatásaink az Ön teljes körű szájüregi egészségét célozzák meg.',
-    icon: Heart, // Ez az ikon létezik és tökéletes
-    fullDescription: 'Az általános fogászati szolgáltatások széles skáláját kínáljuk, a rutin ellenőrzésektől a speciális kezelésekig, tapasztalt fogorvosaink elkötelezettek a kivételes ellátás nyújtása iránt. A legmodernebb felszereléseket és a legújabb orvosi protokollokat alkalmazzuk a legmagasabb minőségű szolgáltatás biztosítása érdekében.',
+    slug: "implantologia",
+    title: "Implantológia",
+    description:
+      "Tartós és esztétikus megoldás a hiányzó fogak pótlására korszerű implantátumokkal.",
+    icon: Plus,
+    fullDescription:
+      "Implantológiai kezeléseink a foghiányok végleges és esztétikus pótlását szolgálják. A titánból készült fogászati implantátumokat precíz tervezés és kivitelezés mentén ültetjük be, lehetővé téve a rágófunkció és a természetes mosoly helyreállítását.",
     features: [
-      'Átfogó fogászati vizsgálat',
-      'Diagnosztikai szolgáltatások (pl. röntgen)',
-      'Kezelési terv készítése',
-      'Rendszeres ellenőrzések',
-      'Esztétikai tanácsadás'
+      "Egyfogas, többfogas és teljes fogpótlás",
+      "CT-alapú tervezés",
+      "Navigált implantáció",
+      "Csonpótlási eljárások",
+      "Hosszú távú utánkövetés",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#5496FF]",
+    shadowColorHex: "#5496FF",
   },
   {
     id: 2,
-    slug: 'megelozo-fogaszat',
-    title: 'Megelőző Fogászat',
-    description: 'Átfogó megelőző szolgáltatásaink célja a lehetséges szájüregi problémák időben történő felismerése és megelőzése.',
-    icon: Shield, // Pajzs a védelemre, nagyon jól illik
-    fullDescription: 'A megelőzés jobb, mint a gyógyítás. Megelőző fogászati szolgáltatásaink az Ön szájüregi egészségének megőrzésére és a betegségek kialakulásának megelőzésére összpontosítanak. Átfogó szűréseket, rendszeres ellenőrzéseket és személyre szabott szájhigiéniai terveket kínálunk az optimális egészség megőrzéséhez.',
+    slug: "szajsebeszet",
+    title: "Szájsebészet",
+    description:
+      "Komplex beavatkozások biztonságosan, fájdalommentesen és tapasztalt szájsebészek által.",
+    icon: Syringe,
+    fullDescription:
+      "Szájsebészeti részlegünk a legmodernebb technológiákkal és altatásos lehetőségekkel kínál beavatkozásokat, a bölcsességfog eltávolítástól a csontpótlásig.",
     features: [
-      'Rendszeres fogorvosi szűrések',
-      'Fogkőeltávolítás és polírozás',
-      'Fogszuvasodás megelőzés (pl. fluoridálás)',
-      'Szájhigiéniai tanácsadás',
-      'Korai felismerési programok'
+      "Bölcsességfog eltávolítás",
+      "Implantáció előkészítése",
+      "Ciszta eltávolítás",
+      "Lágyrész műtétek",
+      "Altatásos kezelések",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#54D169]",
+    shadowColorHex: "#54D169",
   },
   {
     id: 3,
-    slug: 'fogszabalyozas',
-    title: 'Fogszabályozás',
-    description: 'Fogszabályozási szolgáltatásaink segítenek Önnek elérni a tökéletes mosolyt és a megfelelő harapást.',
-    icon: Braces, // Ez az ikon létezik és pontos
-    fullDescription: 'Modern fogszabályozási megoldásokat kínálunk mind gyermekek, mind felnőttek számára. A hagyományos fém fogszabályzótól az esztétikus, átlátszó sínekig (pl. Invisalign) a legújabb technológiákat alkalmazzuk, hogy a kezelés kényelmes és hatékony legyen.',
+    slug: "protetika-fogpotlas",
+    title: "Protetika / Fogpótlás",
+    description:
+      "Esztétikus és funkcionális megoldások hiányzó fogak pótlására különféle fogpótlásokkal.",
+    icon: Smile,
+    fullDescription:
+      "A protetikai kezelések célja a rágófunkció és az esztétika helyreállítása. Rögzített koronákat, hidakat és kivehető pótlásokat is készítünk, egyéni igényekhez igazítva.",
     features: [
-      'Gyermek és felnőtt fogszabályozás',
-      'Hagyományos és láthatatlan rendszerek',
-      'Kezelési terv és tanácsadás',
-      'Utókezelés és retenció',
-      'Digitális lenyomatvétel'
+      "Koronák és hidak",
+      "Kivehető és rögzített pótlások",
+      "Cirkónium és kerámia megoldások",
+      "Implantátumra épülő pótlások",
+      "Mosolytervezés",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#FF63DE]",
+    shadowColorHex: "#FF63DE",
   },
   {
     id: 4,
-    slug: 'gyermekfogaszat',
-    title: 'Gyermekfogászat',
-    description: 'Gyermekfogászati szolgáltatásainkat kifejezetten a gyermekek számára alakítottuk ki, hogy pozitív fogászati élményt biztosítsunk.',
-    icon: Smile, // Nagyon jól illik
-    fullDescription: 'A gyermekek számára pozitív fogászati élmények megteremtése a szakterületünk. Gyermekfogászati szolgáltatásaink a megelőzésre, a korai beavatkozásra, valamint arra összpontosítanak, hogy a fogorvosi látogatások szórakoztatóvá és kényelmessé váljanak a fiatal páciensek számára.',
+    slug: "esztetikai-fogaszat",
+    title: "Esztétikai Fogászat",
+    description:
+      "A tökéletes mosoly eléréséhez esztétikai beavatkozások széles skáláját kínáljuk.",
+    icon: Paintbrush,
+    fullDescription:
+      "Az esztétikai fogászat célja a természetes, harmonikus mosoly kialakítása. Fogfehérítéssel, héjakkal és esztétikus tömésekkel segítünk megújítani mosolyát.",
     features: [
-      'Gyermekbarát környezet',
-      'Gyengéd megközelítés',
-      'Megelőző kezelések gyermekeknek',
-      'Viselkedésmódosítás',
-      'Szülői tanácsadás'
+      "Kompozit tömések",
+      "Kerámia héjak",
+      "Fogformázás",
+      "Mosolytervezés",
+      "Szín- és formaharmonizálás",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#12EBF2]",
+    shadowColorHex: "#12EBF2",
   },
   {
     id: 5,
-    slug: 'szajsebeszet',
-    title: 'Szájsebészet',
-    description: 'Átfogó szájsebészeti szolgáltatásaink a szájüregi beavatkozások széles skáláját fedik le.',
-    icon: Syringe, // Orvosi beavatkozást, injekciót jelképezhet
-    fullDescription: 'Szájsebészeti szolgáltatásaink magasan képzett szájsebészek által végzett komplex eljárásokat foglalnak magukban. A bölcsességfog-eltávolítástól a komplex rekonstrukciós beavatkozásokig szakértő sebészeti ellátást nyújtunk.',
+    slug: "megtarto-fogaszat-endodoncia",
+    title: "Megtartó Fogászat / Endodoncia",
+    description:
+      "Fogmegtartó kezelések, beleértve a gyökérkezelést és töméseket a fogak megőrzése érdekében.",
+    icon: Heart,
+    fullDescription:
+      "Célunk, hogy a saját fogait minél tovább megőrizze. A megtartó kezelések során modern technikákat alkalmazunk a szuvasodások, törések és gyökérproblémák kezelésére.",
     features: [
-      'Bölcsességfog-eltávolítás',
-      'Fogászati implantátum beültetés',
-      'Arcüregemelés (sinus lift)',
-      'Csontpótlás',
-      'Altatásos lehetőségek'
+      "Modern gyökérkezelés gépi eszközökkel",
+      "Kompozit tömések",
+      "Érzéstelenítés mesterfokon",
+      "Digitális röntgen diagnosztika",
+      "Foghézag-zárás",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#5496FF]",
+    shadowColorHex: "#5496FF",
   },
   {
     id: 6,
-    slug: 'fogaszati-implantatumok',
-    title: 'Fogászati Implantátumok',
-    description: 'Átfogó fogászati implantációs szolgáltatásaink tartós megoldást kínálnak a hiányzó fogakra, természetes megjelenéssel.',
-    icon: Plus,
-    fullDescription: 'A fogászati implantátumok az arany standard a hiányzó fogak pótlására. Implantátum szolgáltatásaink átfogó értékelést, precíz beültetést és helyreállítást foglalnak magukban, hogy Ön természetes megjelenésű és működő mosolyt kapjon.',
+    slug: "prevencio",
+    title: "Prevenció",
+    description:
+      "A megelőzés az egészséges mosoly kulcsa. Rendszeres ellenőrzések és tanácsadás.",
+    icon: Shield,
+    fullDescription:
+      "A szájüreg egészségének megőrzése érdekében nagy hangsúlyt fektetünk a megelőzésre. Tanácsadással, fogkőeltávolítással és szűrésekkel támogatjuk a hosszú távú egészséget.",
     features: [
-      'Egyes fog pótlása',
-      'Több fog pótlása',
-      'Teljes száj rehabilitáció',
-      'Azonnali terhelési lehetőségek',
-      'Hosszú távú karbantartás'
+      "Fogkőeltávolítás és polírozás",
+      "Fluoridkezelés",
+      "Szűrővizsgálatok",
+      "Szájhigiéniai tanácsadás",
+      "Gyermekprevenció",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#54D169]",
+    shadowColorHex: "#54D169",
   },
   {
     id: 7,
-    slug: 'parodontologiai-kezeles',
-    title: 'Parodontológiai Kezelés',
-    description: 'Parodontológiai szolgáltatásaink az íny és a fogat tartó szövetek egészségére összpontosítanak.',
-    icon: Shield,
-    fullDescription: 'Az egészséges íny a szájüregi egészség alapja. Parodontológiai szolgáltatásaink magukban foglalják az ínybetegségek és a fogat tartó struktúrákat érintő egyéb állapotok diagnózisát, kezelését és menedzselését.',
+    slug: "fogszabalyozas",
+    title: "Fogszabályozás",
+    description:
+      "Modern, esztétikus megoldások szabálytalan fogsor korrigálására gyermekeknek és felnőtteknek.",
+    icon: Braces,
+    fullDescription:
+      "Szabályos fogsor és helyes harapás nemcsak esztétikai, hanem egészségügyi szempontból is fontos. Rögzített és kivehető fogszabályozókat kínálunk, beleértve a láthatatlan síneket is.",
     features: [
-      'Ínybetegségek kezelése',
-      'Mélytisztítási eljárások',
-      'Fenntartó terápia',
-      'Sebészeti beavatkozások (pl. ínyplasztika)',
-      'Megelőző programok'
+      "Gyermek és felnőtt fogszabályozás",
+      "Láthatatlan sínes rendszerek",
+      "Digitális kezeléstervezés",
+      "Retenció és utánkövetés",
+      "Állcsont-ortopédiai megoldások",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#FF63DE]",
+    shadowColorHex: "#FF63DE",
   },
   {
     id: 8,
-    slug: 'esztetikai-fogaszat',
-    title: 'Esztétikai Fogászat',
-    description: 'Esztétikai fogászati szolgáltatásaink a mosoly szépítésére és az önbizalom növelésére irányulnak.',
-    icon: Paintbrush,
-    fullDescription: 'Segítünk Önnek elérni álmai mosolyát esztétikai fogászati kezeléseinkkel. Ide tartozik a fogfehérítés, héjak, koronák és egyéb kozmetikai eljárások, amelyek javítják fogai megjelenését és harmóniát teremtenek az arcával.',
+    slug: "parodontologia",
+    title: "Parodontológia / Fogágybetegség Kezelés",
+    description:
+      "Ínybetegségek korai felismerése és kezelése a fogak hosszú távú megtartásáért.",
+    icon: Shield,
+    fullDescription:
+      "A parodontológiai kezelések célja az íny és a fogakat tartó szövetek egészségének helyreállítása. Szakorvosaink célzott terápiákkal állítják meg az ínysorvadást és gyulladást.",
     features: [
-      'Fogfehérítés',
-      'Kerámia héjak',
-      'Teljes kerámia koronák',
-      'Fogszínű tömések',
-      'Mosolytervezés'
+      "Parodontológiai szűrés",
+      "Zárt és nyitott kürett",
+      "Ínyplasztika",
+      "Fenntartó kezelések",
+      "Mikroszkópos diagnosztika",
     ],
-    category: 'fogaszat'
+    category: "fogaszat",
+    bgColor: "bg-[#12EBF2]",
+    shadowColorHex: "#12EBF2",
   },
   {
     id: 9,
-    slug: 'surgossegi-fogaszat',
-    title: 'Sürgősségi Fogászat',
-    description: 'Sürgősségi fogászati szolgáltatásaink azonnali ellátást biztosítanak sürgős fogászati helyzetekben.',
-    icon: Ambulance, // Kifejezetten sürgősségi esetekre utal
-    fullDescription: 'Fogászati vészhelyzetek bármikor előfordulhatnak. Sürgősségi fogászati szolgáltatásaink azonnali ellátást nyújtanak sürgős fogászati helyzetekben, beleértve az erős fogfájást, a letört fogakat és egyéb fogászati traumákat.',
+    slug: "digitalis-fogaszat",
+    title: "Digitális Fogászat",
+    description:
+      "Digitális technológia a pontosabb tervezésért és gyorsabb kezelésekért.",
+    icon: Smile,
+    fullDescription:
+      "A digitális fogászat lehetővé teszi a precíz tervezést és lenyomatvételt, minimalizálva a kellemetlenségeket. 3D szkennelés, digitális röntgen és CAD/CAM technológiák révén hatékonyabbá válik a kezelés.",
     features: [
-      'Azonnali fájdalomcsillapítás',
-      'Letört fogak kezelése',
-      'Gyulladások sürgősségi ellátása',
-      'Fogbalesetek kezelése',
-      'Rendelői nyitvatartáson kívüli támogatás'
+      "Intraorális 3D szkennelés",
+      "Digitális lenyomat",
+      "CAD/CAM fogpótlások",
+      "Digitális mosolytervezés",
+      "CT és panoráma röntgen",
     ],
-    category: 'fogaszat'
-  }
+    category: "fogaszat",
+    bgColor: "bg-[#5496FF]",
+    shadowColorHex: "#5496FF",
+  },
+  {
+    id: 10,
+    slug: "diagnosztika",
+    title: "Diagnosztika",
+    description:
+      "A pontos diagnózis megalapozza a hatékony fogászati kezeléseket.",
+    icon: Heart,
+    fullDescription:
+      "Rendelőnk modern képalkotó és diagnosztikai eszközökkel van felszerelve, amelyek pontos és gyors állapotfelmérést tesznek lehetővé.",
+    features: [
+      "Digitális röntgen",
+      "Panorámafelvétel",
+      "CBCT (3D CT)",
+      "Kamerás vizsgálatok",
+      "Diagnosztikai konzultációk",
+    ],
+    category: "fogaszat",
+    bgColor: "bg-[#54D169]",
+    shadowColorHex: "#54D169",
+  },
+  {
+    id: 11,
+    slug: "lezeres-fogaszat",
+    title: "Lézeres Fogászati Kezelések",
+    description:
+      "Fájdalommentes, precíz és gyors gyógyulás lézeres technológiával.",
+    icon: Syringe,
+    fullDescription:
+      "A lézeres kezelések során minimalizálható a fájdalom és a vérzés. Ínyformázásra, fertőtlenítésre, kisebb beavatkozásokra egyaránt alkalmazzuk.",
+    features: [
+      "Ínykezelés lézerrel",
+      "Fogfehérítés lézerrel",
+      "Sebkezelés",
+      "Fertőtlenítés",
+      "Minimál invazív beavatkozások",
+    ],
+    category: "fogaszat",
+    bgColor: "bg-[#5496FF]",
+    shadowColorHex: "#5496FF",
+  },
+  {
+    id: 12,
+    slug: "fogfeherites",
+    title: "Fogfehérítés",
+    description: "Gyors és látványos megoldás a ragyogó, fehér mosolyért.",
+    icon: Paintbrush,
+    fullDescription:
+      "Professzionális rendelői fogfehérítési eljárásaink biztonságosan és hatékonyan világosítják fel fogait, akár már egy alkalom alatt is.",
+    features: [
+      "Rendelői fehérítés",
+      "Otthoni sínnel végzett kezelés",
+      "Lézeres fogfehérítés",
+      "Személyre szabott tanácsadás",
+      "Tartós eredmény",
+    ],
+    category: "fogaszat",
+    bgColor: "bg-[#54D169]",
+    shadowColorHex: "#54D169",
+  },
 ];
 
 export const getServiceBySlug = (slug) => {
-  return servicesData.find(service => service.slug === slug);
+  return servicesData.find((service) => service.slug === slug);
 };
 
 export const getServicesByCategory = (category) => {
-  return servicesData.filter(service => service.category === category);
+  return servicesData.filter((service) => service.category === category);
 };
 
 export const SERVICES_PER_PAGE = 6;

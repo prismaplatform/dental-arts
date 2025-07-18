@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,7 +15,7 @@ const Hero = () => {
 
   const animateCounter = (target, setter, duration = 2000) => {
     let start = 0;
-    const increment = target / (duration / 16);
+    const increment = target / (duration / 16)
     const interval = setInterval(() => {
       start += increment;
       if (start >= target) {
@@ -66,40 +67,33 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative w-full overflow-hidden min-h-[300px] lg:min-h-[750px] lg:pt-120 md:pt-80 pt-60 "> {/* Adjusted min-height for responsiveness */}
-        {/* Video háttér */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          
-          <source src="/assets/video/dental-loop.webm" type="video/mp4" /> 
-          A böngésződ nem támogatja a videótag-et.
-        </video>
-
-        {/* Overlay a videón, hogy a szöveg jobban olvasható legyen */}
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-
-        <div className="container relative z-10 py-100"> {/* A tartalom legyen a videó felett */}
-          <div className="grid grid-cols-12 items-center">
-            <div className="lg:col-span-6 col-span-12 pb-50 md:pb-0">
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/assets/img/herobanner.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        
+        <div className="container relative z-20 pt-20">
+          <div className="flex justify-center">
+            <div className="max-w-4xl text-center">
               <div className="relative">
                 <div className="relative">
-                  <h1 className="xxl:text-6xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-white leading-[1.2] [text-shadow:_0_0_45px_#00000080]">
-                    Mosolyt adunk <span className="">szakértelemmel</span> és törődéssel
+                  <h1 className="xxl:text-6xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-white leading-[1.2]">
+                    Mosolyt adunk <span className="text-primary">szakértelemmel</span> és törődéssel
                   </h1>
-                 
                 </div>
-                {/* <p className="xxl:text-xxl xl:text-xl text-lg leading-32 xl:leading-34 pb-45 text-white font-normal">
+                <p className="xxl:text-xxl xl:text-xl text-lg leading-32 xl:leading-34 pb-45 text-white font-normal max-w-3xl mx-auto">
                   Az EU‑konform Dental Arts modern, zöldövezeti rendelője fájdalommentes ellátást és személyre szabott kezelést kínál Fürdősor 12/B címen Sopron‑Balfon.
-                </p> */}
-                <div className="flex items-center gap-18 max-xl:flex-wrap">
+                </p>
+                <div className="flex items-center justify-center gap-18 max-xl:flex-wrap">
                   <Link href="/about-us" className="btn">
                     <span className='flex gap-10'>
-                      Tudj meg többet <ArrowRight size={20} />
+                      Tudj meg tobbet <ArrowRight size={20} />
                     </span>
                   </Link>
                   <ul className="flex ml-14 experience-team">
@@ -146,11 +140,6 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            {/* A jobb oldali kép szekció eltávolítva */}
-            <div className="lg:col-span-6 col-span-12 hidden md:block">
-               {/* Hagyhatsz itt egy üres div-et, hogy megtartsd a rács elrendezést, vagy teljesen eltávolíthatod, ha nem kell a helyfoglalás. */}
-               {/* Ha eltávolítod, akkor a bal oldali szöveg szekció lg:col-span-12 kell legyen. */}
             </div>
           </div>
         </div>

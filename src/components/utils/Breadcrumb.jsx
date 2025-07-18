@@ -4,34 +4,32 @@ import Link from 'next/link'
 const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
   return (
     <section
-      className="pt-90 relative max-lg:bg-[right_center] bg-[#f4f4f4] about-banner overflow-hidden"
-      style={{
-        backgroundImage: 'url(/assets/img/bannr-bg-img.png)'
-      }}
+      className="pt-90 relative max-lg:bg-[right_center] bg-[#F2EFEF] about-banner overflow-hidden"
+
     >
       <div className="container">
-        <div className="row items-center">
-          <div className="lg:w-1/2 w-full">
+        <div className="flex items-center lg:flex-row flex-col">
+          <div className="lg:w-2/5 w-full">
             <div className="relative max-md:text-center">
               <h2 className="xxl:text-5.5xl xl:text-5.5xl md:text-5.2xl sm:text-4.75xl text-4.6xl font-bold capitalize font-sora text-secondary leading-[1.2]">
                 {title}
               </h2>
-              
+             
             </div>
-            
+           
             {/* Dinamikus vagy statikus breadcrumb */}
             <ol className="mb-16 flex items-center max-md:justify-center max-md:mb-40 pt-10">
               {breadcrumbs ? (
                 // Dinamikus breadcrumb több szinttel
                 breadcrumbs.map((crumb, index) => (
-                  <li 
+                  <li
                     key={index}
                     className={`xxl:text-xxl md:text-xl text-sm font-sora capitalize ${
-                      crumb.current 
-                        ? 'text-gary' 
-                        : 'text-secondary hover:text-primary transition-colors'
+                      crumb.current
+                        ? 'text-purple'
+                        : 'text-purple hover:text-primary transition-colors'
                     } ${
-                      index > 0 ? "before:content-['-'] before:float-left before:text-gary before:px-10" : ''
+                      index > 0 ? "before:content-['-'] before:float-left before:text-purple before:px-10" : ''
                     }`}
                     {...(crumb.current && { 'aria-current': 'page' })}
                   >
@@ -47,16 +45,16 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
               ) : (
                 // Régi statikus breadcrumb (backward compatibility)
                 <>
-                  <li className="xxl:text-xxl md:text-xl text-sm text-secondary font-sora capitalize hover:text-primary transition-colors">
+                  <li className="xxl:text-xxl md:text-xl text-sm text-purple font-sora capitalize hover:text-primary transition-colors">
                     <Link href="/"> Főoldal</Link>
                   </li>
                   {middletitle && (
-                    <li className="xxl:text-xxl md:text-xl text-sm text-secondary font-sora capitalize hover:text-primary transition-colors before:content-['-'] before:float-left before:text-gary before:px-10">
+                    <li className="xxl:text-xxl md:text-xl text-sm text-purple font-sora capitalize hover:text-primary transition-colors before:content-['-'] before:float-left before:text-gary before:px-10">
                       <Link href="/blog">{middletitle}</Link>
                     </li>
                   )}
-                  <li 
-                    className="xxl:text-xxl md:text-xl text-sm text-gary capitalize before:content-['-'] before:float-left before:text-gary before:px-10" 
+                  <li
+                    className="xxl:text-xxl md:text-xl text-sm text-purple capitalize before:content-['-'] before:float-left before:text-gary before:px-10"
                     aria-current="page"
                   >
                     {subtitle}
@@ -65,26 +63,14 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
               )}
             </ol>
           </div>
-          
-          <div className="lg:w-1/2 w-full">
-            <div>
-              <img 
-                src="/assets/img/banner3.png" 
-                alt="img" 
-                className="w-[120%] xxl:max-w-[unset]"
+         
+          <div className="lg:w-3/5 w-full flex justify-end lg:justify-center">
+            <div className="w-full max-w-none lg:pl-8">
+              <img
+                src="/assets/img/bannernew6.png"
+                alt="img"
+                className="w-full max-w-none xxl:scale-110 xl:scale-105 lg:scale-100 object-contain"
               />
-              {/* <ul className="shaps">
-                <li className="absolute">
-                  <img 
-                    src="/assets/img/shaps-1.png" 
-                    alt="img" 
-                    className="xxl:w-80 w-60 animate-topshap max-md:hidden"
-                  />
-                </li>
-                
-               
-                
-              </ul> */}
             </div>
           </div>
         </div>

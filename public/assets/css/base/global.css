@@ -204,3 +204,7 @@ input[type=number] {
   border-radius: 12px;
   padding: 1rem 2rem;
 }
+
+  .text-purple {
+    color: var(--color-purple);
+  }

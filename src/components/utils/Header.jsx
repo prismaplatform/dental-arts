@@ -4,8 +4,16 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { useLocale, useTranslations } from "next-intl"; // Hooks for locale and translations
-import { Menu, Search, ArrowRight, X, ChevronDown, Home, Globe } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import {
+  Menu,
+  Search,
+  ArrowRight,
+  X,
+  ChevronDown,
+  Home,
+  Globe,
+} from "lucide-react";
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -17,11 +25,16 @@ const Header = () => {
   const mobileNavRef = useRef(null);
   const languageRef = useRef(null);
 
-  const t = useTranslations("Header"); // Translations for the Header namespace
-  const locale = useLocale(); // Current locale
-  const router = useRouter(); // next-intl router for locale switching
-  const pathname = usePathname(); // Current pathname without locale
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
+  const isHomepage = pathname === "/";
+  let textColor = "text-white";
+  if (!isHomepage) {
+    textColor = "text-secondary";
+  }
   const languages = [
     { code: "hu", flag: "/assets/img/flags/hu.png" },
     { code: "en", flag: "/assets/img/flags/en.webp" },
@@ -48,7 +61,6 @@ const Header = () => {
   };
 
   const handleLanguageChange = (langCode) => {
-    // Switch locale by pushing the same pathname with the new locale
     router.push(pathname, { locale: langCode });
     setLanguageDropdownOpen(false);
     setMobileLangDropdownOpen(false);
@@ -57,19 +69,24 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (headerRef.current) {
-        const headerTop = headerRef.current.offsetTop;
+        const initialHeaderTop =
+          headerRef.current.getBoundingClientRect().top + window.scrollY;
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        if (scrollTop > headerTop) {
-          setIsFixed(true);
-        } else {
-          setIsFixed(false);
-        }
+        setIsFixed(scrollTop > (initialHeaderTop > 0 ? initialHeaderTop : 100));
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -102,7 +119,7 @@ const Header = () => {
         ref={headerRef}
         className={`z-99 main-bar-wraper navbar-expand-lg duration-500 ${
           isFixed ? "is-fixed sticky-header" : ""
-        }`}
+        } ${isFixed && isHomepage ? "homepage" : ""}`}
       >
         <div className="main-bar">
           <div className="container">
@@ -110,16 +127,38 @@ const Header = () => {
               <div className="two-bar">
                 <div className="flex items-center justify-between">
                   <div className="logo">
-                    <Link href="/">
-                      <Image alt="logo" src="/assets/img/logo.svg" width={250} height={80} />
-                    </Link>
+                    {isHomepage ? (
+                      <Link href="/">
+                        <Image
+                          alt="logo"
+                          src={
+                            isFixed
+                              ? "/assets/img/logo.svg"
+                              : "/assets/img/logoWhite.svg"
+                          }
+                          width={250}
+                          height={80}
+                        />
+                      </Link>
+                    ) : (
+                      <Link href="/">
+                        <Image
+                          alt="logo"
+                          src="/assets/img/logo.svg"
+                          width={250}
+                          height={80}
+                        />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
               <div className="lg:hidden flex items-center gap-3">
                 <div className="relative">
                   <button
-                    onClick={() => setMobileLangDropdownOpen(!mobileLangDropdownOpen)}
+                    onClick={() =>
+                      setMobileLangDropdownOpen(!mobileLangDropdownOpen)
+                    }
                     className="flex items-center gap-2 px-3 py-2"
                     aria-label={t("languageSelectAria")}
                   >
@@ -145,8 +184,14 @@ const Header = () => {
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
                             className={`w-full text-left px-4 py-3 hover:bg-blue-50 transition-all duration-200 flex items-center gap-3 text-sm group customlang ${
-                              locale === lang.code ? "bg-blue-50 text-blue-700" : "text-gray-700"
-                            } ${index !== languages.length - 1 ? "border-b border-gray-100" : ""}`}
+                              locale === lang.code
+                                ? "bg-blue-50 text-blue-700"
+                                : "text-gray-700"
+                            } ${
+                              index !== languages.length - 1
+                                ? "border-b border-gray-100"
+                                : ""
+                            }`}
                           >
                             <Image
                               src={lang.flag}
@@ -159,7 +204,9 @@ const Header = () => {
                               {t(`language.${lang.code}`)}
                             </span>
                             {locale === lang.code && (
-                              <div className="ml-auto w-2 h-2 bg-blue-500 rounded-full"></div>
+                              <div className="ml-auto">
+                                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                              </div>
                             )}
                           </button>
                         ))}
@@ -167,9 +214,12 @@ const Header = () => {
                     </div>
                   )}
                 </div>
+
                 <button
                   onClick={handleMobileMenuToggle}
-                  className={`menu-start ${mobileNavOpen ? "open" : ""}`}
+                  className={`menu-start ${mobileNavOpen ? "open" : ""} ${
+                    isFixed && isHomepage ? "" : `${textColor}`
+                  }`}
                   aria-label={t("mobileMenuToggleAria")}
                 >
                   {mobileNavOpen ? <X size={30} /> : <Menu size={30} />}
@@ -177,11 +227,11 @@ const Header = () => {
               </div>
 
               <nav className="navbar lg:block hidden">
-                <ul className="navbar-links">
-                  <li className="navbar-dropdown">
+                <ul className={`navbar-links ${textColor}`}>
+                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/about-us">{t("aboutUs")}</Link>
                   </li>
-                  <li className="navbar-dropdown menu-item-children group relative">
+                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080] menu-item-children group relative">
                     <Link href="/services" className="flex items-center">
                       {t("services")}
                       <ChevronDown
@@ -194,14 +244,16 @@ const Header = () => {
                         <Link href="/services">{t("allServices")}</Link>
                       </li>
                       <li>
-                        <Link href="/services/altalanos-fogaszat">{t("serviceDetails")}</Link>
+                        <Link href="/services/altalanos-fogaszat">
+                          {t("serviceDetails")}
+                        </Link>
                       </li>
                     </ul>
                   </li>
-                  <li className="navbar-dropdown">
+                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/cases">{t("cases")}</Link>
                   </li>
-                  <li className="navbar-dropdown menu-item-children group relative">
+                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080] menu-item-children group relative">
                     <Link href="/blog" className="flex items-center">
                       {t("blog")}
                       <ChevronDown
@@ -220,7 +272,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </li>
-                  <li className="navbar-dropdown">
+                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/contact-us">{t("contact")}</Link>
                   </li>
                 </ul>
@@ -228,7 +280,9 @@ const Header = () => {
               <div className="header-menu-right lg:flex hidden items-center gap-4">
                 <div className="relative" ref={languageRef}>
                   <button
-                    onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
+                    onClick={() =>
+                      setLanguageDropdownOpen(!languageDropdownOpen)
+                    }
                     className="flex items-center gap-3 px-4 py-2.5"
                     aria-label={t("languageSelectAria")}
                   >
@@ -239,7 +293,7 @@ const Header = () => {
                       height={16}
                       className="object-cover"
                     />
-                    <span className="text-sm font-semibold text-gray-700">
+                    <span className={`text-sm font-semibold ${textColor}`}>
                       {t(`language.${locale}`)}
                     </span>
                     <ChevronDown
@@ -257,8 +311,14 @@ const Header = () => {
                             key={lang.code}
                             onClick={() => handleLanguageChange(lang.code)}
                             className={`w-full text-left px-5 py-3 hover:bg-blue-50 transition-all duration-200 flex items-center gap-3 text-sm group customlang ${
-                              locale === lang.code ? "bg-blue-50 text-blue-700" : "text-gray-700"
-                            } ${index !== languages.length - 1 ? "border-b border-gray-100" : ""}`}
+                              locale === lang.code
+                                ? "bg-blue-50 text-blue-700"
+                                : "text-gray-700"
+                            } ${
+                              index !== languages.length - 1
+                                ? "border-b border-gray-100"
+                                : ""
+                            }`}
                           >
                             <Image
                               src={lang.flag}
@@ -281,109 +341,130 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-                <Link href="/appointment" className="btn">
-                  <span className="flex items-center gap-2">{t("appointment")}</span>
+                <Link href="/appointment" className="btn secondary">
+                  <span className="flex items-center gap-2">
+                    {t("appointment")}
+                  </span>
                 </Link>
               </div>
             </div>
           </div>
-          <div ref={mobileNavRef} className={`mobile-nav ${mobileNavOpen ? "open" : ""}`}>
-            <div className="res-log mb-30">
-              <Link href="/" onClick={handleMobileNavClose}>
-                <Image
-                  alt="logo"
-                  src="/assets/img/logo.svg"
-                  className="w-auto"
-                  width={150}
-                  height={40}
+        </div>
+        <div
+          ref={mobileNavRef}
+          className={`mobile-nav ${mobileNavOpen ? "open" : ""}`}
+        >
+          <div className="res-log mb-30">
+            <Link href="/" onClick={handleMobileNavClose}>
+              <Image
+                alt="logo"
+                src={
+                  isFixed ? "/assets/img/logo.svg" : "/assets/img/logoWhite.svg"
+                }
+                className="w-auto"
+                width={150}
+                height={40}
+              />
+            </Link>
+          </div>
+          <ul>
+            <li>
+              <Link href="/about-us" onClick={handleMobileNavClose}>
+                {t("aboutUs")}
+              </Link>
+            </li>
+            <li
+              className={`menu-item-has-children ${
+                activeMobileSubMenu === "research" ? "active" : ""
+              }`}
+              onClick={(e) => handleMobileSubMenuToggle("research", e)}
+            >
+              <Link
+                href="/services"
+                className="flex items-center justify-between"
+              >
+                {t("services")}
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    activeMobileSubMenu === "research" ? "rotate-180" : ""
+                  }`}
                 />
               </Link>
-            </div>
-            <ul>
-              <li>
-                <Link href="/about-us" onClick={handleMobileNavClose}>
-                  {t("aboutUs")}
-                </Link>
-              </li>
-              <li
-                className={`menu-item-has-children ${
-                  activeMobileSubMenu === "research" ? "active" : ""
+              <ul
+                className={`sub-menu ${
+                  activeMobileSubMenu === "research" ? "block" : "hidden"
                 }`}
-                onClick={(e) => handleMobileSubMenuToggle("research", e)}
               >
-                <Link href="/services" className="flex items-center justify-between">
-                  {t("services")}
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-200 ${
-                      activeMobileSubMenu === "research" ? "rotate-180" : ""
-                    }`}
-                  />
-                </Link>
-                <ul
-                  className={`sub-menu ${activeMobileSubMenu === "research" ? "block" : "hidden"}`}
-                >
-                  <li>
-                    <Link href="/services" onClick={handleMobileNavClose}>
-                      {t("allServices")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/altalanos-fogaszat" onClick={handleMobileNavClose}>
-                      {t("serviceDetails")}
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link href="/cases" onClick={handleMobileNavClose}>
-                  {t("cases")}
-                </Link>
-              </li>
-              <li
-                className={`menu-item-has-children ${
-                  activeMobileSubMenu === "blog" ? "active" : ""
-                }`}
-                onClick={(e) => handleMobileSubMenuToggle("blog", e)}
-              >
-                <Link href="/blog" className="flex items-center justify-between">
-                  {t("blog")}
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-200 ${
-                      activeMobileSubMenu === "blog" ? "rotate-180" : ""
-                    }`}
-                  />
-                </Link>
-                <ul className={`sub-menu ${activeMobileSubMenu === "blog" ? "block" : "hidden"}`}>
-                  <li>
-                    <Link href="/blog" onClick={handleMobileNavClose}>
-                      {t("allBlogs")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blog/5-tipp-a-fogko-megelozesehez-otthon"
-                      onClick={handleMobileNavClose}
-                    >
-                      {t("blogDetails")}
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link href="/contact-us">{t("contact")}</Link>
-              </li>
-            </ul>
-            <div className="mt-8 pt-4 absolute bottom-30 w-[85%]">
-              <Link
-                href="/appointment"
-                onClick={handleMobileNavClose}
-                className="btn w-full block text-center"
-              >
-                <span className="flex items-center justify-center gap-2">{t("appointment")}</span>
+                <li>
+                  <Link href="/services" onClick={handleMobileNavClose}>
+                    {t("allServices")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/altalanos-fogaszat"
+                    onClick={handleMobileNavClose}
+                  >
+                    {t("serviceDetails")}
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link href="/cases" onClick={handleMobileNavClose}>
+                {t("cases")}
               </Link>
-            </div>
+            </li>
+            <li
+              className={`menu-item-has-children ${
+                activeMobileSubMenu === "blog" ? "active" : ""
+              }`}
+              onClick={(e) => handleMobileSubMenuToggle("blog", e)}
+            >
+              <Link href="/blog" className="flex items-center justify-between">
+                {t("blog")}
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    activeMobileSubMenu === "blog" ? "rotate-180" : ""
+                  }`}
+                />
+              </Link>
+              <ul
+                className={`sub-menu ${
+                  activeMobileSubMenu === "blog" ? "block" : "hidden"
+                }`}
+              >
+                <li>
+                  <Link href="/blog" onClick={handleMobileNavClose}>
+                    {t("allBlogs")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/5-tipp-a-fogko-megelozesehez-otthon"
+                    onClick={handleMobileNavClose}
+                  >
+                    {t("blogDetails")}
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link href="/contact-us">{t("contact")}</Link>
+            </li>
+          </ul>
+          <div className="mt-8 pt-4 absolute bottom-30 w-[85%]">
+            <Link
+              href="/appointment"
+              onClick={handleMobileNavClose}
+              className="btn w-full block text-center"
+            >
+              <span className="flex items-center justify-center gap-2">
+                {t("appointment")}
+              </span>
+            </Link>
           </div>
         </div>
       </header>

@@ -1,9 +1,10 @@
 :root {
   --common-colour: #111827;
-  --theme-colour: #5C91C1;
+  --theme-colour: #8739E5;
   --color-gary: #646464;
   --color-lightgary: #cbd5e1;
   --color-yellow: #d8b05d;
+  --color-purple: #FF63DE;
   --font-geist-sans: var(
     --font-geist-sans,
     system-ui,

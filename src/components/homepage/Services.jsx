@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { servicesData } from '../../data/services'
 import {
   Brain,
   FileText,
@@ -19,169 +20,131 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const Services = () => {
-  const services = [
-    {
-      id: 1,
-      title: "Általános fogászati ellátás",
-      description:
-        "Rendszeres kontroll, tömések, foghúzás és egyéb alapellátások fájdalommentesen.",
-      icon: Stethoscope,
-      bgColor: "bg-[#58CBF2]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(88,203,242,0.4)]",
-      link: "/services/altalanos-fogaszat",
-    },
-    {
-      id: 2,
-      title: "Esztétikai fogászat",
-      description:
-        "Fogfehérítés, héjak és esztétikus tömések a ragyogó mosolyért.",
-      icon: Smile,
-      bgColor: "bg-[#F05DA8]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(240,93,168,0.4)]",
-      link: "/services/esztetikai-fogaszat",
-    },
-    {
-      id: 3,
-      title: "Implantáció és fogpótlás",
-      description:
-        "Modern, tartós megoldások hiányzó fogak pótlására, személyre szabottan.",
-      icon: FileText,
-      bgColor: "bg-[#9B52E1]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(155,82,225,0.4)]",
-      link: "/services/implantatum-fogpotlas",
-    },
-    {
-      id: 4,
-      title: "Szájsebészet",
-      description:
-        "Bölcsességfog eltávolítás, gyökércsúcs rezekció és egyéb sebészeti beavatkozások.",
-      icon: Brain,
-      bgColor: "bg-[#69b741]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(105,183,65,0.4)]",
-      link: "/services/szajsebeszet",
-    },
-    {
-      id: 5,
-      title: "Gyermekfogászat",
-      description:
-        "Kíméletes és játékos megközelítés kis pácienseink fogainak egészségéért.",
-      icon: Smile,
-      bgColor: "bg-[#FFC107]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(255,193,7,0.4)]",
-      link: "/services/gyermekfogaszat",
-    },
-    {
-      id: 6,
-      title: "Digitális diagnosztika",
-      description:
-        "Röntgen, panorámafelvétel és szkennelés – a precíz diagnózis érdekében.",
-      icon: Stethoscope,
-      bgColor: "bg-[#00BCD4]",
-      shadowColor: "shadow-[0px_0px_24px_0px_rgba(0,188,212,0.4)]",
-      link: "/services/digitalis-diagnosztika",
-    },
-  ];
+
 
   return (
-    <section className="container">
-      <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
-        <div>
-          <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-            # Szolgáltatásaink
-          </span>
-          <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-            Professzionális fogászati ellátás minden korosztálynak.
-          </h2>
+    <section
+      className="relative py-20 lg:py-32 bg-cover bg-center bg-no-repeat"
+      style={{
+        boxShadow: "0px 0px 25px 0px #2E003A",
+        backgroundImage: `url('/assets/img/backgroundServices.png')`,
+      }}
+    >
+      <div className="absolute inset-0"></div>
+      <div className="container relative z-10">
+        <div className="xl:pb-50 lg:pb-40 pb-30 flex flex-col md:flex-row justify-between items-start md:items-end">
+          <div className="mb-8 md:mb-0">
+            <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-purple font-sora pb-5 block">
+              # Szolgáltatásaink
+            </span>
+            <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-white font-sora leading-[1.2]">
+              Professzionális fogászati ellátás minden korosztálynak.
+            </h2>
+          </div>
+          <div className="flex gap-4">
+            <div className="services-swiper-button-prev w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#ff63de] hover:text-white hover:border-[#ff63de] transition-all duration-300 shadow-lg z-99">
+              <ChevronLeft size={24} />
+            </div>
+            <div className="services-swiper-button-next w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#ff63de] hover:text-white hover:border-[#ff63de] transition-all duration-300 shadow-lg z-99">
+              <ChevronRight size={24} />
+            </div>
+          </div>
         </div>
 
-        {/* Navigation Buttons next to title */}
-        <div className="flex gap-4">
-          <div className="services-swiper-button-prev w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
-            <ChevronLeft size={24} />
-          </div>
-          <div className="services-swiper-button-next w-50 h-50 bg-white border-2 border-gray-200 text-gray-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 shadow-lg z-99">
-            <ChevronRight size={24} />
-          </div>
-        </div>
-      </div>
-
-      <div className="relative">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={1}
-          slidesPerView={1}
-          loop={true}
-          navigation={{
-            nextEl: ".services-swiper-button-next",
-            prevEl: ".services-swiper-button-prev",
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          }}
-          className="services-slider"
-        >
-          {services.map((service) => {
-            const IconComponent = service.icon;
-            return (
-              <SwiperSlide key={service.id} className="group h-full">
-                <div className="services-box flex flex-col justify-between h-full min-h-[400px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30  before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500">
-                  <i
-                    className={`${service.bgColor} group-hover:bg-white size-90 flex items-center justify-center mb-25 relative ${service.shadowColor} rounded-full`}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={10}
+            slidesPerView={1}
+            loop={true}
+            navigation={{
+              nextEl: ".services-swiper-button-next",
+              prevEl: ".services-swiper-button-prev",
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
+            className="services-slider"
+          >
+            {servicesData.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <SwiperSlide key={service.id} className="group h-full">
+                  <div
+                    className="services-box flex flex-col justify-between h-full min-h-[400px] relative xxl:p-40 p-30 rounded-xl overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)',
+                      backdropFilter: 'blur(15px)',
+                      border: '1px solid transparent', // Átlátszó border alapból
+                      borderImageSource: `
+                        radial-gradient(69.43% 69.43% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),
+                        radial-gradient(60% 51.57% at 50% 50%, ${service.shadowColorHex} 0%, rgba(${parseInt(service.shadowColorHex.slice(1,3), 16)}, ${parseInt(service.shadowColorHex.slice(3,5), 16)}, ${parseInt(service.shadowColorHex.slice(5,7), 16)}, 0) 100%),
+                        radial-gradient(54.8% 53% at 50% 50%, #151515 0%, rgba(21, 21, 21, 0) 100%)
+                      `,
+                      borderImageSlice: '1',
+                    }}
                   >
-                    <IconComponent
-                      size={45}
-                      className="text-white group-hover:text-gray-800 transition-colors duration-300"
-                      strokeWidth={1.5}
-                    />
-                  </i>
-
-                  <h4 className="xl:text-xl font-sora text-secondary font-medium leading-[1.2]">
-                    <Link
-                      href={service.link}
-                      className="xxl:text-2xl text-xl font-bold font-sora relative text-secondary group-hover:text-white duration-500 hover:underline"
+                    <i
+                      className={`${service.bgColor} size-90 flex items-center justify-center mb-25 relative rounded-full`}
+                      style={{
+                        boxShadow: `0px 0px 20px 0px ${service.shadowColorHex}73`,
+                      }}
                     >
-                      {service.title}
+                      <IconComponent
+                        size={45}
+                        className="text-white transition-colors duration-300"
+                        strokeWidth={1.5}
+                      />
+                    </i>
+
+                    <h4 className="xl:text-xl font-sora font-medium leading-[1.2]">
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="xxl:text-2xl text-xl font-bold font-sora relative text-white duration-500 hover:underline"
+                      >
+                        {service.title}
+                      </Link>
+                    </h4>
+
+                    <p className="pt-10 pb-20 relative text-base text-gray-200 font-normal duration-500">
+                      {service.description}
+                    </p>
+
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="relative font-bold text-white font-sora duration-500 inline-flex items-center hover:underline"
+                    >
+                      Tovább olvasok
+                      <ArrowRight size={16} className="ml-3 relative" />
                     </Link>
-                  </h4>
-
-                  <p className="pt-10 pb-20 relative text-base leading-32 text-[#6f6f6f] font-normal group-hover:text-white duration-500">
-                    {service.description}
-                  </p>
-
-                  <Link
-                    href={service.link}
-                    className="relative font-bold text-secondary font-sora group-hover:text-white duration-500 inline-flex items-center hover:underline"
-                  >
-                    Tovább olvasok
-                    <ArrowRight size={16} className="ml-3 relative" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-      <div className="text-center mt-40">
-        <a href="/services" className="btn max-xxl:px-30">
-          <span className="flex gap-10">
-            Szolgáltatásaink <ArrowRight size={20} />
-          </span>
-        </a>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+        <div className="text-center mt-40">
+          <a href="/services" className="btn max-xxl:px-30">
+            <span className="flex gap-10">
+              Szolgáltatásaink <ArrowRight size={20} />
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   );

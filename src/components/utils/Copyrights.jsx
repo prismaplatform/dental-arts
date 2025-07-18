@@ -10,7 +10,7 @@ const Copyrights = () => {
         <li>
           <Link
             href="/terms"
-            className="text-gary text-base font-Urbanist hover:text-primary duration-500 text-left"
+            className="text-white text-base font-Urbanist hover:text-primary duration-500 text-left"
           >
             Felhasználási feltételek
           </Link>
@@ -18,7 +18,7 @@ const Copyrights = () => {
         <li>
           <Link
             href="/terms"
-            className="text-gary text-base font-Urbanist hover:text-primary duration-500 text-left"
+            className="text-white text-base font-Urbanist hover:text-primary duration-500 text-left"
           >
             Adatvédelmi irányelvek
           </Link>
@@ -27,12 +27,12 @@ const Copyrights = () => {
       
       {/* Copyright section - alul mobilon */}
       <div className="flex flex-col items-start md:order-1">
-        <p className="text-base leading-30 text-gary font-normal mb-2 text-left">
+        <p className="text-white leading-30 text-gary font-normal mb-2 text-left">
           Copyright © {currentYear}. 
-          <br></br>Minden jog fenntartva | <Link href="/" className="text-primary font-bold">Dental Arts</Link>
+          <br></br>Minden jog fenntartva | <Link href="/" className="text-purple font-bold">Dental Arts</Link>
         </p>
-        <p className="text-base leading-30 text-gary font-normal text-left">
-          Készült és fejlesztve: <Link href="https://prismasolutions.ro" className="text-primary font-bold">Prisma Solutions</Link>
+        <p className="text-white leading-30 text-gary font-normal text-left">
+          Készült és fejlesztve: <Link href="https://prismasolutions.ro" className="text-purple font-bold">Prisma Solutions</Link>
         </p>
       </div>
     </div>

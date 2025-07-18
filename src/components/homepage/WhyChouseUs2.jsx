@@ -1,5 +1,5 @@
 import React from "react";
-import { Stethoscope, HeartHandshake, ArrowRight } from "lucide-react"; // Importáld a Lucid ikonokat
+import { Stethoscope, HeartHandshake, ArrowRight, User2, Trophy, Users, Family, Heart } from "lucide-react";
 import Link from "next/link";
 
 const WhyChouseUs2 = () => {
@@ -34,67 +34,89 @@ const WhyChouseUs2 = () => {
             <div className="lg:col-span-6 col-span-12">
               <div className="pb-50 w-[fit-content]">
                 <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-                  # Miért válassza a Dental Arts-ot?
+                  # Az Ön Mosolya, A Mi Küldetésünk
                 </span>
                 <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                  A ragyogó mosolyhoz vezető útja itt kezdődik.
+                  Miért a Dental Arts a legjobb választás az Ön számára?
                 </h2>
                 <p className="text-base leading-28 text-gary font-normal border-l-3 border-primary pl-27 mt-25">
-                  A soproni Dental Artsnál hisszük, hogy a kiváló fogászati
-                  ellátás túlmutat a kezeléseken. Ez egy{" "}
-                  <strong>személyre szabott élmény</strong>, mely a bizalomra és
-                  a kényelemre épül, ahol az Ön szájhigiéniája és gyönyörű
-                  mosolya a legfőbb prioritásunk.
+                  A soproni Dental Artsnál nem csak fogakat kezelünk, hanem{" "}
+                  **mosolyokat építünk**, melyek magabiztosságot
+                  és örömet sugároznak. Elkötelezettek vagyunk amellett, hogy
+                  minden páciensünk számára kivételes, személyre szabott
+                  ellátást nyújtsunk, családias hangulatban. Az Ön kényelme és
+                  egészsége a legfontosabb számunkra.
                 </p>
               </div>
-              <div className="sm:flex gap-20 mb-25 border-b border-[#D8D8D8] pb-25 group">
-                <span
-                  className="bg-[#F05DA8] size-90 flex items-center justify-center mb-25 relative 
-							shadow-[#f05da866_0px_0px_24px_0px] rounded-full"
-                >
-                  <Stethoscope className="size-90 p-20 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" />
-                </span>
-                <div>
-                  <h4 className="font-bold xl:text-2.3xl text-2xl pb-7 text-secondary leading-[1.2] font-sora">
-                    Képzett szakemberek, modern ellátás
+
+              {/* Two Column Layout for Values */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
+                <div className="flex items-center gap-4 mb-4 md:mb-0 group"> {/* Adjusted for title next to icon */}
+                  <span
+                    className="size-50 flex items-center justify-center relative rounded-full flex-shrink-0
+                   bg-[linear-gradient(256.15deg,#FF63DE_0%,#B122E5_100%)]
+                   shadow-[0px_0px_24px_0px_#f05da866,0px_0px_10px_0px_#FF63DEBF]
+                   backdrop-blur-[42px]"
+                  >
+                    <User2 className="size-30 p-5 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" /> {/* Smaller icon size and padding */}
+                  </span>
+                  <h4 className="font-bold xl:text-xl text-lg text-secondary leading-[1.2] font-sora">
+                    Több Generáció a Szolgálatában
                   </h4>
-                  <p className="text-base leading-30 text-gary fobt-normal">
-                    Tapasztalt fogorvosainkból és szakembereinkből álló
-                    csapatunk többéves szakértelemmel és a legmagasabb szintű
-                    ellátás iránti elkötelezettséggel rendelkezik. Tudásukat{" "}
-                    <strong>korszerű technológiával</strong> ötvözzük a pontos
-                    és hatékony kezelések érdekében.
-                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 mb-4 md:mb-0 group"> {/* Adjusted for title next to icon */}
+                  <span
+                    className="size-50 flex items-center justify-center relative rounded-full flex-shrink-0
+                   bg-[linear-gradient(256.15deg,#029CF5_0%,#00E4F5_100%)]
+                   shadow-[0px_0px_24px_0px_#f05da866,0px_0px_10px_0px_#12EBF2BF]
+                   backdrop-blur-[42px]"
+                  >
+                    <Trophy className="size-30 p-5 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" /> {/* Smaller icon size and padding */}
+                  </span>
+                  <h4 className="font-bold xl:text-xl text-lg text-secondary leading-[1.2] font-sora">
+                    Több mint 30 év Szakértelem
+                  </h4>
+                </div>
+
+                <div className="flex items-center gap-4 mb-4 md:mb-0 group"> {/* Adjusted for title next to icon */}
+                  <span
+                    className="size-50 flex items-center justify-center relative rounded-full flex-shrink-0
+                   bg-[linear-gradient(256.15deg,#FF63DE_0%,#B122E5_100%)]
+                   shadow-[0px_0px_24px_0px_#f05da866,0px_0px_10px_0px_#FF63DEBF]
+                   backdrop-blur-[42px]"
+                  >
+                    <Users className="size-30 p-5 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" /> {/* Smaller icon size and padding */}
+                  </span>
+                  <h4 className="font-bold xl:text-xl text-lg text-secondary leading-[1.2] font-sora">
+                    Több mint 10.000 Elégedett Páciens
+                  </h4>
+                </div>
+
+                <div className="flex items-center gap-4 group"> {/* Adjusted for title next to icon */}
+                  <span
+                    className="size-50 flex items-center justify-center relative rounded-full flex-shrink-0
+                   bg-[linear-gradient(256.15deg,#029CF5_0%,#00E4F5_100%)]
+                   shadow-[0px_0px_24px_0px_#f05da866,0px_0px_10px_0px_#12EBF2BF]
+                   backdrop-blur-[42px]"
+                  >
+                    <Heart className="size-30 p-5 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" /> {/* Smaller icon size and padding */}
+                  </span>
+                  <h4 className="font-bold xl:text-xl text-lg text-secondary leading-[1.2] font-sora">
+                    Családi Vállalkozás, Gondoskodó Közeg
+                  </h4>
                 </div>
               </div>
-              <div className="sm:flex gap-20 group">
-                <span
-                  className="bg-[#58CBF2] size-90 flex items-center justify-center mb-25 relative 
-							shadow-[#f05da866_0px_0px_24px_0px] rounded-full"
-                >
-                  <HeartHandshake className="size-90 p-20 group-hover:[transform:rotate3d(1,1,1,360deg)] duration-500 text-white" />
-                </span>
-                <div>
-                  <h4 className="font-bold xl:text-2.3xl text-2xl pb-7 text-secondary leading-[1.2] font-sora">
-                    Páciensközpontú megközelítés
-                  </h4>
-                  <p className="text-base leading-30 text-gary fobt-normal">
-                    Az Ön kényelmét és jólétét helyezzük előtérbe. Az{" "}
-                    <strong>azonnali, még aznapi korona eljárásoktól</strong> a
-                    kíméletes bölcsességfog-eltávolításig, együttérző
-                    személyzetünk elkötelezett amellett, hogy minden látogatása
-                    pozitív, <strong>stresszmentes élmény</strong> legyen.
-                  </p>
-                </div>
+              {/* End Two Column Layout for Values */}
+
+              <div className="flex justify-end">
+                <Link href="/appointment" className="btn max-xxl:px-30 mt-40">
+                  <span className="flex gap-10">
+                    Foglalj időpontot <ArrowRight size={20} />
+                  </span>
+                </Link>
               </div>
-               
-              <Link href="/about-us" className="btn max-xxl:px-30 mt-40">
-                <span className="flex gap-10">
-                  Foglalj időpontot <ArrowRight size={20} />
-                </span>
-              </Link>
             </div>
-             
           </div>
         </div>
       </section>
