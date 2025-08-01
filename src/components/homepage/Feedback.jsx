@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Autoplay, FreeMode, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, FreeMode } from "swiper/modules";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 const Feedback = () => {
   const testimonials = [
@@ -58,17 +57,17 @@ const Feedback = () => {
       </li>
     ));
   };
-
+const t = useTranslations("testimonials");
   return (
     <section className="lg:py-120 md:py-80 py-60">
       <div className="container ">
         <div className="xl:pb-50 lg:pb-40 pb-30 flex justify-between items-end">
           <div>
             <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-             # Páciens Vélemények
+             {  t("title")}
             </span>
             <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                   Mosolyok, amik minket inspirálnak
+                  {t("subtitle")}
             </h2>
           </div>
           

@@ -1,8 +1,8 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { useTranslations } from "next-intl";
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Heart } from 'lucide-react'; 
+import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
   const [patientsCount, setPatientsCount] = useState(0);
@@ -11,6 +11,7 @@ const Hero = () => {
   const patientsRef = useRef(null);
   const reportsRef = useRef(null);
   const specialistsRef = useRef(null);
+  const t = useTranslations("hero");
 
   const animateCounter = (target, setter, duration = 2000) => {
     let start = 0;
@@ -64,99 +65,42 @@ const Hero = () => {
     };
   }, []);
 
-  return (
-    <>
-      <section className="relative w-full overflow-hidden min-h-[300px] lg:min-h-[750px] lg:pt-120 md:pt-80 pt-60 "> {/* Adjusted min-height for responsiveness */}
-        {/* Video háttér */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          
-          <source src="/assets/video/dental-loop.webm" type="video/mp4" /> 
-          A böngésződ nem támogatja a videótag-et.
-        </video>
+ return (
+  <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    {/* Video háttér */}
+    <video 
+      autoPlay 
+      loop 
+      muted 
+      playsInline 
+      className="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/assets/video/dental-loop.webm" type="video/mp4" /> 
+      A böngésződ nem támogatja a videótag-et.
+    </video>
 
-        {/* Overlay a videón, hogy a szöveg jobban olvasható legyen */}
-        <div className="absolute inset-0 bg-black opacity-20"></div>
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black opacity-20"></div>
 
-        <div className="container relative z-10 py-100"> {/* A tartalom legyen a videó felett */}
-          <div className="grid grid-cols-12 items-center">
-            <div className="lg:col-span-6 col-span-12 pb-50 md:pb-0">
-              <div className="relative">
-                <div className="relative">
-                  <h1 className="xxl:text-6xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-20 uppercase font-sora text-white leading-[1.2] [text-shadow:_0_0_45px_#00000080]">
-                    Mosolyt adunk <span className="">szakértelemmel</span> és törődéssel
-                  </h1>
-                 
-                </div>
-                {/* <p className="xxl:text-xxl xl:text-xl text-lg leading-32 xl:leading-34 pb-45 text-white font-normal">
-                  Az EU‑konform Dental Arts modern, zöldövezeti rendelője fájdalommentes ellátást és személyre szabott kezelést kínál Fürdősor 12/B címen Sopron‑Balfon.
-                </p> */}
-                <div className="flex items-center gap-18 max-xl:flex-wrap">
-                  <Link href="/about-us" className="btn">
-                    <span className='flex gap-10'>
-                      Tudj meg többet <ArrowRight size={20} />
-                    </span>
-                  </Link>
-                  <ul className="flex ml-14 experience-team">
-                    <li className="-ml-15">
-                      <Image
-                        src="/assets/img/team-1.png"
-                        alt="Team Member 1"
-                        width={50}
-                        height={50}
-                        className="max-xxl:w-50 rounded-full" 
-                      />
-                    </li>
-                    <li className="-ml-15">
-                      <Image
-                        src="/assets/img/team-2.png"
-                        alt="Team Member 2"
-                        width={50}
-                        height={50}
-                        className="max-xxl:w-50 rounded-full"
-                      />
-                    </li>
-                    <li className="-ml-15">
-                      <Image
-                        src="/assets/img/team-3.png"
-                        alt="Team Member 3"
-                        width={50}
-                        height={50}
-                        className="max-xxl:w-50 rounded-full"
-                      />
-                    </li>
-                    <li className="-ml-15">
-                      <Link href="/team" className="size-50 flex items-center justify-center rounded-full bg-primary text-white text-lg font-bold hover:bg-secondary transition-colors duration-300">
-                        +
-                      </Link>
-                    </li>
-                  </ul>
-                  <div className='hidden md:block '>
-                    <h6 className="font-bold text-white font-sora text-base">
-                      1000+
-                    </h6>
-                    <span className="text-white max-xxl:text-xs">
-                      Elégedett 
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* A jobb oldali kép szekció eltávolítva */}
-            <div className="lg:col-span-6 col-span-12 hidden md:block">
-               {/* Hagyhatsz itt egy üres div-et, hogy megtartsd a rács elrendezést, vagy teljesen eltávolíthatod, ha nem kell a helyfoglalás. */}
-               {/* Ha eltávolítod, akkor a bal oldali szöveg szekció lg:col-span-12 kell legyen. */}
-            </div>
-          </div>
+    {/* Tartalom */}
+    <div className="relative z-10 container mx-auto flex items-center justify-center h-full">
+      <div className="w-full lg:w-2/3 text-center">
+        <h1 className="xxl:text-6xl xl:text-6xl md:text-5.2xl sm:text-4.3xl text-4.75xl font-bold mb-10 uppercase font-sora text-white leading-[1.2] [text-shadow:_0_0_45px_#00000080]">
+         {t("slogan")}
+        </h1>
+
+        <div className="mt-10 flex justify-center">
+          <Link href="/about-us" className="btn">
+            <span className="flex gap-10 items-center">
+              {t("learnMore")} <ArrowRight size={20} />
+            </span>
+          </Link>
         </div>
-      </section>
-    </>
-  );
+      </div>
+    </div>
+  </section>
+);
+
 };
 
 export default Hero;

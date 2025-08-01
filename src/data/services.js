@@ -1,15 +1,3 @@
-// data/services.js
-import {
-  Ambulance,
-  Braces,
-  Heart,
-  Paintbrush,
-  Plus,
-  Shield,
-  Smile,
-  Syringe,
-} from "lucide-react"; // Frissített Lucide ikon importok
-
 export const servicesData = [
   {
     id: 1,
@@ -17,7 +5,7 @@ export const servicesData = [
     title: "Implantológia",
     description:
       "Tartós és esztétikus megoldás a hiányzó fogak pótlására korszerű implantátumokkal.",
-    icon: Plus,
+    icon: "Implantology.svg",
     fullDescription:
       "Implantológiai kezeléseink a foghiányok végleges és esztétikus pótlását szolgálják. A titánból készült fogászati implantátumokat precíz tervezés és kivitelezés mentén ültetjük be, lehetővé téve a rágófunkció és a természetes mosoly helyreállítását.",
     features: [
@@ -37,7 +25,7 @@ export const servicesData = [
     title: "Szájsebészet",
     description:
       "Komplex beavatkozások biztonságosan, fájdalommentesen és tapasztalt szájsebészek által.",
-    icon: Syringe,
+    icon: "OralSurgery.svg",
     fullDescription:
       "Szájsebészeti részlegünk a legmodernebb technológiákkal és altatásos lehetőségekkel kínál beavatkozásokat, a bölcsességfog eltávolítástól a csontpótlásig.",
     features: [
@@ -57,7 +45,7 @@ export const servicesData = [
     title: "Protetika / Fogpótlás",
     description:
       "Esztétikus és funkcionális megoldások hiányzó fogak pótlására különféle fogpótlásokkal.",
-    icon: Smile,
+    icon: "Prosthodontics.svg",
     fullDescription:
       "A protetikai kezelések célja a rágófunkció és az esztétika helyreállítása. Rögzített koronákat, hidakat és kivehető pótlásokat is készítünk, egyéni igényekhez igazítva.",
     features: [
@@ -68,8 +56,8 @@ export const servicesData = [
       "Mosolytervezés",
     ],
     category: "fogaszat",
-    bgColor: "bg-[#FF63DE]",
-    shadowColorHex: "#FF63DE",
+    bgColor: "bg-[#B122E5]",
+    shadowColorHex: "#B122E5",
   },
   {
     id: 4,
@@ -77,7 +65,7 @@ export const servicesData = [
     title: "Esztétikai Fogászat",
     description:
       "A tökéletes mosoly eléréséhez esztétikai beavatkozások széles skáláját kínáljuk.",
-    icon: Paintbrush,
+    icon: "AestheticDentistry.svg",
     fullDescription:
       "Az esztétikai fogászat célja a természetes, harmonikus mosoly kialakítása. Fogfehérítéssel, héjakkal és esztétikus tömésekkel segítünk megújítani mosolyát.",
     features: [
@@ -97,7 +85,7 @@ export const servicesData = [
     title: "Megtartó Fogászat / Endodoncia",
     description:
       "Fogmegtartó kezelések, beleértve a gyökérkezelést és töméseket a fogak megőrzése érdekében.",
-    icon: Heart,
+    icon: "Endodontics.svg",
     fullDescription:
       "Célunk, hogy a saját fogait minél tovább megőrizze. A megtartó kezelések során modern technikákat alkalmazunk a szuvasodások, törések és gyökérproblémák kezelésére.",
     features: [
@@ -117,7 +105,7 @@ export const servicesData = [
     title: "Prevenció",
     description:
       "A megelőzés az egészséges mosoly kulcsa. Rendszeres ellenőrzések és tanácsadás.",
-    icon: Shield,
+    icon: "PreventiveDentistry.svg",
     fullDescription:
       "A szájüreg egészségének megőrzése érdekében nagy hangsúlyt fektetünk a megelőzésre. Tanácsadással, fogkőeltávolítással és szűrésekkel támogatjuk a hosszú távú egészséget.",
     features: [
@@ -137,7 +125,7 @@ export const servicesData = [
     title: "Fogszabályozás",
     description:
       "Modern, esztétikus megoldások szabálytalan fogsor korrigálására gyermekeknek és felnőtteknek.",
-    icon: Braces,
+    icon: "Orthodontics.svg",
     fullDescription:
       "Szabályos fogsor és helyes harapás nemcsak esztétikai, hanem egészségügyi szempontból is fontos. Rögzített és kivehető fogszabályozókat kínálunk, beleértve a láthatatlan síneket is.",
     features: [
@@ -148,8 +136,8 @@ export const servicesData = [
       "Állcsont-ortopédiai megoldások",
     ],
     category: "fogaszat",
-    bgColor: "bg-[#FF63DE]",
-    shadowColorHex: "#FF63DE",
+    bgColor: "bg-[#B122E5]",
+    shadowColorHex: "#B122E5",
   },
   {
     id: 8,
@@ -157,7 +145,7 @@ export const servicesData = [
     title: "Parodontológia / Fogágybetegség Kezelés",
     description:
       "Ínybetegségek korai felismerése és kezelése a fogak hosszú távú megtartásáért.",
-    icon: Shield,
+    icon: "Periodontology.svg",
     fullDescription:
       "A parodontológiai kezelések célja az íny és a fogakat tartó szövetek egészségének helyreállítása. Szakorvosaink célzott terápiákkal állítják meg az ínysorvadást és gyulladást.",
     features: [
@@ -177,7 +165,7 @@ export const servicesData = [
     title: "Digitális Fogászat",
     description:
       "Digitális technológia a pontosabb tervezésért és gyorsabb kezelésekért.",
-    icon: Smile,
+    icon: "DigitalDentistry.svg",
     fullDescription:
       "A digitális fogászat lehetővé teszi a precíz tervezést és lenyomatvételt, minimalizálva a kellemetlenségeket. 3D szkennelés, digitális röntgen és CAD/CAM technológiák révén hatékonyabbá válik a kezelés.",
     features: [
@@ -197,7 +185,7 @@ export const servicesData = [
     title: "Diagnosztika",
     description:
       "A pontos diagnózis megalapozza a hatékony fogászati kezeléseket.",
-    icon: Heart,
+    icon: "Diagnostics.svg",
     fullDescription:
       "Rendelőnk modern képalkotó és diagnosztikai eszközökkel van felszerelve, amelyek pontos és gyors állapotfelmérést tesznek lehetővé.",
     features: [
@@ -217,7 +205,7 @@ export const servicesData = [
     title: "Lézeres Fogászati Kezelések",
     description:
       "Fájdalommentes, precíz és gyors gyógyulás lézeres technológiával.",
-    icon: Syringe,
+    icon: "LaserDentalTreatments.svg",
     fullDescription:
       "A lézeres kezelések során minimalizálható a fájdalom és a vérzés. Ínyformázásra, fertőtlenítésre, kisebb beavatkozásokra egyaránt alkalmazzuk.",
     features: [
@@ -236,7 +224,7 @@ export const servicesData = [
     slug: "fogfeherites",
     title: "Fogfehérítés",
     description: "Gyors és látványos megoldás a ragyogó, fehér mosolyért.",
-    icon: Paintbrush,
+    icon: "TeethWhitening.svg",
     fullDescription:
       "Professzionális rendelői fogfehérítési eljárásaink biztonságosan és hatékonyan világosítják fel fogait, akár már egy alkalom alatt is.",
     features: [

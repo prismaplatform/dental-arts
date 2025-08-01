@@ -199,8 +199,8 @@ const Appointment = () => {
                   </div>
                   <div> 
                     <span className="block text-gray-700 pb-3">Sürgős hívás</span>
-                    <Link className="font-bold text-secondary hover:text-primary duration-300" href="tel:013354213-92132">
-                     +36 99 531 015
+                    <Link className="font-bold text-secondary hover:text-primary duration-300" href="tel:+3699531015">
+                     (+36) 99 531 015
                     </Link>
                   </div>
                 </div>

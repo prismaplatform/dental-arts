@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-
+import { useTranslations } from "next-intl";
 const faqData = [
   {
     question: "Milyen gyakran ajánlott fogorvoshoz járni?",
@@ -45,16 +45,16 @@ const FAQ = ({
   const toggleAccordion = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
-
+const t = useTranslations("faq");
   return (
     <section className="lg:pt-120 md:pt-80 pt-60 relative section-about-two">
       <div className="container">
         <div className="mb-10 w-[fit-content]">
           <span className="black font-sora font-semibold capitalize xxl:text-xxl xl:text-xl sm:text-lg leading-50 text-primary">
-            # Gyakran Ismételt Kérdések
+            {t("title")}
           </span>
           <h2 className="xxl:text-5xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold font-sora text-secondary leading-[1.2]">
-        Találd meg válaszainkat
+        {t("subtitle")}
           </h2>
         </div>
         <div className="accordion xxl:pt-50 pt-40 xxl:pb-25 pb-15">

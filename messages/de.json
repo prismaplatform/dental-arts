@@ -7,17 +7,99 @@
     "allServices": "Alle Dienstleistungen",
     "serviceDetails": "Dienstleistungsdetails",
     "cases": "Fälle",
-    "blog": "Blog",
-    "allBlogs": "Alle Blogs",
-    "blogDetails": "Blogdetails",
+
     "contact": "Kontakt",
     "appointment": "Terminvereinbarung",
     "language": {
       "hu": "Magyar",
       "en": "English",
       "ro": "Română",
-      "de": "Deutsch",
-      "at": "Österreichisch"
+      "de": "Deutsch"
     }
+  },
+  "hero": {
+    "slogan": "Wir schenken Lächeln mit Fachwissen und Fürsorge",
+    "learnMore": "Mehr erfahren",
+    "dentistryTag": "# Zahnmedizin",
+    "subline": "Ihr Weg zu einem strahlenden Lächeln beginnt hier.",
+    "analogDentistry": "Analoge",
+    "digitalDentistry": "Digitale",
+        "footer":"zahnmedizin"
+  },
+  "mission": {
+    "title": "# Ihr Lächeln, Unsere Mission",
+    "subtitle": "Warum ist Dental Arts die beste Wahl für Sie?",
+    "content": "Bei Dental Arts in Sopron behandeln wir nicht nur Zähne, sondern schaffen Lächeln, die Selbstvertrauen und Freude ausstrahlen. Wir sind bestrebt, jedem unserer Patienten eine außergewöhnliche, persönliche Betreuung in einer familiären Atmosphäre zu bieten. Ihr Komfort und Ihre Gesundheit sind für uns das Wichtigste."
+  },
+  "highlights": {
+    "generations": "Mehrere Generationen im Dienste",
+    "experience": "Über 30 Jahre Fachwissen",
+    "patients": "Mehr als 10.000 zufriedene Patienten",
+    "familyBusiness": "Familienunternehmen, fürsorgliche Umgebung",
+    "bookAppointment": "Termin buchen"
+  },
+  "services": {
+    "title": "# Unsere Dienstleistungen",
+    "subtitle": "Professionelle zahnmedizinische Versorgung für jedes Alter.",
+        "button":"Dienstleistungen"
+  },
+  "gallery": {
+    "title": "# Galerie",
+    "subtitle": "Werfen Sie einen Blick in unsere Praxis!",
+    "moreImages": "Weitere Bilder"
+  },
+  "testimonials": {
+    "title": "# Patientenbewertungen",
+    "subtitle": "Lächeln, die uns inspirieren"
+  },
+  "trustFactors": {
+    "reliable": "Zuverlässige Zahnmedizin",
+    "modern": "Moderne Behandlungen",
+    "comfort": "Komfort und Sicherheit"
+  },
+  "faq": {
+    "title": "# Häufig gestellte Fragen",
+    "subtitle": "Finden Sie hier Ihre Antworten"
+  },
+  "cases": {
+    "title": "# Fallstudien",
+    "subtitle": "Spektakuläre Veränderungen – vorher und nachher.",
+    "allCases": "Alle Fälle"
+  },
+  "newsletter": {
+    "title": "Abonnieren Sie unseren Newsletter!",
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "privacy": "Ich habe gelesen und akzeptiere die ",
+    "link":"Datenschutzbestimmungen"
+  },
+  "footer": {
+    "logoText": "Wir sind bestrebt, eine außergewöhnliche Gesundheitsversorgung mit Mitgefühl, Fachwissen und Innovation zu bieten. Unser Team arbeitet engagiert für Ihre Gesundheit.",
+    "usefulLinks": "Nützliche Links",
+    "aboutUs": "Über uns",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "generalDentistry": "Allgemeine Zahnmedizin",
+    "aestheticDentistry": "Ästhetische Zahnmedizin",
+    "implantsProsthetics": "Implantate und Prothetik",
+    "oralSurgery": "Oralchirurgie",
+    "pediatricDentistry": "Kinderzahnmedizin",
+    "address": {
+      "title": "Adresse",
+      "value": "Balf, Sopron, Fürdő sor 12, 9494 Ungarn"
+    },
+    "phone": {
+      "title": "Telefon",
+      "value": "(+36) 99 531 015"
+    },
+    "email": {
+      "title": "E-Mail",
+      "value": "info@dentalarts.hu"
+    },
+    "terms": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutzbestimmungen",
+    "copyright": "Copyright",
+    "copyright2":"Alle Rechte vorbehalten",
+    "developerCredit": "Entwickelt und gestaltet von"
   }
 }

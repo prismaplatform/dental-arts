@@ -39,7 +39,7 @@ const ScrollToTop = () => {
   }, []);
 
   const backgroundStyle = {
-    background: `conic-gradient(#8739E5 ${scrollValue}%, #fff ${scrollValue}%)`
+    background: `conic-gradient(#FF63DE ${scrollValue}%, #fff ${scrollValue}%)`
   };
 
   return (

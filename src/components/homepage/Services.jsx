@@ -1,27 +1,22 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import { servicesData } from '../../data/services'
 import {
-  Brain,
-  FileText,
-  Stethoscope,
-  Smile,
   ArrowRight,
   ChevronLeft,
-  ChevronRight,
+  ChevronRight
 } from "lucide-react";
-
+import Image from "next/image";
+import Link from "next/link";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { servicesData } from '../../data/services';
+import { useTranslations } from "next-intl";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
 const Services = () => {
-
-
+  const t = useTranslations("services");
   return (
     <section
       className="relative py-20 lg:py-32 bg-cover bg-center bg-no-repeat"
@@ -35,17 +30,17 @@ const Services = () => {
         <div className="xl:pb-50 lg:pb-40 pb-30 flex flex-col md:flex-row justify-between items-start md:items-end">
           <div className="mb-8 md:mb-0">
             <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-purple font-sora pb-5 block">
-              # Szolgáltatásaink
+              {t("title")}
             </span>
             <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-white font-sora leading-[1.2]">
-              Professzionális fogászati ellátás minden korosztálynak.
+              {t("subtitle")}
             </h2>
           </div>
           <div className="flex gap-4">
-            <div className="services-swiper-button-prev w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#ff63de] hover:text-white hover:border-[#ff63de] transition-all duration-300 shadow-lg z-99">
+            <div className="services-swiper-button-prev w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B122E5] hover:text-white hover:border-[#B122E5] transition-all duration-300 shadow-lg z-99">
               <ChevronLeft size={24} />
             </div>
-            <div className="services-swiper-button-next w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#ff63de] hover:text-white hover:border-[#ff63de] transition-all duration-300 shadow-lg z-99">
+            <div className="services-swiper-button-next w-50 h-50 bg-[#FFFFFF1A] border-2 border-[#E9FBFB1A] text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B122E5] hover:text-white hover:border-[#B122E5] transition-all duration-300 shadow-lg z-99">
               <ChevronRight size={24} />
             </div>
           </div>
@@ -82,7 +77,6 @@ const Services = () => {
             className="services-slider"
           >
             {servicesData.map((service) => {
-              const IconComponent = service.icon;
               return (
                 <SwiperSlide key={service.id} className="group h-full">
                   <div
@@ -90,7 +84,7 @@ const Services = () => {
                     style={{
                       background: 'linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)',
                       backdropFilter: 'blur(15px)',
-                      border: '1px solid transparent', // Átlátszó border alapból
+                      border: '1px solid transparent',
                       borderImageSource: `
                         radial-gradient(69.43% 69.43% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),
                         radial-gradient(60% 51.57% at 50% 50%, ${service.shadowColorHex} 0%, rgba(${parseInt(service.shadowColorHex.slice(1,3), 16)}, ${parseInt(service.shadowColorHex.slice(3,5), 16)}, ${parseInt(service.shadowColorHex.slice(5,7), 16)}, 0) 100%),
@@ -99,18 +93,20 @@ const Services = () => {
                       borderImageSlice: '1',
                     }}
                   >
-                    <i
+                    <div
                       className={`${service.bgColor} size-90 flex items-center justify-center mb-25 relative rounded-full`}
                       style={{
                         boxShadow: `0px 0px 20px 0px ${service.shadowColorHex}73`,
                       }}
                     >
-                      <IconComponent
-                        size={45}
+                      <Image
+                        src={`/assets/icons/${service.icon}`}
+                        alt={service.title}
+                        width={55}
+                        height={55}
                         className="text-white transition-colors duration-300"
-                        strokeWidth={1.5}
                       />
-                    </i>
+                    </div>
 
                     <h4 className="xl:text-xl font-sora font-medium leading-[1.2]">
                       <Link
@@ -141,7 +137,7 @@ const Services = () => {
         <div className="text-center mt-40">
           <a href="/services" className="btn max-xxl:px-30">
             <span className="flex gap-10">
-              Szolgáltatásaink <ArrowRight size={20} />
+              {t("button")} <ArrowRight size={20} />
             </span>
           </a>
         </div>

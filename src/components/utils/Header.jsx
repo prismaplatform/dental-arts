@@ -1,19 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import {
+  ChevronDown,
+  Menu,
+  X
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "@/i18n/navigation";
-import { useLocale, useTranslations } from "next-intl";
-import {
-  Menu,
-  Search,
-  ArrowRight,
-  X,
-  ChevronDown,
-  Home,
-  Globe,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -40,7 +36,6 @@ const Header = () => {
     { code: "en", flag: "/assets/img/flags/en.webp" },
     { code: "ro", flag: "/assets/img/flags/ro.png" },
     { code: "de", flag: "/assets/img/flags/de.webp" },
-    { code: "at", flag: "/assets/img/flags/at.png" },
   ];
 
   const handleMobileMenuToggle = () => {
@@ -253,25 +248,7 @@ const Header = () => {
                   <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/cases">{t("cases")}</Link>
                   </li>
-                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080] menu-item-children group relative">
-                    <Link href="/blog" className="flex items-center">
-                      {t("blog")}
-                      <ChevronDown
-                        size={16}
-                        className="ml-1 group-hover:rotate-180 transition-transform duration-200"
-                      />
-                    </Link>
-                    <ul className="sub-menu absolute hidden group-hover:block bg-white shadow-lg py-2 rounded-md">
-                      <li>
-                        <Link href="/blog">{t("allBlogs")}</Link>
-                      </li>
-                      <li>
-                        <Link href="/blog/5-tipp-a-fogko-megelozesehez-otthon">
-                          {t("blogDetails")}
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
+                
                   <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/contact-us">{t("contact")}</Link>
                   </li>
@@ -416,41 +393,7 @@ const Header = () => {
                 {t("cases")}
               </Link>
             </li>
-            <li
-              className={`menu-item-has-children ${
-                activeMobileSubMenu === "blog" ? "active" : ""
-              }`}
-              onClick={(e) => handleMobileSubMenuToggle("blog", e)}
-            >
-              <Link href="/blog" className="flex items-center justify-between">
-                {t("blog")}
-                <ChevronDown
-                  size={16}
-                  className={`transition-transform duration-200 ${
-                    activeMobileSubMenu === "blog" ? "rotate-180" : ""
-                  }`}
-                />
-              </Link>
-              <ul
-                className={`sub-menu ${
-                  activeMobileSubMenu === "blog" ? "block" : "hidden"
-                }`}
-              >
-                <li>
-                  <Link href="/blog" onClick={handleMobileNavClose}>
-                    {t("allBlogs")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog/5-tipp-a-fogko-megelozesehez-otthon"
-                    onClick={handleMobileNavClose}
-                  >
-                    {t("blogDetails")}
-                  </Link>
-                </li>
-              </ul>
-            </li>
+            
             <li>
               <Link href="/contact-us">{t("contact")}</Link>
             </li>

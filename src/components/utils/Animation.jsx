@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslations } from "next-intl";
 const Animation = () => {
+  const t = useTranslations("trustFactors");
   return (
     <>
       <div className="flex overflow-hidden relative z-[11]">
@@ -13,7 +14,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Megbízható Fogászat
+               {t("reliable")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -24,7 +25,7 @@ const Animation = () => {
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
                 {" "}
-                Korszerű Kezelések
+                {t("modern")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -34,7 +35,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Kényelem és Biztonság
+                {t("comfort")}
               </h3>
             </div>
           </div>
@@ -46,7 +47,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Megbízható Fogászat
+                  {t("reliable")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -57,7 +58,7 @@ const Animation = () => {
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
                 {" "}
-                Korszerű Kezelések
+                {t("modern")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -67,7 +68,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Kényelem és Biztonság
+                {t("comfort")}
               </h3>
             </div>
           </div>
@@ -83,7 +84,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Megbízható Fogászat
+                  {t("reliable")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -94,7 +95,7 @@ const Animation = () => {
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
                 {" "}
-                Korszerű Kezelések
+                {t("modern")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -104,7 +105,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Kényelem és Biztonság
+                {t("comfort")}
               </h3>
             </div>
           </div>
@@ -116,7 +117,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Megbízható Fogászat
+                  {t("reliable")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -127,7 +128,7 @@ const Animation = () => {
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
                 {" "}
-                Korszerű Kezelések
+                {t("modern")}
               </h3>
             </div>
             <div className="lg:ml-60 ml-33 w-[max-content] lg:gap-30 gap-20 flex items-center">
@@ -137,7 +138,7 @@ const Animation = () => {
                 className="max-xxl:w-60 max-lg:w-36"
               />
               <h3 className="xxl:text-5.2xl lg:text-4.65xl text-3xl uppercase font-bold text-white font-sora">
-                Kényelem és Biztonság
+                {t("comfort")}
               </h3>
             </div>
           </div>

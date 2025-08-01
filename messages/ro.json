@@ -7,17 +7,98 @@
     "allServices": "Toate serviciile",
     "serviceDetails": "Detalii serviciu",
     "cases": "Cazuri",
-    "blog": "Blog",
-    "allBlogs": "Toate blogurile",
-    "blogDetails": "Detalii blog",
     "contact": "Contact",
     "appointment": "Programare",
     "language": {
       "hu": "Magyar",
       "en": "English",
       "ro": "Română",
-      "de": "Deutsch",
-      "at": "Österreichisch"
+      "de": "Deutsch"
     }
+  },
+  "hero": {
+    "slogan": "Oferim zâmbete cu expertiză și grijă",
+    "learnMore": "Află mai multe",
+    "dentistryTag": "# Stomatologie",
+    "subline": "Drumul către un zâmbet strălucitor începe aici.",
+    "analogDentistry": "Analogă",
+    "digitalDentistry": "Digitală",
+    "footer":"Stomatologie"
+  },
+  "mission": {
+    "title": "# Zâmbetul tău, Misiunea noastră",
+    "subtitle": "De ce Dental Arts este cea mai bună alegere pentru tine?",
+    "content": "La Dental Arts în Sopron, nu tratăm doar dinții, ci construim zâmbete care radiază încredere și bucurie. Ne angajăm să oferim fiecărui pacient o îngrijire excepțională, personalizată, într-o atmosferă familială. Confortul și sănătatea ta sunt cele mai importante pentru noi."
+  },
+  "highlights": {
+    "generations": "Mai multe generații în slujba ta",
+    "experience": "Peste 30 de ani de expertiză",
+    "patients": "Peste 10.000 de pacienți mulțumiți",
+    "familyBusiness": "Afacere de familie, mediu grijuliu",
+    "bookAppointment": "Fă o programare"
+  },
+  "services": {
+    "title": "# Serviciile noastre",
+    "subtitle": "Îngrijire stomatologică profesională pentru toate vârstele.",
+    "button":"Servicii"
+  },
+  "gallery": {
+    "title": "# Galerie",
+    "subtitle": "Aruncă o privire în lumea clinicii noastre!",
+    "moreImages": "Mai multe imagini"
+  },
+  "testimonials": {
+    "title": "# Mărturii pacienți",
+    "subtitle": "Zâmbete care ne inspiră"
+  },
+  "trustFactors": {
+    "reliable": "Stomatologie de încredere",
+    "modern": "Tratamente moderne",
+    "comfort": "Confort și siguranță"
+  },
+  "faq": {
+    "title": "# Întrebări frecvente",
+    "subtitle": "Găsește-ți răspunsurile"
+  },
+  "cases": {
+    "title": "# Studii de caz",
+    "subtitle": "Transformări spectaculoase – înainte și după.",
+    "allCases": "Toate cazurile"
+  },
+  "newsletter": {
+    "title": "Abonează-te la newsletter-ul nostru!",
+    "emailPlaceholder": "Adresa ta de email",
+    "subscribe": "Abonare",
+    "privacy": "Am citit și accept",
+    "link":"Politica de confidențialitate."
+  },
+  "footer": {
+    "logoText": "Suntem dedicați îngrijirii medicale excepționale, cu compasiune, expertiză și inovație. Echipa noastră lucrează cu devotament pentru sănătatea ta.",
+    "usefulLinks": "Linkuri utile",
+    "aboutUs": "Despre noi",
+    "services": "Servicii",
+    "contact": "Contact",
+    "generalDentistry": "Stomatologie generală",
+    "aestheticDentistry": "Stomatologie estetică",
+    "implantsProsthetics": "Implanturi și protetică",
+    "oralSurgery": "Chirurgie orală",
+    "pediatricDentistry": "Stomatologie pediatrică",
+    "address": {
+      "title": "Adresă",
+      "value": "Balf, Sopron, Fürdő sor 12, 9494 Ungaria"
+    },
+    "phone": {
+      "title": "Telefon",
+      "value": "(+36) 99 531 015"
+    },
+    "email": {
+      "title": "E-mail",
+      "value": "info@dentalarts.hu"
+    },
+    "terms": "Termeni de utilizare",
+    "privacyPolicy": "Politica de confidențialitate",
+    "copyright": "Copyright",
+    "copyright2":"Toate drepturile rezervate",
+    "developerCredit": "Creat și dezvoltat de"
   }
 }

@@ -7,17 +7,99 @@
     "allServices": "Minden szolgáltatás",
     "serviceDetails": "Szolgáltatás részletei",
     "cases": "Esetek",
-    "blog": "Blog",
-    "allBlogs": "Összes blog",
-    "blogDetails": "Blog részletei",
     "contact": "Kapcsolat",
     "appointment": "Időpontfoglalás",
     "language": {
       "hu": "Magyar",
       "en": "English",
       "ro": "Română",
-      "de": "Deutsch",
-      "at": "Österreichisch"
+      "de": "Deutsch"
     }
+  },
+  "hero": {
+    "slogan": "Mosolyt adunk szakértelemmel és törődéssel",
+    "learnMore": "Tudj meg többet",
+    "dentistryTag": "# Fogászat",
+    "subline": "A ragyogó mosolyhoz vezető útja itt kezdődik.",
+    "analogDentistry": "Analóg",
+    "digitalDentistry": "Digitális",
+    "footer":"fogászat"
+  },
+  "mission": {
+    "title": "# Az Ön Mosolya, A Mi Küldetésünk",
+    "subtitle": "Miért a Dental Arts a legjobb választás az Ön számára?",
+    "content": "A soproni Dental Artsnál nem csak fogakat kezelünk, hanem mosolyokat építünk, melyek magabiztosságot és örömet sugároznak. Elkötelezettek vagyunk amellett, hogy minden páciensünk számára kivételes, személyre szabott ellátást nyújtsunk, családias hangulatban. Az Ön kényelme és egészsége a legfontosabb számunkra."
+  },
+  "highlights": {
+    "generations": "Több Generáció a Szolgálatában",
+    "experience": "Több mint 30 év Szakértelem",
+    "patients": "Több mint 10.000 Elégedett Páciens",
+    "familyBusiness": "Családi Vállalkozás, Gondoskodó Közeg",
+    "bookAppointment": "Foglalj időpontot"
+  },
+  "services": {
+    "title": "# Szolgáltatásaink",
+    "subtitle": "Professzionális fogászati ellátás minden korosztálynak.",
+    "button":"Szolgáltatásaink"
+  },
+  "gallery": {
+    "title": "# Galéria",
+    "subtitle": "Pillantson be rendelőnk világába!",
+    "moreImages": "További képek"
+  },
+  "testimonials": {
+    "title": "# Páciens Vélemények",
+    "subtitle": "Mosolyok, amik minket inspirálnak"
+    
+  },
+  "trustFactors": {
+    "reliable": "Megbízható Fogászat",
+    "modern": "Korszerű Kezelések",
+    "comfort": "Kényelem és Biztonság"
+  },
+  "faq": {
+    "title": "# Gyakran Ismételt Kérdések",
+    "subtitle": "Találd meg válaszainkat"
+  },
+  "cases": {
+    "title": "# Esettanulmányok",
+    "subtitle": "Látványos változások – előtte és utána.",
+    "allCases": "Összes eset"
+  },
+  "newsletter": {
+    "title": "Iratkozz fel hírlevelünkre!",
+    "emailPlaceholder": "Email címed",
+    "subscribe": "Feliratkozás",
+    "privacy": "Elolvastam és elfogadom az ",
+    "link":"Adatvédelmi irányelveket."
+  },
+  "footer": {
+    "logoText": "Elkötelezettek vagyunk a kivételes egészségügyi ellátás iránt, együttérzéssel, szakértelemmel és innovációval. Csapatunk elhivatottan dolgozik az Ön egészségéért.",
+    "usefulLinks": "Hasznos linkek",
+    "aboutUs": "Rólunk",
+    "services": "Szolgáltatásaink",
+    "contact": "Kapcsolat",
+    "generalDentistry": "Általános fogászati ellátás",
+    "aestheticDentistry": "Esztétikai fogászat",
+    "implantsProsthetics": "Implantáció és fogpótlás",
+    "oralSurgery": "Szájsebészet",
+    "pediatricDentistry": "Gyermekfogászat",
+    "address": {
+      "title": "Cím",
+      "value": "Balf, Sopron, Fürdő sor 12, 9494 Magyarország"
+    },
+    "phone": {
+      "title": "Telefon",
+      "value": "(+36) 99 531 015"
+    },
+    "email": {
+      "title": "E-mail",
+      "value": "info@dentalarts.hu"
+    },
+    "terms": "Felhasználási feltételek",
+    "privacyPolicy": "Adatvédelmi irányelvek",
+    "copyright": "Copyright",
+    "copyright2": "Minden jog fenntartva",
+    "developerCredit": "Készült és fejlesztve"
   }
 }

@@ -1,16 +1,16 @@
-import React from "react";
 import {
-  Stethoscope,
-  HeartHandshake,
   ArrowRight,
+  Heart,
   Trophy,
   User2,
-  Users,
-  Heart,
+  Users
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const WhyChouseUs2 = () => {
+  const t = useTranslations("mission");
+  const t2 = useTranslations("highlights");
   return (
     <section className="lg:py-120 md:py-80 py-60 relative section-about-two">
       <div className="container">
@@ -45,49 +45,44 @@ const WhyChouseUs2 = () => {
           <div className="lg:col-span-6 col-span-12">
             <div className="pb-50 w-[fit-content]">
               <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-                # Az Ön Mosolya, A Mi Küldetésünk
+                {t("title")}
               </span>
 
               <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                Miért a Dental Arts a legjobb választás az Ön számára?
+                {t("subtitle")}
               </h2>
 
               <p className="text-base leading-28 text-gary font-normal border-l-3 border-primary pl-27 mt-25">
-                A soproni Dental Artsnál nem csak fogakat kezelünk, hanem{" "}
-                **mosolyokat építünk**, melyek magabiztosságot és örömet
-                sugároznak. Elkötelezettek vagyunk amellett, hogy minden
-                páciensünk számára kivételes, személyre szabott ellátást
-                nyújtsunk, családias hangulatban. Az Ön kényelme és egészsége a
-                legfontosabb számunkra.
+                {t("content")}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
               <div className="flex items-center gap-4 mb-4 md:mb-0 group">
                 <User2 className="size-30 text-primary flex-shrink-0 me-10" />{" "}
-                <p className="xl:text-xl text-lg text-secondary">
-                  Több Generáció a Szolgálatában
+                <p className="text-base leading-28 text-gary font-normal">
+                  {t2("generations")}
                 </p>
               </div>
 
               <div className="flex items-center gap-4 mb-4 md:mb-0 group">
                 <Trophy className="size-30 text-primary flex-shrink-0 me-10" />{" "}
-                <p className="xl:text-xl text-lg text-secondary">
-                  Több mint 30 év Szakértelem
+                <p className="text-base leading-28 text-gary font-normal">
+                  {t2("experience")}
                 </p>
               </div>
 
               <div className="flex items-center gap-4 mb-4 md:mb-0 group">
                 <Users className="size-30 text-primary flex-shrink-0 me-10" />{" "}
-                <p className="xl:text-xl text-lg text-secondary">
-                  Több mint 10.000 Elégedett Páciens
+                <p className="text-base leading-28 text-gary font-normal">
+                 {t2("patients")}
                 </p>
               </div>
 
               <div className="flex items-center gap-4 group">
                 <Heart className="size-30 text-primary flex-shrink-0 me-10" />{" "}
-                <p className="xl:text-xl text-lg text-secondary">
-                  Családi Vállalkozás, Gondoskodó Közeg
+                <p className="text-base leading-28 text-gary font-normal">
+                  {t2("familyBusiness")}
                 </p>
               </div>
             </div>
@@ -96,7 +91,7 @@ const WhyChouseUs2 = () => {
             <div className="flex justify-end">
               <Link href="/appointment" className="btn max-xxl:px-30 mt-40">
                 <span className="flex gap-10">
-                  Foglalj időpontot <ArrowRight size={20} />
+                  {t2("bookAppointment")} <ArrowRight size={20} />
                 </span>
               </Link>
             </div>

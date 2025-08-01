@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-
+import { useTranslations } from "next-intl";
 // Import the image comparison slider components
 import {
   ReactCompareSlider,
@@ -49,16 +47,16 @@ const Portfolio = () => {
       link: "/portfolio-details/premium-treatment",
     },
   ];
-
+const t = useTranslations("cases");
   return (
     <section className="lg:py-120 md:py-80 py-60">
       <div className="container ">
         <div className="xl:pb-50 lg:pb-40 pb-30 text-center">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-            # Esettanulmányok
+            {t("title")}
           </span>
           <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-             Látványos változások – előtte és utána.
+            {t("subtitle")}
           </h2>
         </div>
 
@@ -129,7 +127,8 @@ const Portfolio = () => {
         <div className="text-center">
           <Link href="/cases" className="btn max-xxl:px-30">
             <span className="flex gap-10">
-              Összes eset <ArrowRight size={20} />
+             
+             {t("allCases")} <ArrowRight size={20} />
             </span>
           </Link>
         </div>

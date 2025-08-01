@@ -61,61 +61,7 @@ const PortfolioAll = () => {
       category: "Korona és Híd",
       title: "Hiányzó fogak pótlása",
       link: "/portfolio-details/korona-hid",
-    },
-    {
-      id: 4,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage4,
-      afterImage: defaultAfterImage4,
-      category: "Fogszabályozás",
-      title: "Egyenes fogsor, magabiztos mosoly",
-      link: "/portfolio-details/fogszabalyozas",
-    },
-    {
-      id: 5,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage5,
-      afterImage: defaultAfterImage5,
-      category: "Fogimplantátum",
-      title: "Teljes fogsor rehabilitáció",
-      link: "/portfolio-details/fogimplantatum",
-    },
-    {
-      id: 6,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage6,
-      afterImage: defaultAfterImage6,
-      category: "Gyökérkezelés",
-      title: "Fájdalommentes gyógyulás",
-      link: "/portfolio-details/gyokerkezeles",
-    },
-    {
-      id: 7,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage7,
-      afterImage: defaultAfterImage7,
-      category: "Parodontológia",
-      title: "Egészséges íny visszaállítása",
-      link: "/portfolio-details/parodontologia",
-    },
-    {
-      id: 8,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage8,
-      afterImage: defaultAfterImage8,
-      category: "Konzerváló fogászat",
-      title: "Tömés és restauráció",
-      link: "/portfolio-details/konzervalo-fogaszat",
-    },
-    {
-      id: 9,
-      type: "horizontal",
-      beforeImage: defaultBeforeImage9,
-      afterImage: defaultAfterImage9,
-      category: "Gyermekfogászat",
-      title: "Egészséges gyermekfogak",
-      link: "/portfolio-details/gyermekfogaszat",
-    },
+    }
   ];
 
   return (
@@ -169,20 +115,12 @@ const PortfolioAll = () => {
                     {item.category}
                   </p>
                   <h3 className="text-xl font-bold text-secondary mb-3">
-                    <Link
-                      href={item.link}
-                      className="hover:text-primary transition-colors duration-200"
-                    >
+                  
                       {item.title}
-                    </Link>
+                    
                   </h3>
                 </div>
-                <Link
-                  href={item.link}
-                  className="text-primary font-bold inline-flex items-center justify-center hover:text-secondary transition-colors duration-200 mt-4"
-                >
-                  Részletek megtekintése <ArrowRight size={16} className="ml-2" />
-                </Link>
+                
               </div>
             </div>
           ))}

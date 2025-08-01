@@ -3,10 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const ServiceCard = ({ service }) => {
-  const IconComponent = service.icon;
-
   return (
     <div className="lg:col-span-4 md:col-span-6 col-span-12 group">
       <div className="services-section shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative xxl:p-40 p-30 before:w-full before:h-0 before:bg-primary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500 rounded-lg h-full flex flex-col">
@@ -16,7 +15,13 @@ const ServiceCard = ({ service }) => {
             boxShadow: `0px 0px 30px 0px ${service.shadowColorHex}c2`,
           }}
         >
-          {IconComponent && <IconComponent size={40} strokeWidth={1} />}
+          <Image
+            src={`/assets/icons/${service.icon}`}
+            alt={service.title}
+            width={55}
+            height={55}
+            className="transition-colors duration-500"
+          />
         </div>
 
         <h4 className="xl:text-xl font-sora text-secondary font-medium leading-[1.2] mb-3">

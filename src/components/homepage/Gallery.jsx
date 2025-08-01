@@ -10,7 +10,7 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-
+import { useTranslations } from "next-intl";
 const Gallery = () => {
   const images = [
     "/assets/img/gallery8.jpeg",
@@ -95,17 +95,18 @@ const Gallery = () => {
       document.head.removeChild(style);
     };
   }, []);
-
+const t = useTranslations("gallery");
   return (
+    
     <>
       <section className="lg:pt-120 md:pt-80 pt-60 relative section-about-two">
         <div className="container ">
           <div className="mb-10 w-[fit-content]">
             <span className="black font-sora font-semibold capitalize xxl:text-xxl xl:text-xl sm:text-lg leading-50 text-primary">
-              # Galéria
+              {t("title")}
             </span>
             <h2 className="xxl:text-5xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold font-sora text-secondary leading-[1.2]">
-              Pillantson be rendelőnk világába!
+              {t("subtitle")}
             </h2>
           </div>
 
@@ -147,7 +148,7 @@ const Gallery = () => {
           <div className="text-center mt-40">
             <Link href="/gallery" className="btn max-xxl:px-30">
               <span className="flex gap-10">
-                További képek <ArrowRight size={20} />
+                {t("moreImages")} <ArrowRight size={20} />
               </span>
             </Link>
           </div>

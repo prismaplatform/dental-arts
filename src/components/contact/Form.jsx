@@ -246,9 +246,9 @@ const Form = () => {
                   </span>
                   <Link 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
-                    href="mailto:info123@gmail.com"
+                    href="mailto:info@dentalarts.hu"
                   >
-                    info123@gmail.com
+                    info@dentalarts.hu
                   </Link>
                 </li>
                 <li className="border-b border-[#304F74] pb-20 mb-20">

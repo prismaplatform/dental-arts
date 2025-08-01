@@ -4,8 +4,10 @@ import Image from "next/image";
 import Copyrights from "./Copyrights";
 import Cta from "./Cta";
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
-
+import { useTranslations } from "next-intl";
 const Footer = () => {
+const t = useTranslations("footer");
+const tHeader = useTranslations("Header");
   return (
     <>
       <footer className="lg:pt-120 md:pt-80 pt-60 relative bg-[linear-gradient(63.97deg,_#2E003A_-0.01%,_#8000A0_100%)]">
@@ -19,7 +21,7 @@ const Footer = () => {
                     <Image src="/assets/img/logoWhiteFull.svg" alt="logo" width={300} height={80}/>
                   </Link>
                   <p className="pt-14 pb-30 text-white leading-30  font-normal">
-                    Elkötelezettek vagyunk a kivételes egészségügyi ellátás iránt, együttérzéssel, szakértelemmel és innovációval. Csapatunk elhivatottan dolgozik az Ön egészségéért.
+                    {t("logoText")}
                   </p>
                   <ul className="flex gap-x-10">
                     <li>
@@ -68,7 +70,7 @@ const Footer = () => {
               <div className="lg:col-span-3 sm:col-span-6 col-span-12">
                 <div className="lg:border-l lg:border-[#D8D8D8] xxl:pl-40 xl:pl-25 sm:pl-20 xxl:ml-20 sm:ml-10">
                   <h5 className="font-bold xxl:text-2xxl text-xxl capitalize pb-18 font-sora text-white">
-                    Hasznos linkek
+                     {t("usefulLinks")}
                   </h5>
                   <ul>
                     <li className="pb-16">
@@ -76,7 +78,7 @@ const Footer = () => {
                         href="/about-us"
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
-                        Rólunk
+                        {tHeader("aboutUs")}
                       </Link>
                     </li>
                     <li className="pb-16">
@@ -84,23 +86,16 @@ const Footer = () => {
                         href="/services"
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
-                        Szolgáltatásaink
+                        {tHeader("services")}
                       </Link>
                     </li>
-                    <li className="pb-16">
-                      <Link
-                        href="/blog"
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Esettanulmányok
-                      </Link>
-                    </li>
+                    
                     <li>
                       <Link
                         href="/contact-us"
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
-                        Kapcsolat
+                        {tHeader("contact")}
                       </Link>
                     </li>
                   </ul>
@@ -158,40 +153,40 @@ const Footer = () => {
               <div className="lg:col-span-3 sm:col-span-6 col-span-12">
                 <div className="lg:border-l lg:border-[#D8D8D8] xxl:pl-35 xl:pl-20 sm:pl-15 xxl:ml-20 sm:ml-10">
                   <h5 className="font-bold xxl:text-2xxl text-xxl capitalize pb-18 font-sora text-white">
-                    Elérhetőségek
+                    {t("contact")}
                   </h5>
                   <ul>
                     <li className="pb-16">
                       <h6 className="pb-6 capitalize font-urbanist text-white text-base font-medium leading-[1.2] flex items-center">
                         <MapPin className="mr-5 text-white" size={16}/>
-                        Cím
+                        {t("address.title")}
                       </h6>
                       <span className="font-bold font-urbanist text-white hover:text-primary duration-500">
-                       Balf, Sopron, Fürdő sor 12, 9494 Magyarország
+                         {t("address.value")}
                       </span>
                     </li>
                     <li className="pb-16">
                       <h6 className="pb-6 capitalize font-urbanist text-white text-base font-medium leading-[1.2] flex items-center">
                         <Phone className="mr-5 text-white" size={16}/>
-                        Telefon
+                         {t("phone.title")}
                       </h6>
                       <Link
                         className="font-bold font-urbanist text-white hover:text-primary duration-500"
-                        href="tel:013354213-92132"
+                        href="tel:+3699531015"
                       >
-                        +36 99 531 015
+                       {t("phone.value")}
                       </Link>
                     </li>
                     <li>
                       <h6 className="pb-6 capitalize font-urbanist text-white text-base font-medium leading-[1.2] flex items-center">
                         <Mail className="mr-5 text-white" size={16}/>
-                        E-mail
+                        {t("email.title")}
                       </h6>
                       <Link
                         className="font-bold font-urbanist text-white hover:text-primary duration-500"
-                        href="mailto:info123@gmail.com"
+                        href="mailto:info@dentalarts.hu"
                       >
-                        info123@gmail.com
+                        {t("email.value")}
                       </Link>
                     </li>
                   </ul>
