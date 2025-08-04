@@ -275,7 +275,7 @@ const SingleService = ({ slug }) => {
                 <ul className="flex items-center gap-10 xxl:pt-48 pt-42">
                   <li>
                     <Link
-                      href="https://www.facebook.com/"
+                      href="https://www.facebook.com/digitalworkflowestheticaldentistry"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -283,7 +283,7 @@ const SingleService = ({ slug }) => {
                       <Facebook size={18} />
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       href="https://x.com/"
                       className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black"
@@ -312,7 +312,7 @@ const SingleService = ({ slug }) => {
                     >
                       <Youtube size={18} />
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

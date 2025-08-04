@@ -33,11 +33,11 @@ const Header = () => {
   }
   const languages = [
     { code: "hu", flag: "/assets/img/flags/hu.png" },
-    { code: "en", flag: "/assets/img/flags/en.webp" },
-    { code: "ro", flag: "/assets/img/flags/ro.png" },
+  
     { code: "de", flag: "/assets/img/flags/de.webp" },
   ];
-
+  // { code: "en", flag: "/assets/img/flags/en.webp" },
+  //   { code: "ro", flag: "/assets/img/flags/ro.png" },
   const handleMobileMenuToggle = () => {
     setMobileNavOpen(!mobileNavOpen);
     if (mobileNavOpen) {
@@ -238,11 +238,7 @@ const Header = () => {
                       <li>
                         <Link href="/services">{t("allServices")}</Link>
                       </li>
-                      <li>
-                        <Link href="/services/altalanos-fogaszat">
-                          {t("serviceDetails")}
-                        </Link>
-                      </li>
+                     
                     </ul>
                   </li>
                   <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
@@ -318,7 +314,7 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-                <Link href="/appointment" className="btn secondary">
+                <Link href="/contact-us" className="btn secondary">
                   <span className="flex items-center gap-2">
                     {t("appointment")}
                   </span>
@@ -378,14 +374,7 @@ const Header = () => {
                     {t("allServices")}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/services/altalanos-fogaszat"
-                    onClick={handleMobileNavClose}
-                  >
-                    {t("serviceDetails")}
-                  </Link>
-                </li>
+                
               </ul>
             </li>
             <li>
@@ -400,7 +389,7 @@ const Header = () => {
           </ul>
           <div className="mt-8 pt-4 absolute bottom-30 w-[85%]">
             <Link
-              href="/appointment"
+              href="/contact-us"
               onClick={handleMobileNavClose}
               className="btn w-full block text-center"
             >

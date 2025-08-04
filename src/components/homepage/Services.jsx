@@ -109,25 +109,18 @@ const Services = () => {
                     </div>
 
                     <h4 className="xl:text-xl font-sora font-medium leading-[1.2]">
-                      <Link
-                        href={`/services/${service.slug}`}
+                      <h5
+                       
                         className="xxl:text-2xl text-xl font-bold font-sora relative text-white duration-500 hover:underline"
                       >
                         {service.title}
-                      </Link>
+                      </h5>
                     </h4>
 
                     <p className="pt-10 pb-20 relative text-base text-gray-200 font-normal duration-500">
                       {service.description}
                     </p>
 
-                    <Link
-                      href={`/services/${service.slug}`}
-                      className="relative font-bold text-white font-sora duration-500 inline-flex items-center hover:underline"
-                    >
-                      Tovább olvasok
-                      <ArrowRight size={16} className="ml-3 relative" />
-                    </Link>
                   </div>
                 </SwiperSlide>
               );

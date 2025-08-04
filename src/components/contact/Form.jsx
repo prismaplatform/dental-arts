@@ -10,7 +10,6 @@ const Form = () => {
     name: '',
     email: '',
     phone: '',
-    doctor: '',
     message: '',
     gdprConsent: false
   });
@@ -18,12 +17,6 @@ const Form = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const doctors = [
-    { value: '', label: 'Orvos kiválasztása' },
-    { value: '1', label: 'Dr. Include John' },
-    { value: '2', label: 'Dr. Dávid' },
-    { value: '3', label: 'Dr. Róbert' }
-  ];
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -57,9 +50,6 @@ const Form = () => {
       newErrors.phone = 'Telefonszám megadása kötelező';
     }
 
-    if (!formData.doctor) {
-      newErrors.doctor = 'Kérjük válasszon orvost';
-    }
 
     if (!formData.message.trim()) {
       newErrors.message = 'Írjon üzenetet';
@@ -92,7 +82,6 @@ const Form = () => {
         name: '',
         email: '',
         phone: '',
-        doctor: '',
         message: '',
         gdprConsent: false
       });
@@ -110,22 +99,23 @@ const Form = () => {
     <section className="lg:py-120 md:py-80 py-60">
       <div className="container">
         <div className="grid grid-cols-12 lg:gap-30">
-          <div className="col-span-12">
-            <Map />
-          </div>
+          
           <div className="lg:col-span-6 col-span-12">
-            <div className="w-[fit-content] pb-24">
+                  <div className="w-[fit-content] pb-24">
               <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-5 block">
-                # Kapcsolatfelvétel
+                # Időpontfoglalás
               </span>
               <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                Maradj kapcsolatban az egészséged érdekében.
+                Foglaljon időpontot vagy tegye fel kérdését!
               </h2>
+              <p className="text-gray-600 mt-4 text-base leading-relaxed">
+                Ha időpontot szeretne foglalni vizsgálatra vagy kezelésre, vagy bármilyen kérdése van szolgáltatásainkkal kapcsolatban, kérjük töltse ki az alábbi űrlapot. Munkatársaink hamarosan felvesszük Önnel a kapcsolatot.
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="bg-white">
               <div className="grid grid-cols-12 sm:gap-x-30">
-                <div className="lg:col-span-6 col-span-12">
+                <div className="lg:col-span-12 col-span-12">
                   <input
                     className={`w-full h-50 pl-20 border ${errors.name ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors`}
                     type="text"
@@ -164,22 +154,7 @@ const Form = () => {
                   {!errors.phone && <div className="mb-20"></div>}
                 </div>
 
-                <div className="lg:col-span-6 col-span-12">
-                  <select
-                    className={`w-full h-50 pl-20 border ${errors.doctor ? 'border-red-500' : 'border-[#D8D8D8]'} mb-4 rounded-[10px] outline-none focus:border-primary transition-colors bg-white`}
-                    name="doctor"
-                    value={formData.doctor}
-                    onChange={handleInputChange}
-                  >
-                    {doctors.map((doctor) => (
-                      <option key={doctor.value} value={doctor.value}>
-                        {doctor.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.doctor && <p className="text-red-500 text-sm mb-20">{errors.doctor}</p>}
-                  {!errors.doctor && <div className="mb-20"></div>}
-                </div>
+                
 
                 <div className="col-span-12">
                   <textarea
@@ -258,9 +233,9 @@ const Form = () => {
                   </span>
                   <Link 
                     className="text-white block font-bold font-sora hover:text-primary duration-500" 
-                    href="tel:0133542392132"
+                    href="tel:3699531015"
                   >
-                    013 354 213 - 92132
+                    (+36) 99 531 015
                   </Link>
                 </li>
                 <li className="border-b border-[#304F74] pb-20 mb-20">
@@ -269,10 +244,10 @@ const Form = () => {
                     Cím
                   </span>
                   <h6 className="text-white block font-bold font-sora">
-                    1901 Thornridge Cir. Shiloh
+                    Balf, Sopron, Fürdő sor 12, 9494 Hungary
                   </h6>
                 </li>
-                <li>
+                {/* <li>
                   <span className="text-white pb-5 block flex items-center gap-2">
                     <Stethoscope size={16} />
                     Téma
@@ -280,12 +255,12 @@ const Form = () => {
                   <h6 className="text-white block font-bold font-sora">
                     Orvosi és Fogászati szolgáltatások
                   </h6>
-                </li>
+                </li> */}
               </ul>
               <ul className="flex items-center gap-10 xxl:pt-48 pt-42">
                 <li>
                   <Link
-                    href="https://www.facebook.com/" 
+                    href="https://www.facebook.com/digitalworkflowestheticaldentistry" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
                     target="_blank"
                     rel="noopener noreferrer"
@@ -293,7 +268,7 @@ const Form = () => {
                     <Facebook size={18} />
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="https://x.com/" 
                     className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
@@ -322,9 +297,12 @@ const Form = () => {
                   >
                     <Youtube size={18} />
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
+          </div>
+          <div className="col-span-12">
+            <Map />
           </div>
         </div>
       </div>

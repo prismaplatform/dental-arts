@@ -25,23 +25,18 @@ const ServiceCard = ({ service }) => {
         </div>
 
         <h4 className="xl:text-xl font-sora text-secondary font-medium leading-[1.2] mb-3">
-          <Link
-            href={`/services/${service.slug}`}
-            className="xxl:text-2xl text-xl font-bold font-sora relative text-secondary group-hover:text-white duration-500 hover:text-primary"
+          <h5
+           
+            className="xxl:text-2xl text-xl font-bold font-sora relative text-secondary group-hover:text-white duration-500 "
           >
             {service.title}
-          </Link>
+          </h5>
         </h4>
         <p className="pt-10 pb-20 relative text-base leading-32 text-[#6f6f6f] font-normal group-hover:text-white duration-500 flex-grow">
           {service.description}
         </p>
 
-        <Link
-          href={`/services/${service.slug}`}
-          className="relative font-bold text-secondary font-sora group-hover:text-white duration-500 hover:text-primary inline-flex items-center gap-3 mt-auto"
-        >
-          Tovább olvasok <ArrowRight size={20} />
-        </Link>
+       
       </div>
     </div>
   );

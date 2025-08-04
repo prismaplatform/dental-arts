@@ -26,7 +26,7 @@ const tHeader = useTranslations("Header");
                   <ul className="flex gap-x-10">
                     <li>
                       <Link
-                        href="https://www.facebook.com/"
+                        href="https://www.facebook.com/digitalworkflowestheticaldentistry"
                         className="flex items-center text-white justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -34,7 +34,7 @@ const tHeader = useTranslations("Header");
                         <Facebook/>
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link
                         href="https://x.com/"
                         className="flex items-center text-white justify-center xxl:size-50 size-40 max-xxl:text-sm border border-[#444] rounded-full hover:bg-primary duration-500 hover:text-white hover:border-transparent"
@@ -63,7 +63,7 @@ const tHeader = useTranslations("Header");
                       >
                         <Youtube/>
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -108,44 +108,44 @@ const tHeader = useTranslations("Header");
                   </h5>
                   <ul>
                     <li className="pb-16">
-                      <Link
-                        href="/services/altalanos-fogaszat"
+                      <h5
+                      
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
                         Általános fogászati ellátás
-                      </Link>
+                      </h5>
                     </li>
                     <li className="pb-16">
-                      <Link
-                        href="/services/esztetikai-fogaszat"
+                      <h5
+                        
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
                         Esztétikai fogászat
-                      </Link>
+                      </h5>
                     </li>
                     <li className="pb-16">
-                      <Link
-                        href="/services/implantatum-fogpotlas"
+                      <h5
+                       
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
                         Implantáció és fogpótlás
-                      </Link>
+                      </h5>
                     </li>
                     <li className="pb-16">
-                      <Link
-                        href="/services/szajsebeszet"
+                      <h5
+                      
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
                         Szájsebészet
-                      </Link>
+                      </h5>
                     </li>
                     <li>
-                      <Link
-                        href="/services/gyermekfogaszat"
+                      <h5
+                       
                         className="text-white font-sora hover:text-primary duration-500 capitalize"
                       >
                         Gyermekfogászat
-                      </Link>
+                      </h5>
                     </li>
                   </ul>
                 </div>
