@@ -13,10 +13,10 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 const Gallery = () => {
   const images = [
-    "/assets/img/gallery8.jpeg",
-    "/assets/img/gallery2.jpeg",
-    "/assets/img/gallery4.jpeg",
-    "/assets/img/gallery6.jpeg",
+    "/assets/img/gallery/1.webp",
+    "/assets/img/gallery/7.webp",
+    "/assets/img/gallery/19.webp",
+    "/assets/img/gallery/29.webp",
   ];
 
   // Thumbnail URL generálása - ha van külön thumbnail kép

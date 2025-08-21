@@ -213,6 +213,7 @@ export default async function LocaleLayout({ children, params }) {
       <body className={`${urbanist.variable} ${sora.variable} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           <Header />
+          
           {children}
           <Footer />
           <ScrollToTop />

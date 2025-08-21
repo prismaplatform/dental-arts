@@ -25,6 +25,7 @@
     "analogDentistry": "Analoge",
     "digitalDentistry": "Digitale",
         "footer":"zahnmedizin"
+      
   },
   "mission": {
     "title": "# Ihr Lächeln, Unsere Mission",
@@ -53,9 +54,9 @@
     "subtitle": "Lächeln, die uns inspirieren"
   },
   "trustFactors": {
-    "reliable": "Zuverlässige Zahnmedizin",
-    "modern": "Moderne Behandlungen",
-    "comfort": "Komfort und Sicherheit"
+    "reliable": "Slow dentist treat.",
+    "modern": "One implant. One tooth.",
+    "comfort": "Slow dentist treat."
   },
   "faq": {
     "title": "# Häufig gestellte Fragen",
@@ -72,6 +73,9 @@
     "subscribe": "Abonnieren",
     "privacy": "Ich habe gelesen und akzeptiere die ",
     "link":"Datenschutzbestimmungen"
+  },
+    "team": {
+  "title": "Unser Team"
   },
   "footer": {
     "logoText": "Wir sind bestrebt, eine außergewöhnliche Gesundheitsversorgung mit Mitgefühl, Fachwissen und Innovation zu bieten. Unser Team arbeitet engagiert für Ihre Gesundheit.",

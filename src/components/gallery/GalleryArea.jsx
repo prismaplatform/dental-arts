@@ -13,17 +13,40 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
 const GalleryPage = () => {
-  const images = [
-    "/assets/img/gallery1.jpeg",
-    "/assets/img/gallery2.jpeg",
-    "/assets/img/gallery3.jpeg",
-    "/assets/img/gallery4.jpeg",
-    "/assets/img/gallery5.jpeg",
-    "/assets/img/gallery6.jpeg",
-    "/assets/img/gallery7.jpeg",
-    "/assets/img/gallery8.jpeg",
+const images = [
+  "/assets/img/gallery/1.webp",
 
-  ];
+  "/assets/img/gallery/7.webp",
+  "/assets/img/gallery/8.webp",
+  "/assets/img/gallery/9.webp",
+  "/assets/img/gallery/10.webp",
+  "/assets/img/gallery/11.webp",
+  "/assets/img/gallery/12.webp",
+  "/assets/img/gallery/13.webp",
+  "/assets/img/gallery/14.webp",
+  "/assets/img/gallery/15.webp",
+  "/assets/img/gallery/16.webp",
+  "/assets/img/gallery/17.webp",
+  "/assets/img/gallery/18.webp",
+  "/assets/img/gallery/19.webp",
+  "/assets/img/gallery/20.webp",
+  "/assets/img/gallery/21.webp",
+  "/assets/img/gallery/22.webp",
+  "/assets/img/gallery/23.webp",
+  "/assets/img/gallery/24.webp",
+  "/assets/img/gallery/25.webp",
+  "/assets/img/gallery/26.webp",
+  "/assets/img/gallery/27.webp",
+  "/assets/img/gallery/28.webp",
+  "/assets/img/gallery/29.webp",
+  "/assets/img/gallery/30.webp",
+  "/assets/img/gallery/31.webp",
+  "/assets/img/gallery/32.webp",
+  "/assets/img/gallery/33.jpg",
+  "/assets/img/gallery/34.jpg",
+  "/assets/img/gallery/35.jpg",
+];
+
 
   // Thumbnail URL generálása
   const getThumbnailUrl = (imageUrl) => {
@@ -82,13 +105,12 @@ const GalleryPage = () => {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       }
       
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 12px;
-        transition: transform 0.3s ease;
-      }
+.gallery-item img {
+  width: 100%;
+  height: auto;   /* képarány megmarad */
+  display: block;
+  border-radius: 12px;
+}
       
       .gallery-item:hover img {
         transform: scale(1.02);
@@ -151,15 +173,17 @@ const GalleryPage = () => {
                       data-thumb={getThumbnailUrl(image)}
                     >
                       <img 
-                        src={image} 
-                        alt={`Gallery image ${index + 1}`}
-                        loading="lazy"
-                        style={{
-                          width: '100%',
-                          height: 'auto',
-                          minHeight: `${200 + Math.floor(Math.random() * 200)}px` // Véletlenszerű magasság a masonry effekthez
-                        }}
-                      />
+  src={image} 
+  alt={`Gallery image ${index + 1}`}
+  loading="lazy"
+  style={{
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    borderRadius: '12px',
+    objectFit: 'cover'
+  }}
+/>
                     </div>
                   ))}
                 </Masonry>

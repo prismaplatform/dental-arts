@@ -53,9 +53,9 @@
     
   },
   "trustFactors": {
-    "reliable": "Megbízható Fogászat",
-    "modern": "Korszerű Kezelések",
-    "comfort": "Kényelem és Biztonság"
+    "reliable": "Slow dentist treat.",
+    "modern": "One implant. One tooth.",
+    "comfort": "Slow dentist treat."
   },
   "faq": {
     "title": "# Gyakran Ismételt Kérdések",
@@ -72,6 +72,9 @@
     "subscribe": "Feliratkozás",
     "privacy": "Elolvastam és elfogadom az ",
     "link":"Adatvédelmi irányelveket."
+  },
+  "team": {
+  "title": "Csapatunk"
   },
   "footer": {
     "logoText": "Elkötelezettek vagyunk a kivételes egészségügyi ellátás iránt, együttérzéssel, szakértelemmel és innovációval. Csapatunk elhivatottan dolgozik az Ön egészségéért.",

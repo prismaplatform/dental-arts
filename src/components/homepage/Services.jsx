@@ -108,14 +108,11 @@ const Services = () => {
                       />
                     </div>
 
-                    <h4 className="xl:text-xl font-sora font-medium leading-[1.2]">
                       <h5
-                       
                         className="xxl:text-2xl text-xl font-bold font-sora relative text-white duration-500 hover:underline"
                       >
                         {service.title}
                       </h5>
-                    </h4>
 
                     <p className="pt-10 pb-20 relative text-base text-gray-200 font-normal duration-500">
                       {service.description}

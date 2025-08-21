@@ -52,9 +52,9 @@
     "subtitle": "Smiles that inspire us"
   },
   "trustFactors": {
-    "reliable": "Reliable Dentistry",
-    "modern": "Modern Treatments",
-    "comfort": "Comfort and Safety"
+    "reliable": "Slow dentist treat.",
+    "modern": "One implant. One tooth.",
+    "comfort": "Slow dentist treat."
   },
   "faq": {
     "title": "# Frequently Asked Questions",
@@ -72,6 +72,10 @@
     "privacy": "I have read and accept the ",
     "link":"Privacy Policy."
   },
+    "team": {
+  "title": "Our team"
+  },
+  
   "footer": {
     "logoText": "We are committed to exceptional healthcare with compassion, expertise, and innovation. Our team is dedicated to your health.",
     "usefulLinks": "Useful links",

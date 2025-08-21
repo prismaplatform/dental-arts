@@ -23,7 +23,7 @@
     "subline": "Drumul către un zâmbet strălucitor începe aici.",
     "analogDentistry": "Analogă",
     "digitalDentistry": "Digitală",
-    "footer":"Stomatologie"
+    "footer": "Stomatologie"
   },
   "mission": {
     "title": "# Zâmbetul tău, Misiunea noastră",
@@ -40,7 +40,7 @@
   "services": {
     "title": "# Serviciile noastre",
     "subtitle": "Îngrijire stomatologică profesională pentru toate vârstele.",
-    "button":"Servicii"
+    "button": "Servicii"
   },
   "gallery": {
     "title": "# Galerie",
@@ -52,9 +52,9 @@
     "subtitle": "Zâmbete care ne inspiră"
   },
   "trustFactors": {
-    "reliable": "Stomatologie de încredere",
-    "modern": "Tratamente moderne",
-    "comfort": "Confort și siguranță"
+    "reliable": "Slow dentist treat.",
+    "modern": "One implant. One tooth.",
+    "comfort": "Slow dentist treat."
   },
   "faq": {
     "title": "# Întrebări frecvente",
@@ -70,7 +70,10 @@
     "emailPlaceholder": "Adresa ta de email",
     "subscribe": "Abonare",
     "privacy": "Am citit și accept",
-    "link":"Politica de confidențialitate."
+    "link": "Politica de confidențialitate."
+  },
+  "team": {
+    "title": "Echipa noastră"
   },
   "footer": {
     "logoText": "Suntem dedicați îngrijirii medicale excepționale, cu compasiune, expertiză și inovație. Echipa noastră lucrează cu devotament pentru sănătatea ta.",
@@ -98,7 +101,7 @@
     "terms": "Termeni de utilizare",
     "privacyPolicy": "Politica de confidențialitate",
     "copyright": "Copyright",
-    "copyright2":"Toate drepturile rezervate",
+    "copyright2": "Toate drepturile rezervate",
     "developerCredit": "Creat și dezvoltat de"
   }
 }

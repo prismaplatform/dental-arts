@@ -5,65 +5,10 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
-  const [patientsCount, setPatientsCount] = useState(0);
-  const [reportsCount, setReportsCount] = useState(0);
-  const [specialistsCount, setSpecialistsCount] = useState(0);
-  const patientsRef = useRef(null);
-  const reportsRef = useRef(null);
-  const specialistsRef = useRef(null);
+ 
   const t = useTranslations("hero");
 
-  const animateCounter = (target, setter, duration = 2000) => {
-    let start = 0;
-    const increment = target / (duration / 16);
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setter(target);
-        clearInterval(interval);
-      } else {
-        setter(Math.ceil(start));
-      }
-    }, 16);
-  };
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, 
-    };
-
-    const handleIntersection = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetElement = entry.target;
-          const maxVal = parseInt(targetElement.dataset.max);
-
-          if (targetElement === patientsRef.current) {
-            animateCounter(maxVal, setPatientsCount);
-          } else if (targetElement === reportsRef.current) {
-            animateCounter(maxVal, setReportsCount);
-          } else if (targetElement === specialistsRef.current) {
-            animateCounter(maxVal, setSpecialistsCount);
-          }
-          observer.unobserve(targetElement);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    if (patientsRef.current) observer.observe(patientsRef.current);
-    if (reportsRef.current) observer.observe(reportsRef.current);
-    if (specialistsRef.current) observer.observe(specialistsRef.current);
-
-    return () => {
-      if (patientsRef.current) observer.unobserve(patientsRef.current);
-      if (reportsRef.current) observer.unobserve(reportsRef.current);
-      if (specialistsRef.current) observer.unobserve(specialistsRef.current);
-    };
-  }, []);
+  
 
  return (
   <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">

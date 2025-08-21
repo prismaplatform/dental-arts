@@ -1,13 +1,15 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react';
 
+import { useTranslations } from "next-intl";
 const teamMembers = [
   {
     id: 1,
     name: 'Dental Arts Praxis – Ahol a szakértelem családi hagyomány',
     role: 'Co-founder & CEO',
-    image: '/assets/img/aboutUsTeam.png',
+    image: '/assets/img/gallery/25.webp',
     bio: 'A Dental Arts Praxis nem csupán egy fogászati rendelő. Generációkon átívelően őrzik a szakmai precizitást, a minőséget és az emberközpontú hozzáállást. Nálunk a fogászat nemcsak hivatás, hanem örökség: a családi értékeken alapuló gondoskodás és bizalom minden egyes kezelést áthat. Hiszünk benne, hogy a legmagasabb színvonalú ellátás a törődésből, az alaposságból és a hagyomány iránti elkötelezettségből fakad és ezt minden mosolyban visszatükröződni látjuk.',
     quote: '"Alone we can do so little; together we can do so much."',
     socials: {
@@ -22,7 +24,7 @@ const teamMembers = [
     id: 2,
     name: 'Dr. Istvan Robert Horváth',
     role: 'Dentist',
-    image: '/assets/img/DrIstvanRobertHorvath.png',
+    image: '/assets/img/gallery/2.webp',
     socials: {
       facebook: 'https://www.facebook.com/',
       twitter: 'https://x.com/',
@@ -35,7 +37,7 @@ const teamMembers = [
     id: 3,
     name: 'Dr. Beatrice Horváth',
     role: 'Dentist',
-    image: '/assets/img/DrBeatriceHorvath.png',
+    image: '/assets/img/gallery/4.webp',
     socials: {
       facebook: 'https://www.facebook.com/',
       twitter: 'https://x.com/',
@@ -62,16 +64,16 @@ const teamMembers = [
 const Team = () => {
   const featuredMember = teamMembers.find((member) => member.isFeatured);
   const otherMembers = teamMembers.filter((member) => !member.isFeatured);
-
+  const t = useTranslations("team");
   return (
     <section className='lg:pt-120 md:pt-80 pt-60 relative section-about-two'>
       <div className="container">
         <div className="text-center mb-10">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-            # Team Member
+            # Dental Arts
           </span>
           <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-            The Faces of Exceptional
+           {t("title")}
           </h2>
         </div>
 

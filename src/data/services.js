@@ -5,7 +5,7 @@ export const servicesData = [
     title: "Implantológia",
     description:
       "Tartós és esztétikus megoldás a hiányzó fogak pótlására korszerű implantátumokkal.",
-    icon: "Implantology.svg",
+    icon: "image.png",
     fullDescription:
       "Implantológiai kezeléseink a foghiányok végleges és esztétikus pótlását szolgálják. A titánból készült fogászati implantátumokat precíz tervezés és kivitelezés mentén ültetjük be, lehetővé téve a rágófunkció és a természetes mosoly helyreállítását.",
     features: [
