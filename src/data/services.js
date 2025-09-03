@@ -15,9 +15,11 @@ export const servicesData = [
       "Csonpótlási eljárások",
       "Hosszú távú utánkövetés",
     ],
+   
     category: "fogaszat",
     bgColor: "bg-[#5496FF]",
     shadowColorHex: "#5496FF",
+     image:"dental2.webp"
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#54D169]",
     shadowColorHex: "#54D169",
+       image:"dental3.webp"
   },
   {
     id: 3,
@@ -58,6 +61,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#B122E5]",
     shadowColorHex: "#B122E5",
+       image:"dental4.webp"
   },
   {
     id: 4,
@@ -78,6 +82,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#12EBF2]",
     shadowColorHex: "#12EBF2",
+       image:"dental5.webp"
   },
   {
     id: 5,
@@ -98,6 +103,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#5496FF]",
     shadowColorHex: "#5496FF",
+       image:"dental6.webp"
   },
   {
     id: 6,
@@ -118,6 +124,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#54D169]",
     shadowColorHex: "#54D169",
+       image:"dental7.webp"
   },
   {
     id: 7,
@@ -138,6 +145,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#B122E5]",
     shadowColorHex: "#B122E5",
+       image:"dental8.webp"
   },
   {
     id: 8,
@@ -158,6 +166,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#12EBF2]",
     shadowColorHex: "#12EBF2",
+       image:"dental9.webp"
   },
   {
     id: 9,
@@ -178,6 +187,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#5496FF]",
     shadowColorHex: "#5496FF",
+       image:"dental1.webp"
   },
   {
     id: 10,
@@ -198,6 +208,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#54D169]",
     shadowColorHex: "#54D169",
+       image:"dental10.webp"
   },
   {
     id: 11,
@@ -218,6 +229,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#5496FF]",
     shadowColorHex: "#5496FF",
+       image:"dental11.webp"
   },
   {
     id: 12,
@@ -237,6 +249,7 @@ export const servicesData = [
     category: "fogaszat",
     bgColor: "bg-[#54D169]",
     shadowColorHex: "#54D169",
+       image:"dental12.webp"
   },
 ];
 

@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
         {/* Kép szekció */}
         <div className="relative h-200 overflow-hidden rounded-t-xl">
           <Image
-            src="/assets/img/digital-service.png"
+            src={`/assets/img/services/${service.image}`}
             alt={service.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700 h-200"
