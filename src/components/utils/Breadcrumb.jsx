@@ -46,7 +46,7 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
                 // Régi statikus breadcrumb (backward compatibility)
                 <>
                   <li className="xxl:text-xxl md:text-xl text-sm text-purple font-sora capitalize hover:text-primary transition-colors">
-                    <Link href="/"> Főoldal</Link>
+                    <Link href="/"> {subtitle}</Link>
                   </li>
                   {middletitle && (
                     <li className="xxl:text-xxl md:text-xl text-sm text-purple font-sora capitalize hover:text-primary transition-colors before:content-['-'] before:float-left before:text-gary before:px-10">
@@ -57,7 +57,7 @@ const Breadcrumb = ({ title, middletitle, subtitle, breadcrumbs }) => {
                     className="xxl:text-xxl md:text-xl text-sm text-purple capitalize before:content-['-'] before:float-left before:text-gary before:px-10"
                     aria-current="page"
                   >
-                    {subtitle}
+                    {title}
                   </li>
                 </>
               )}

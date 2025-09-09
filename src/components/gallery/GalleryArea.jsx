@@ -1,52 +1,51 @@
 "use client";
-import React, { useEffect } from 'react';
-import LightGallery from 'lightgallery/react';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import React, { useEffect } from "react";
+import LightGallery from "lightgallery/react";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // LightGallery CSS importok
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-thumbnail.css';
-import 'lightgallery/css/lg-zoom.css';
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
 
 // LightGallery plugin importok
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
-const GalleryPage = () => {
-const images = [
-  "/assets/img/gallery/1.webp",
+const GalleryPage = ({title,subtitle}) => {
+  const images = [
+    "/assets/img/gallery/1.webp",
 
-  "/assets/img/gallery/7.webp",
-  "/assets/img/gallery/8.webp",
-  "/assets/img/gallery/9.webp",
-  "/assets/img/gallery/10.webp",
-  "/assets/img/gallery/11.webp",
-  "/assets/img/gallery/12.webp",
-  "/assets/img/gallery/13.webp",
-  "/assets/img/gallery/14.webp",
-  "/assets/img/gallery/15.webp",
-  "/assets/img/gallery/16.webp",
-  "/assets/img/gallery/17.webp",
-  "/assets/img/gallery/18.webp",
-  "/assets/img/gallery/19.webp",
-  "/assets/img/gallery/20.webp",
-  "/assets/img/gallery/21.webp",
-  "/assets/img/gallery/22.webp",
-  "/assets/img/gallery/23.webp",
-  "/assets/img/gallery/24.webp",
-  "/assets/img/gallery/25.webp",
-  "/assets/img/gallery/26.webp",
-  "/assets/img/gallery/27.webp",
-  "/assets/img/gallery/28.webp",
-  "/assets/img/gallery/29.webp",
-  "/assets/img/gallery/30.webp",
-  "/assets/img/gallery/31.webp",
-  "/assets/img/gallery/32.webp",
-  "/assets/img/gallery/33.jpg",
-  "/assets/img/gallery/34.jpg",
-  "/assets/img/gallery/35.jpg",
-];
-
+    "/assets/img/gallery/7.webp",
+    "/assets/img/gallery/8.webp",
+    "/assets/img/gallery/9.webp",
+    "/assets/img/gallery/10.webp",
+    "/assets/img/gallery/11.webp",
+    "/assets/img/gallery/12.webp",
+    "/assets/img/gallery/13.webp",
+    "/assets/img/gallery/14.webp",
+    "/assets/img/gallery/15.webp",
+    "/assets/img/gallery/16.webp",
+    "/assets/img/gallery/17.webp",
+    "/assets/img/gallery/18.webp",
+    "/assets/img/gallery/19.webp",
+    "/assets/img/gallery/20.webp",
+    "/assets/img/gallery/21.webp",
+    "/assets/img/gallery/22.webp",
+    "/assets/img/gallery/23.webp",
+    "/assets/img/gallery/24.webp",
+    "/assets/img/gallery/25.webp",
+    "/assets/img/gallery/26.webp",
+    "/assets/img/gallery/27.webp",
+    "/assets/img/gallery/28.webp",
+    "/assets/img/gallery/29.webp",
+    "/assets/img/gallery/30.webp",
+    "/assets/img/gallery/31.webp",
+    "/assets/img/gallery/32.webp",
+    "/assets/img/gallery/33.jpg",
+    "/assets/img/gallery/34.jpg",
+    "/assets/img/gallery/35.jpg",
+  ];
 
   // Thumbnail URL generálása
   const getThumbnailUrl = (imageUrl) => {
@@ -54,12 +53,12 @@ const images = [
   };
 
   const onInit = () => {
-    console.log('LightGallery sikeresen inicializálva!');
+    console.log("LightGallery sikeresen inicializálva!");
   };
 
   // CSS stílusok hozzáadása
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .lg-thumb-item {
         width: 100px !important;
@@ -121,7 +120,7 @@ const images = [
       }
     `;
     document.head.appendChild(style);
-    
+
     return () => {
       document.head.removeChild(style);
     };
@@ -133,13 +132,13 @@ const images = [
         <div className="container ">
           <div className="mb-10 w-[fit-content]">
             <span className="black font-sora font-semibold capitalize xxl:text-xxl xl:text-xl sm:text-lg leading-50 text-primary">
-              # Galéria
+              {subtitle}
             </span>
             <h2 className="xxl:text-5xl xl:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold font-sora text-secondary leading-[1.2]">
-             Pillanatok a rendelő mindennapjaiból
+              {title}
             </h2>
           </div>
-          
+
           <div className="masonry-container">
             <LightGallery
               onInit={onInit}
@@ -161,7 +160,7 @@ const images = [
                   350: 1,
                   750: 2,
                   900: 3,
-                  1200: 4
+                  1200: 4,
                 }}
               >
                 <Masonry gutter="16px">
@@ -172,18 +171,18 @@ const images = [
                       data-src={image}
                       data-thumb={getThumbnailUrl(image)}
                     >
-                      <img 
-  src={image} 
-  alt={`Gallery image ${index + 1}`}
-  loading="lazy"
-  style={{
-    width: '100%',
-    height: 'auto',
-    display: 'block',
-    borderRadius: '12px',
-    objectFit: 'cover'
-  }}
-/>
+                      <img
+                        src={image}
+                        alt={`Gallery image ${index + 1}`}
+                        loading="lazy"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          display: "block",
+                          borderRadius: "12px",
+                          objectFit: "cover",
+                        }}
+                      />
                     </div>
                   ))}
                 </Masonry>

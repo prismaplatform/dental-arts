@@ -24,8 +24,7 @@
     "subline": "Ihr Weg zu einem strahlenden Lächeln beginnt hier.",
     "analogDentistry": "Analoge",
     "digitalDentistry": "Digitale",
-        "footer":"zahnmedizin"
-      
+    "footer": "zahnmedizin"
   },
   "mission": {
     "title": "# Ihr Lächeln, Unsere Mission",
@@ -42,7 +41,7 @@
   "services": {
     "title": "# Unsere Dienstleistungen",
     "subtitle": "Professionelle zahnmedizinische Versorgung für jedes Alter.",
-        "button":"Dienstleistungen"
+    "button": "Dienstleistungen"
   },
   "gallery": {
     "title": "# Galerie",
@@ -72,10 +71,10 @@
     "emailPlaceholder": "Ihre E-Mail-Adresse",
     "subscribe": "Abonnieren",
     "privacy": "Ich habe gelesen und akzeptiere die ",
-    "link":"Datenschutzbestimmungen"
+    "link": "Datenschutzbestimmungen"
   },
-    "team": {
-  "title": "Unser Team"
+  "team": {
+    "title": "Unser Team"
   },
   "footer": {
     "logoText": "Wir sind bestrebt, eine außergewöhnliche Gesundheitsversorgung mit Mitgefühl, Fachwissen und Innovation zu bieten. Unser Team arbeitet engagiert für Ihre Gesundheit.",
@@ -103,7 +102,96 @@
     "terms": "Nutzungsbedingungen",
     "privacyPolicy": "Datenschutzbestimmungen",
     "copyright": "Copyright",
-    "copyright2":"Alle Rechte vorbehalten",
+    "copyright2": "Alle Rechte vorbehalten",
     "developerCredit": "Entwickelt und gestaltet von"
+  },
+  "about": {
+    "hero": {
+      "title": "Über uns",
+      "home": "Startseite"
+    },
+    "about": {
+      "subtitle": "# Warum Dental Arts wählen?",
+      "title": "Ihr Weg zu einem strahlenden Lächeln beginnt hier.",
+      "content": "Bei Dental Arts in Sopron glauben wir, dass exzellente zahnmedizinische Versorgung über die Behandlungen hinausgeht. Es ist ein individuelles Erlebnis, das auf Vertrauen und Komfort basiert, bei dem Ihre Mundhygiene und Ihr schönes Lächeln unsere höchste Priorität sind.",
+      "service1title": "Qualifizierte Fachkräfte, moderne Versorgung",
+      "service1text": "Unser Team aus erfahrenen Zahnärzten und Fachkräften verfügt über jahrelange Expertise und ein starkes Engagement für höchste Versorgungsqualität. Wir kombinieren ihr Wissen mit modernster Technologie, um präzise und effektive Behandlungen zu gewährleisten.",
+      "service2title": "Patientenzentrierter Ansatz",
+      "service2text": "Wir stellen Ihr Wohlbefinden und Ihren Komfort in den Vordergrund. Von sofortigen, noch am selben Tag eingesetzten Kronen bis hin zu sanften Weisheitszahnentfernungen – unser einfühlsames Team sorgt dafür, dass jeder Besuch zu einem positiven und stressfreien Erlebnis wird."
+    },
+    "team": {
+      "subtitle": "# Dental Arts",
+      "title": "Unser Team",
+      "sectiontitle": "Dental Arts Praxis – Wo Fachkompetenz Familientradition ist",
+      "sectioncontent": "Die Dental Arts Praxis ist weit mehr als nur eine Zahnarztpraxis. Über Generationen hinweg bewahren wir fachliche Präzision, Qualität und eine menschliche, patientenorientierte Haltung. Für uns ist Zahnmedizin nicht nur ein Beruf, sondern ein Erbe: Fürsorge und Vertrauen, die auf familiären Werten beruhen, prägen jede Behandlung. Wir glauben daran, dass die höchste Qualität aus Achtsamkeit, Gründlichkeit und der Verpflichtung zur Tradition entsteht – und wir sehen dies in jedem Lächeln widergespiegelt."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontakt",
+      "home": "Startseite"
+    },
+    "form": {
+      "subtitle": "# Terminvereinbarung",
+      "title": "Vereinbaren Sie einen Termin oder stellen Sie Ihre Frage!",
+      "content": "Wenn Sie einen Termin für eine Untersuchung oder Behandlung vereinbaren möchten oder Fragen zu unseren Leistungen haben, füllen Sie bitte das untenstehende Formular aus. Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.",
+      "fields": {
+        "name": "Ihr Name",
+        "email": "Ihre E-Mail-Adresse",
+        "phone": "Ihre Telefonnummer",
+        "message": "Schreiben Sie eine Nachricht..."
+      },
+      "gdpr": {
+        "part1": "Ich akzeptiere die Verarbeitung meiner personenbezogenen Daten gemäß der",
+        "link": "Datenschutzrichtlinie",
+        "part2": "und stimme zu, dass Sie mich zur Terminvereinbarung kontaktieren."
+      },
+      "privacy": "Ich akzeptiere die Verarbeitung meiner personenbezogenen Daten gemäß der Datenschutzrichtlinie und stimme zu, dass Sie mich zur Terminvereinbarung kontaktieren.",
+      "submit": "Termin vereinbaren",
+      "submitting": "Termin wird gesendet..."
+    },
+    "info": {
+      "subtitle": "Dental Arts Kontakt:",
+      "emailLabel": "E-Mail-Adresse",
+      "phoneLabel": "Telefonnummer",
+      "addressLabel": "Adresse"
+    }
+  },
+  "fall": {
+    "hero": {
+      "title": "Fallstudien",
+      "home": "Startseite"
+    },
+    "home": {
+      "subtitle": "Fallstudien",
+      "title": "Beeindruckende Veränderungen – vorher und nachher."
+    }
+  },
+  "galleryPage": {
+    "hero": {
+      "title": "Galerie",
+      "home": "Startseite"
+    },
+    "home": {
+      "subtitle": "# Galerie",
+      "title": "Momente aus dem Alltag der Praxis"
+    }
+  },
+  "servicePage": {
+    "hero": {
+      "title": "Dienstleistungen",
+      "home": "Startseite"
+    },
+    "highlight": {
+      "title": "# Hervorgehobene Dienstleistung",
+      "text1": "Digitale Diagnostik",
+      "text2": "Ästhetisches Lächeln"
+    },
+    "service": {
+      "subtitle": "# Dienstleistungen",
+      "title": "Professionelle zahnärztliche Dienstleistungen",
+      "pagination1": "Angezeigt:",
+      "pagination2": "Dienstleistung"
+    }
   }
 }

@@ -1,8 +1,5 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 
 // Import the image comparison slider components
 import {
@@ -11,9 +8,8 @@ import {
 } from "react-compare-slider";
 
 // Import Lucide React icons
-import { ArrowRight } from "lucide-react";
 
-const PortfolioAll = () => {
+const PortfolioAll = ({title, subtitle}) => {
   // Define a larger set of default images for 9 items
   const defaultBeforeImage1 = "/assets/img/before-after/before-1.png";
   const defaultAfterImage1 = "/assets/img/before-after/after-1.png";
@@ -69,10 +65,10 @@ const PortfolioAll = () => {
       <div className="container ">
         <div className="xl:pb-50 lg:pb-40 pb-30 text-center">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-            # Esettanulmányok
+            {title}
           </span>
           <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-            Látványos változások – előtte és utána.
+            {subtitle}
           </h2>
         </div>
 

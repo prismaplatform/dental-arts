@@ -1,9 +1,6 @@
 "use client";
 import Image from 'next/image';
-import React from 'react';
-import { Facebook, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react';
 
-import { useTranslations } from "next-intl";
 const teamMembers = [
   {
     id: 1,
@@ -61,19 +58,18 @@ const teamMembers = [
   }
 ];
 
-const Team = () => {
+const Team = ({subtitle, title,sectiontitle,sectioncontent}) => {
   const featuredMember = teamMembers.find((member) => member.isFeatured);
   const otherMembers = teamMembers.filter((member) => !member.isFeatured);
-  const t = useTranslations("team");
   return (
     <section className='lg:pt-120 md:pt-80 pt-60 relative section-about-two'>
       <div className="container">
         <div className="text-center mb-10">
           <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-            # Dental Arts
+            {subtitle}
           </span>
           <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-           {t("title")}
+           {title}
           </h2>
         </div>
 
@@ -93,13 +89,13 @@ const Team = () => {
             </div>
             <div className="lg:w-1/2 w-full text-center lg:text-left">
               <h4 className="font-bold xl:text-2.3xl text-2xl pb-7 text-secondary leading-[1.2] font-sora">
-                {featuredMember.name}
+                {sectiontitle}
               </h4>
               {/* <p className="text-xl font-semibold text-primary mb-6">
                 {featuredMember.role}
               </p> */}
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                {featuredMember.bio}
+               {sectioncontent}
               </p>
               {/* <blockquote className="italic border-l-4 border-primary pl-4 text-gray-600 mb-8">
                 "{featuredMember.quote}"

@@ -2,7 +2,13 @@ import React from "react";
 import { Stethoscope, HeartHandshake, ArrowRight } from "lucide-react"; // Importáld a Lucid ikonokat
 import Link from "next/link";
 
-const WhyChouseUs2About = () => {
+const WhyChouseUs2About = ({ subtitle, 
+  title, 
+  content, 
+  service1title, 
+  service1text, 
+  service2title, 
+  service2text }) => {
   return (
     <>
            
@@ -35,17 +41,13 @@ const WhyChouseUs2About = () => {
             <div className="lg:col-span-6 col-span-12">
               <div className="pb-50 w-[fit-content]">
                 <span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">
-                  # Miért válassza a Dental Arts-ot?
+                   {subtitle}
                 </span>
                 <h2 className="xl:text-5xl md:text-4xl sm:text-3xl text-2.5xl font-semibold text-secondary font-sora leading-[1.2]">
-                  A ragyogó mosolyhoz vezető útja itt kezdődik.
+                 {title}
                 </h2>
                 <p className="text-base leading-28 text-gary font-normal border-l-3 border-primary pl-27 mt-25">
-                  A soproni Dental Artsnál hisszük, hogy a kiváló fogászati
-                  ellátás túlmutat a kezeléseken. Ez egy{" "}
-                  <strong>személyre szabott élmény</strong>, mely a bizalomra és
-                  a kényelemre épül, ahol az Ön szájhigiéniája és gyönyörű
-                  mosolya a legfőbb prioritásunk.
+                   {content}
                 </p>
               </div>
               <div className="sm:flex gap-20 mb-25 border-b border-[#D8D8D8] pb-25 group">
@@ -57,14 +59,11 @@ const WhyChouseUs2About = () => {
                 </span>
                 <div>
                   <h4 className="font-bold xl:text-2.3xl text-2xl pb-7 text-secondary leading-[1.2] font-sora">
-                    Képzett szakemberek, modern ellátás
+                    {service1title}
                   </h4>
                   <p className="text-base leading-30 text-gary fobt-normal">
-                    Tapasztalt fogorvosainkból és szakembereinkből álló
-                    csapatunk többéves szakértelemmel és a legmagasabb szintű
-                    ellátás iránti elkötelezettséggel rendelkezik. Tudásukat{" "}
-                    <strong>korszerű technológiával</strong> ötvözzük a pontos
-                    és hatékony kezelések érdekében.
+                  {service1text}
+
                   </p>
                 </div>
               </div>
@@ -77,14 +76,10 @@ const WhyChouseUs2About = () => {
                 </span>
                 <div>
                   <h4 className="font-bold xl:text-2.3xl text-2xl pb-7 text-secondary leading-[1.2] font-sora">
-                    Páciensközpontú megközelítés
+                   {service2title}
                   </h4>
                   <p className="text-base leading-30 text-gary fobt-normal">
-                    Az Ön kényelmét és jólétét helyezzük előtérbe. Az{" "}
-                    <strong>azonnali, még aznapi korona eljárásoktól</strong> a
-                    kíméletes bölcsességfog-eltávolításig, együttérző
-                    személyzetünk elkötelezett amellett, hogy minden látogatása
-                    pozitív, <strong>stresszmentes élmény</strong> legyen.
+                  {service2text}
                   </p>
                 </div>
               </div>

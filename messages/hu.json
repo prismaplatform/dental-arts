@@ -23,7 +23,7 @@
     "subline": "A ragyogó mosolyhoz vezető útja itt kezdődik.",
     "analogDentistry": "Analóg",
     "digitalDentistry": "Digitális",
-    "footer":"fogászat"
+    "footer": "fogászat"
   },
   "mission": {
     "title": "# Az Ön Mosolya, A Mi Küldetésünk",
@@ -40,7 +40,7 @@
   "services": {
     "title": "# Szolgáltatásaink",
     "subtitle": "Professzionális fogászati ellátás minden korosztálynak.",
-    "button":"Szolgáltatásaink"
+    "button": "Szolgáltatásaink"
   },
   "gallery": {
     "title": "# Galéria",
@@ -50,7 +50,6 @@
   "testimonials": {
     "title": "# Páciens Vélemények",
     "subtitle": "Mosolyok, amik minket inspirálnak"
-    
   },
   "trustFactors": {
     "reliable": "Slow dentist treat.",
@@ -71,10 +70,10 @@
     "emailPlaceholder": "Email címed",
     "subscribe": "Feliratkozás",
     "privacy": "Elolvastam és elfogadom az ",
-    "link":"Adatvédelmi irányelveket."
+    "link": "Adatvédelmi irányelveket."
   },
   "team": {
-  "title": "Csapatunk"
+    "title": "Csapatunk"
   },
   "footer": {
     "logoText": "Elkötelezettek vagyunk a kivételes egészségügyi ellátás iránt, együttérzéssel, szakértelemmel és innovációval. Csapatunk elhivatottan dolgozik az Ön egészségéért.",
@@ -104,5 +103,94 @@
     "copyright": "Copyright",
     "copyright2": "Minden jog fenntartva",
     "developerCredit": "Készült és fejlesztve"
+  },
+  "about": {
+    "hero": {
+      "title": "Rólunk",
+      "home": "Főoldal"
+    },
+    "about": {
+      "subtitle": "# Miért válassza a Dental Arts-ot?",
+      "title": "A ragyogó mosolyhoz vezető útja itt kezdődik.",
+      "content": "A soproni Dental Artsnál hisszük, hogy a kiváló fogászati ellátás túlmutat a kezeléseken. Ez egy személyre szabott élmény, mely a bizalomra és a kényelemre épül, ahol az Ön szájhigiéniája és gyönyörű mosolya a legfőbb prioritásunk.",
+      "service1title": "Képzett szakemberek, modern ellátás",
+      "service1text": "Tapasztalt fogorvosainkból és szakembereinkből álló csapatunk többéves szakértelemmel és a legmagasabb szintű ellátás iránti elkötelezettséggel rendelkezik. Tudásukat korszerű technológiával ötvözzük a pontos és hatékony kezelések érdekében.",
+      "service2title": "Páciensközpontú megközelítés",
+      "service2text": "Az Ön kényelmét és jólétét helyezzük előtérbe. Az azonnali, még aznapi korona eljárásoktól a kíméletes bölcsességfog-eltávolításig, együttérző személyzetünk elkötelezett amellett, hogy minden látogatása pozitív, stresszmentes élmény legyen."
+    },
+    "team": {
+      "subtitle": "# Dental Arts",
+      "title": "Unser Team",
+      "sectiontitle": "Dental Arts Praxis – Ahol a szakértelem családi hagyomány",
+      "sectioncontent": "A Dental Arts Praxis nem csupán egy fogászati rendelő. Generációkon átívelően őrzik a szakmai precizitást, a minőséget és az emberközpontú hozzáállást. Nálunk a fogászat nemcsak hivatás, hanem örökség: a családi értékeken alapuló gondoskodás és bizalom minden egyes kezelést áthat. Hiszünk benne, hogy a legmagasabb színvonalú ellátás a törődésből, az alaposságból és a hagyomány iránti elkötelezettségből fakad és ezt minden mosolyban visszatükröződni látjuk."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Kapcsolat",
+      "home": "Főoldal"
+    },
+    "form": {
+      "subtitle": "# Időpontfoglalás",
+      "title": "Foglaljon időpontot vagy tegye fel kérdését!",
+      "content": "Ha időpontot szeretne foglalni vizsgálatra vagy kezelésre, vagy bármilyen kérdése van szolgáltatásainkkal kapcsolatban, kérjük töltse ki az alábbi űrlapot. Munkatársaink hamarosan felveszik Önnel a kapcsolatot.",
+      "fields": {
+        "name": "Neved",
+        "email": "Email címed",
+        "phone": "Telefonszámod",
+        "message": "Írj üzenetet..."
+      },
+      "gdpr": {
+        "part1": "Elfogadom a személyes adataim kezelését az",
+        "link": "Adatvédelmi Szabályzat",
+        "part2": "szerint, és hozzájárulok, hogy felvegyék velem a kapcsolatot időpontfoglalás ügyében."
+      },
+      "privacy": "Elfogadom a személyes adataim kezelését az Adatvédelmi Szabályzat szerint, és hozzájárulok, hogy felvegyék velem a kapcsolatot időpontfoglalás ügyében.",
+      "submit": "Időpont foglalása",
+      "submitting": "Foglalás folyamatban..."
+    },
+    "info": {
+      "subtitle": "Dental Arts Kapcsolat:",
+      "emailLabel": "Email cím",
+      "phoneLabel": "Telefonszám",
+      "addressLabel": "Cím"
+    }
+  },
+  "fall": {
+    "hero": {
+      "title": "Esettanulmányok",
+      "home": "Főoldal"
+    },
+    "home": {
+      "subtitle": "Esettanulmányok",
+      "title": "Látványos változások – előtte és utána."
+    }
+  },
+  "galleryPage": {
+    "hero": {
+      "title": "Galéria",
+      "home": "Főoldal"
+    },
+    "home": {
+      "subtitle": "# Galéria",
+      "title": "Pillanatok a rendelő mindennapjaiból"
+    }
+  },
+  "servicePage": {
+    "hero": {
+      "title": "Szolgáltatások",
+      "home": "Főoldal"
+    },
+    "highlight": {
+      "title": "# Kiemelt szolgáltatás",
+      "text1": "Digitális diagnosztika",
+      "text2": "Esztétikus mosoly"
+    },
+    "service": {
+      "subtitle": "# Szolgáltatások",
+      "title": "Professzionális fogászati szolgáltatások",
+      "pagination1": "Megjelenítve:",
+      "pagination2": "szolgáltatás"
+    }
   }
 }
