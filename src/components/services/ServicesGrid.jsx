@@ -2,24 +2,26 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import ServiceCard from './ServiceCard'
 import ServicesPagination from './ServicesPagination'
-import { servicesData, SERVICES_PER_PAGE } from '../../data/services'
+
+const SERVICES_PER_PAGE = 6 // Define this constant here since we're removing the import
 
 const ServicesGrid = ({
   title = "Szolgáltatásaink",
   subtitle = "# Amit Kínálunk",
   showPagination = true,
   itemsPerPage = SERVICES_PER_PAGE,
-  category = null
+  category = null,
+  services = [] // Add services prop to receive data from parent
 }) => {
   const [currentPage, setCurrentPage] = useState(1)
   
   // Filter services by category if provided
   const filteredServices = useMemo(() => {
     if (category) {
-      return servicesData.filter(service => service.category === category)
+      return services.filter(service => service.category === category)
     }
-    return servicesData
-  }, [category])
+    return services
+  }, [category, services]) // Add services to dependency array
   
   // Calculate pagination
   const totalPages = Math.ceil(filteredServices.length / itemsPerPage)
@@ -38,6 +40,11 @@ const ServicesGrid = ({
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+  
+  // Reset current page when services change
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [services])
   
   return (
     <section className="lg:py-120 md:py-100 sm:py-80 py-60 services-grid-section">

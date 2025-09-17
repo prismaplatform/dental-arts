@@ -5,17 +5,15 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { servicesData } from '../../data/services';
-import { useTranslations } from "next-intl";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
-const Services = () => {
+const Services = ({services}) => {
   const t = useTranslations("services");
   return (
     <section
@@ -76,48 +74,75 @@ const Services = () => {
             }}
             className="services-slider"
           >
-            {servicesData.map((service) => {
+            {services.services.map((service) => {
               return (
                 <SwiperSlide key={service.id} className="group h-full">
                   <div
-                    className="services-box flex flex-col justify-between h-full min-h-[400px] relative xxl:p-40 p-30 rounded-xl overflow-hidden"
+                    className="services-box flex flex-col justify-between h-full min-h-[400px] relative xxl:p-40 p-30 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                     style={{
                       background: 'linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)',
                       backdropFilter: 'blur(15px)',
-                      border: '1px solid transparent',
-                      borderImageSource: `
-                        radial-gradient(69.43% 69.43% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),
-                        radial-gradient(60% 51.57% at 50% 50%, ${service.shadowColorHex} 0%, rgba(${parseInt(service.shadowColorHex.slice(1,3), 16)}, ${parseInt(service.shadowColorHex.slice(3,5), 16)}, ${parseInt(service.shadowColorHex.slice(5,7), 16)}, 0) 100%),
-                        radial-gradient(54.8% 53% at 50% 50%, #151515 0%, rgba(21, 21, 21, 0) 100%)
-                      `,
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderImageSlice: '1',
                     }}
                   >
-                    <div
-                      className={`${service.bgColor} size-90 flex items-center justify-center mb-25 relative rounded-full`}
-                      style={{
-                        boxShadow: `0px 0px 20px 0px ${service.shadowColorHex}73`,
-                      }}
-                    >
-                      <Image
-                        src={`/assets/icons/${service.icon}`}
-                        alt={service.title}
-                        width={55}
-                        height={55}
-                        className="text-white transition-colors duration-300"
-                      />
+                    {/* Service Image - Improved styling */}
+                    <div className="relative mb-25 flex items-center justify-center">
+                      <div 
+                        className="relative w-100  h-100 rounded-full overflow-hidden border-4 border-[#B122E5] shadow-[0_0_30px_rgba(177,34,229,0.4)] group-hover:shadow-[0_0_40px_rgba(177,34,229,0.6)] transition-all duration-500"
+                      >
+                        {service.main_image_url ? (
+                          <Image
+                            src={`https://tester10.prismaweb.ro/uploads/services/${service.main_image_url}`}
+                            alt={service.title}
+                            fill
+                            
+                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            onError={(e) => {
+                              // Fallback to icon if image fails
+                              e.target.style.display = 'none';
+                              e.target.nextSibling.style.display = 'flex';
+                            }}
+                          />
+                        ) : null}
+                        
+                        {/* Fallback icon */}
+                        <div 
+                          className="absolute inset-0 bg-gradient-to-br from-[#B122E5] to-[#8A1CB8] flex items-center justify-center"
+                          style={{ display: service.main_image_url ? 'none' : 'flex' }}
+                        >
+                          <span className="text-white text-3xl">🦷</span>
+                        </div>
+                      </div>
+                      
+                      {/* Animated background glow */}
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#B122E5] to-transparent opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-xl"></div>
                     </div>
 
-                      <h5
-                        className="xxl:text-2xl text-xl font-bold font-sora relative text-white duration-500 hover:underline"
-                      >
-                        {service.title}
-                      </h5>
+                    {/* Service Title */}
+                    <h5 className="xxl:text-2xl text-xl font-bold font-sora relative text-white duration-500 hover:text-[#B122E5] cursor-pointer mb-4">
+                      {service.title}
+                    </h5>
 
-                    <p className="pt-10 pb-20 relative text-base text-gray-200 font-normal duration-500">
-                      {service.description}
+                    {/* Service Description */}
+                    <p className="relative text-base text-gray-300 font-normal duration-500 leading-relaxed flex-grow">
+                      {service.short_description}
                     </p>
 
+                    {/* Service Price (if available) */}
+                    {service.price && (
+                      <div className="mt-6 pt-4 border-t border-[#FFFFFF1A]">
+                        <div className="flex items-center justify-between">
+                          <span className="text-gray-400 text-sm">Starting from</span>
+                          <span className="px-4 py-2 bg-gradient-to-r from-[#B122E5] to-[#8A1CB8] text-white text-sm font-bold rounded-full shadow-lg">
+                            ${service.price}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Hover overlay effect */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#B122E5]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"></div>
                   </div>
                 </SwiperSlide>
               );

@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
         {/* Kép szekció */}
         <div className="relative h-200 overflow-hidden rounded-t-xl">
           <Image
-            src={`/assets/img/services/${service.image}`}
+             src={`https://tester10.prismaweb.ro/uploads/services/${service.main_image_url}`}
             alt={service.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700 h-200"
@@ -32,7 +32,7 @@ const ServiceCard = ({ service }) => {
             </h5>
             
             <p className="relative text-base leading-relaxed text-[#6f6f6f] font-normal group-hover:text-white/90 duration-500 mb-6">
-              {service.description}
+              {service.short_description}
             </p>
           </div>
 
@@ -43,11 +43,7 @@ const ServiceCard = ({ service }) => {
                 <p className="font-sora text-lg font-bold text-secondary group-hover:text-white duration-500">
                   {service.price || '250'} €-tól
                 </p>
-                {service.duration && (
-                  <p className="text-sm text-gray-500 group-hover:text-white/70 duration-500 mt-1">
-                    Kezelési idő: {service.duration}
-                  </p>
-                )}
+               
               </div>
               
               <Link

@@ -193,5 +193,11 @@
       "pagination1": "Angezeigt:",
       "pagination2": "Dienstleistung"
     }
+  },
+   "termsPage": {
+    "hero": {
+      "title": "Nutzungsbedingungen",
+      "home": "Startseite"
+    }
   }
 }

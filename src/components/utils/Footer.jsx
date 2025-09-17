@@ -4,10 +4,12 @@ import Image from "next/image";
 import Copyrights from "./Copyrights";
 import Cta from "./Cta";
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import ServiceItem from "../services/ServiceItem";
 const Footer = () => {
 const t = useTranslations("footer");
 const tHeader = useTranslations("Header");
+const locale = useLocale();
   return (
     <>
       <footer className="lg:pt-120 md:pt-80 pt-60 relative bg-[linear-gradient(63.97deg,_#2E003A_-0.01%,_#8000A0_100%)]">
@@ -104,49 +106,10 @@ const tHeader = useTranslations("Header");
               <div className="lg:col-span-3 sm:col-span-6 col-span-12">
                 <div className="lg:border-l lg:border-[#D8D8D8] xxl:pl-40 xl:pl-25 lg:pl-20 xxl:ml-20 lg:ml-10">
                   <h5 className="font-bold xxl:text-2xxl text-xxl capitalize pb-18 font-sora text-white">
-                    Szolgáltatások
+                     {tHeader("services")}
                   </h5>
                   <ul>
-                    <li className="pb-16">
-                      <h5
-                      
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Általános fogászati ellátás
-                      </h5>
-                    </li>
-                    <li className="pb-16">
-                      <h5
-                        
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Esztétikai fogászat
-                      </h5>
-                    </li>
-                    <li className="pb-16">
-                      <h5
-                       
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Implantáció és fogpótlás
-                      </h5>
-                    </li>
-                    <li className="pb-16">
-                      <h5
-                      
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Szájsebészet
-                      </h5>
-                    </li>
-                    <li>
-                      <h5
-                       
-                        className="text-white font-sora hover:text-primary duration-500 capitalize"
-                      >
-                        Gyermekfogászat
-                      </h5>
-                    </li>
+                    <ServiceItem locale={locale}/>
                   </ul>
                 </div>
               </div>

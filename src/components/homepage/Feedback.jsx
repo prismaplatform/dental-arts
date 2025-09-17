@@ -8,42 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
+import Image from "next/image";
 
-const Feedback = () => {
-  const testimonials = [
-    {
-  id: 1,
-  rating: 5,
-  text: "Nagyon kedves személyzet, gyönyörű környezet, csak ajánlani tudom. Gondos odafigyeléssel dolgoznak, nagyon szép munkát végeznek! Csak ajánlani tudom, ha tehetném minden nap itt lennék!",
-  image: "/assets/img/review-img-1.jpg",
-  name: "Ágnes Margaréta Janka",
-  position: "elégedett páciens",
-},
-{
-  id: 2,
-  rating: 5,
-  text: "Nagyon szuper hely mindenki nagyon profin dolgozik bölcsességfog húzásra érkeztem🦷",
-  image: "/assets/img/review-img-2.jpg",
-  name: "Gina Boda",
-  position: "elégedett páciens",
-},
-{
-  id: 3,
-  rating: 5,
-  text: "Brauchte wieder einmal ein Implatat, das mir der Sohn von Doktore eingesetzt hat. Möchte nur sagen er arbeitet genauso gut wie sein Vater. Danke und Daumen hoch!",
-  image: "/assets/img/review-img-2.jpg",
-  name: "Robert Schuster",
-  position: "elégedett páciens",
-},
-{
-  id: 4,
-  rating: 5,
-  text: "Ich habe meine Zähne von dr. Horvath jetzt seit 2005. Das beste Zahnarzt Team überhaupt. Tolle Betreuung und faire Preise. Kann ich mit gutem Gefühl weiter empfehlen, was ich auch schon gemacht habe.",
-  image: "/assets/img/review-img-2.jpg",
-  name: "Zwerg Zwerg",
-  position: "elégedett páciens",
-},
-  ];
+const Feedback = ({feedback}) => {
 
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -117,18 +84,20 @@ const t = useTranslations("testimonials");
           }}
           className="reviewtwo-slider"
         >
-          {testimonials.map((testimonial) => (
+          {feedback.feedbacks.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="group">
               <div className="relative bg-white md:p-40 p-15 border border-lightgary duration-500 group-hover:bg-primary">
                 <ul className="flex text-sm gap-4 mb-10">
                   {renderStars(testimonial.rating)}
                 </ul>
                 <p className="md:text-2xl text-xl md:leading-34 font-medium pb-21 text-gary duration-500 group-hover:text-white">
-                  {testimonial.text}
+                  {testimonial.description}
                 </p>
                 <div className="pt-12 flex items-center gap-15">
-                  <img
-                    src={testimonial.image}
+                  <Image
+                  width={60}
+                  height={60}
+                   src={`https://tester10.prismaweb.ro/uploads/feedback/${testimonial.image}`}
                     alt={testimonial.name}
                     className="rounded-full w-50 h-50 object-cover"
                   />

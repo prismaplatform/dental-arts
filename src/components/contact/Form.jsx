@@ -4,18 +4,18 @@ import React, { useState } from "react";
 import {
   ArrowRight,
   Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
   Mail,
   Phone,
   MapPin,
-  Stethoscope,
 } from "lucide-react";
 import Map from "./Map";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+
 const Form = () => {
+  const t = useTranslations("contact");
+  const locale = useLocale();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +26,38 @@ const Form = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "success" or "error"
+
+  // Lokalizált hibaüzenetek
+  const getLocalizedError = (key, fallback) => {
+    const messages = {
+      hu: {
+        nameRequired: "Név megadása kötelező",
+        emailRequired: "Email cím megadása kötelező",
+        emailInvalid: "Érvényes email címet adjon meg",
+        phoneRequired: "Telefonszám megadása kötelező",
+        messageRequired: "Írjon üzenetet",
+        gdprRequired: "Elfogadása kötelező az adatvédelmi tájékoztatónak",
+        submitSuccess: "Üzenet sikeresen elküldve!",
+        submitError: "Hiba történt az üzenet küldése során. Kérjük, próbálja újra.",
+        networkError: "Hálózati hiba történt. Kérjük, ellenőrizze internetkapcsolatát."
+      },
+      de: {
+        nameRequired: "Name ist erforderlich",
+        emailRequired: "E-Mail-Adresse ist erforderlich",
+        emailInvalid: "Geben Sie eine gültige E-Mail-Adresse ein",
+        phoneRequired: "Telefonnummer ist erforderlich",
+        messageRequired: "Schreiben Sie eine Nachricht",
+        gdprRequired: "Die Zustimmung zur Datenschutzerklärung ist erforderlich",
+        submitSuccess: "Nachricht erfolgreich gesendet!",
+        submitError: "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
+        networkError: "Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung."
+      }
+    };
+    
+    return messages[locale]?.[key] || fallback;
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -34,6 +66,7 @@ const Form = () => {
       [name]: type === "checkbox" ? checked : value,
     }));
 
+    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -46,26 +79,25 @@ const Form = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Név megadása kötelező";
+      newErrors.name = getLocalizedError('nameRequired', 'Name is required');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email cím megadása kötelező";
+      newErrors.email = getLocalizedError('emailRequired', 'Email is required');
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Érvényes email címet adjon meg";
+      newErrors.email = getLocalizedError('emailInvalid', 'Please enter a valid email');
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Telefonszám megadása kötelező";
+      newErrors.phone = getLocalizedError('phoneRequired', 'Phone number is required');
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Írjon üzenetet";
+      newErrors.message = getLocalizedError('messageRequired', 'Please write a message');
     }
 
     if (!formData.gdprConsent) {
-      newErrors.gdprConsent =
-        "Elfogadása kötelező az adatvédelmi tájékoztatónak";
+      newErrors.gdprConsent = getLocalizedError('gdprRequired', 'GDPR consent is required');
     }
 
     return newErrors;
@@ -81,29 +113,53 @@ const Form = () => {
     }
 
     setIsSubmitting(true);
+    setSubmitMessage("");
 
     try {
-      console.log("Beküldött adatok:", formData);
-
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        gdprConsent: false,
+const response = await fetch('/api/contact', {
+  method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          gdprConsent: formData.gdprConsent
+        }),
       });
 
-      alert("Időpontfoglalás sikeres!");
+      console.log('Contact response status:', response.status);
+      const data = await response.json();
+      console.log('Contact response data:', data);
+
+      if (data.success && response.status !== 400) {
+        setSubmitMessage(getLocalizedError('submitSuccess', 'Message sent successfully!'));
+        setMessageType("success");
+        
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          gdprConsent: false,
+        });
+        setErrors({});
+      } else {
+        setSubmitMessage(data.message || getLocalizedError('submitError', 'An error occurred'));
+        setMessageType("error");
+      }
     } catch (error) {
-      console.error("Hiba a beküldés során:", error);
-      alert("Hiba történt az időpontfoglalás során. Kérjük, próbálja újra.");
+      console.error('Contact form error:', error);
+      setSubmitMessage(getLocalizedError('networkError', 'Network error occurred'));
+      setMessageType("error");
     } finally {
       setIsSubmitting(false);
     }
   };
-  const t = useTranslations("contact");
+
   return (
     <section className="lg:py-120 md:py-80 py-60">
       <div className="container">
@@ -122,6 +178,17 @@ const Form = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="bg-white">
+              {/* Success/Error Message */}
+              {submitMessage && (
+                <div className={`mb-6 p-4 rounded-lg text-sm ${
+                  messageType === "success" 
+                    ? "bg-green-100 text-green-800 border border-green-300" 
+                    : "bg-red-100 text-red-800 border border-red-300"
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
+
               <div className="grid grid-cols-12 sm:gap-x-30">
                 <div className="lg:col-span-12 col-span-12">
                   <input
@@ -133,6 +200,7 @@ const Form = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder={t("form.fields.name")}
+                    disabled={isSubmitting}
                   />
                   {errors.name && (
                     <p className="text-red-500 text-sm mb-20">{errors.name}</p>
@@ -150,6 +218,7 @@ const Form = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder={t("form.fields.email")}
+                    disabled={isSubmitting}
                   />
                   {errors.email && (
                     <p className="text-red-500 text-sm mb-20">{errors.email}</p>
@@ -167,6 +236,7 @@ const Form = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder={t("form.fields.phone")}
+                    disabled={isSubmitting}
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-sm mb-20">{errors.phone}</p>
@@ -183,6 +253,7 @@ const Form = () => {
                     className={`w-full h-180 p-20 border ${
                       errors.message ? "border-red-500" : "border-[#D8D8D8]"
                     } mb-4 rounded-[10px] outline-none focus:border-primary transition-colors resize-none`}
+                    disabled={isSubmitting}
                   />
                   {errors.message && (
                     <p className="text-red-500 text-sm mb-18">
@@ -203,6 +274,7 @@ const Form = () => {
                         checked={formData.gdprConsent}
                         onChange={handleInputChange}
                         className="w-20 h-20 text-blue-600 bg-gray-100 border-gray-300 rounded-sm"
+                        disabled={isSubmitting}
                       />
                       <label
                         htmlFor="gdprConsent"
@@ -236,7 +308,7 @@ const Form = () => {
                   >
                     <span className="flex items-center gap-2">
                       {isSubmitting ? t("form.submitting") : t("form.submit")}
-                      <ArrowRight size={16} />
+                      {!isSubmitting && <ArrowRight size={16} />}
                     </span>
                   </button>
                 </div>
@@ -283,15 +355,6 @@ const Form = () => {
                     Balf, Sopron, Fürdő sor 12, 9494 Hungary
                   </h6>
                 </li>
-                {/* <li>
-                  <span className="text-white pb-5 block flex items-center gap-2">
-                    <Stethoscope size={16} />
-                    Téma
-                  </span>
-                  <h6 className="text-white block font-bold font-sora">
-                    Orvosi és Fogászati szolgáltatások
-                  </h6>
-                </li> */}
               </ul>
               <ul className="flex items-center gap-10 xxl:pt-48 pt-42">
                 <li>
@@ -304,36 +367,6 @@ const Form = () => {
                     <Facebook size={18} />
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="https://x.com/" 
-                    className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Twitter size={18} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.instagram.com/" 
-                    className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram size={18} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.youtube.com/" 
-                    className="flex items-center justify-center xxl:size-50 size-40 max-xxl:text-sm rounded-full hover:bg-primary duration-500 hover:text-white bg-white text-black" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Youtube size={18} />
-                  </Link>
-                </li> */}
               </ul>
             </div>
           </div>

@@ -192,5 +192,11 @@
       "pagination1": "Megjelenítve:",
       "pagination2": "szolgáltatás"
     }
+  },
+   "termsPage": {
+    "hero": {
+      "title": "Felhasználási feltételek",
+      "home": "Főoldal"
+    }
   }
 }

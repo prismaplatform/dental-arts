@@ -68,7 +68,7 @@
 	}
 
 	header li.menu-item-children > a:before {
-		@apply content-[''] bg-[url(/img/down-arrow.svg)] bg-no-repeat absolute top-1/2 -translate-y-1/2 right-28 size-8;
+		@apply content-['']  bg-no-repeat absolute top-1/2 -translate-y-1/2 right-28 size-8;
 	}
 	@media (max-width: 1400px) {
     header li.menu-item-children > a:before {
@@ -144,7 +144,7 @@
 		@apply border-b border-[#8f8f8f69];
 	}
 	.mobile-nav ul > li.menu-item-has-children:before {
-		@apply content-[''] bg-[url(/img/down-arrow.svg)] bg-no-repeat absolute top-20 right-0 size-10 rotate-[-90deg] text-white font-['Awesome'] inline-block pr-3 align-middle font-black text-[11px];
+		@apply content-['']  bg-no-repeat absolute top-20 right-0 size-10 rotate-[-90deg] text-white font-['Awesome'] inline-block pr-3 align-middle font-black text-[11px];
 	}
 	.mobile-nav > ul li > a {
 		@apply text-sm leading-26 capitalize text-black;

@@ -1,28 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import {
+  ChevronLeft, // For "All Services" navigation
+  ChevronRight,
+  Facebook,
+  Mail,
+  MapPin, // Import Plus icon for accordion closed state
+  Minus,
+  Phone,
+  Plus,
+  Stethoscope
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
-  servicesData,
   getServiceBySlug,
-  getServicesByCategory,
+  getServicesByCategory
 } from "../../data/services";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  Stethoscope,
-  Twitter,
-  Youtube,
-  Plus, // Import Plus icon for accordion closed state
-  Minus, // Import Minus icon for accordion open state
-  ChevronLeft, // For "All Services" navigation
-  ChevronRight, // For "Book Appointment" navigation
-  CheckCircle, // For features list
-} from "lucide-react";
 
 // Dummy FAQ data for demonstration
 const faqData = [

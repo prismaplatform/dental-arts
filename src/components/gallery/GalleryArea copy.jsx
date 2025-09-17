@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import LightGallery from "lightgallery/react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -12,21 +12,45 @@ import "lightgallery/css/lg-zoom.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-const GalleryPage = ({ title, subtitle, images }) => {
+const GalleryPage = ({title,subtitle}) => {
+  const images = [
+    "/assets/img/gallery/1.webp",
+
+    "/assets/img/gallery/7.webp",
+    "/assets/img/gallery/8.webp",
+    "/assets/img/gallery/9.webp",
+    "/assets/img/gallery/10.webp",
+    "/assets/img/gallery/11.webp",
+    "/assets/img/gallery/12.webp",
+    "/assets/img/gallery/13.webp",
+    "/assets/img/gallery/14.webp",
+    "/assets/img/gallery/15.webp",
+    "/assets/img/gallery/16.webp",
+    "/assets/img/gallery/17.webp",
+    "/assets/img/gallery/18.webp",
+    "/assets/img/gallery/19.webp",
+    "/assets/img/gallery/20.webp",
+    "/assets/img/gallery/21.webp",
+    "/assets/img/gallery/22.webp",
+    "/assets/img/gallery/23.webp",
+    "/assets/img/gallery/24.webp",
+    "/assets/img/gallery/25.webp",
+    "/assets/img/gallery/26.webp",
+    "/assets/img/gallery/27.webp",
+    "/assets/img/gallery/28.webp",
+    "/assets/img/gallery/29.webp",
+    "/assets/img/gallery/30.webp",
+    "/assets/img/gallery/31.webp",
+    "/assets/img/gallery/32.webp",
+    "/assets/img/gallery/33.jpg",
+    "/assets/img/gallery/34.jpg",
+    "/assets/img/gallery/35.jpg",
+  ];
+
   // Thumbnail URL generálása
   const getThumbnailUrl = (imageUrl) => {
     return imageUrl;
   };
-  const [loadedImages, setLoadedImages] = useState([]);
-
-  useEffect(() => {
-    // Add full URL to images
-    const fullUrls = images.map((img) => ({
-      ...img,
-      image_url: `https://tester10.prismaweb.ro/uploads/gallery/${img.image_url}`,
-    }));
-    setLoadedImages(fullUrls);
-  }, [images]);
 
   const onInit = () => {
     console.log("LightGallery sikeresen inicializálva!");
@@ -140,15 +164,15 @@ const GalleryPage = ({ title, subtitle, images }) => {
                 }}
               >
                 <Masonry gutter="16px">
-                  {loadedImages.map((image, index) => (
+                  {images.map((image, index) => (
                     <div
                       key={`gallery-item-${index}`}
                       className="gallery-item"
-                      data-src={image.image_url}
-                      data-thumb={getThumbnailUrl(image.image_url)}
+                      data-src={image}
+                      data-thumb={getThumbnailUrl(image)}
                     >
                       <img
-                        src={image.image_url}
+                        src={image}
                         alt={`Gallery image ${index + 1}`}
                         loading="lazy"
                         style={{

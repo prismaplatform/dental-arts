@@ -8,7 +8,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { slideUp } from './animation';
 import { ArrowRight } from 'lucide-react';
 import styles from './style.module.scss';
-export default function Home({ animateHero = false }) {
+export default function Landing({ animateHero = false }) {
 
   const firstText = useRef(null);
   const secondText = useRef(null);

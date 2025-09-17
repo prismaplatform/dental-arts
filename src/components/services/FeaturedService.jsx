@@ -16,14 +16,14 @@ const FeaturedService = ({
 			<div className="grid grid-cols-12 xxl:gap-50 gap-25">
 				<div className="lg:col-span-6 col-span-12">
 					<div className="relative">
-						<img src={featuredService?.image} alt="img" className="relative sm:rounded-tr-[20px] rounded-tr-[10px] sm:rounded-bl-[20px] rounded-bl-[10px] w-full"/>
+						<img src={`https://tester10.prismaweb.ro/uploads/services/${featuredService.main_image_url}`} alt="img" className="relative sm:rounded-tr-[20px] rounded-tr-[10px] sm:rounded-bl-[20px] rounded-bl-[10px] w-full"/>
 					</div>
 				</div>
 				<div className="lg:col-span-6 col-span-12">
 					<div>
 						<span className="capitalize font-semibold xxl:text-xxl xl:text-xl sm:text-lg text-base text-primary font-sora pb-6 block">{title}</span>
 						<h2 className="xxl:text-5xl lg:text-4.65xl md:text-3.8xl sm:text-3xl text-2.5xl font-semibold text-secondary leading-[1.2] font-sora">{featuredService?.title}</h2>
-						<p className="text-base text-gary font-normal xxl:leading-30 xl:leading-28 leading-26 mt-25 xl:pb-50 pb-40 w-[fit-content]">{featuredService?.description}</p>
+						<p className="text-base text-gary font-normal xxl:leading-30 xl:leading-28 leading-26 mt-25 xl:pb-50 pb-40 w-[fit-content]">{featuredService?.short_description}</p>
 					</div>
 					<div className="about-text-two gap-20 duration-500 max-sm:flex-wrap flex justify-between relative sm:after:absolute sm:after:h-full sm:after:w-px sm:after:bg-[#D8D8D8] sm:after:left-1/2">
 						<div className="flex sm:w-[45%] w-full items-center">

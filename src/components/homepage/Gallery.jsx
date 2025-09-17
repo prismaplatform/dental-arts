@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LightGallery from "lightgallery/react";
 // LightGallery CSS importok
 import "lightgallery/css/lightgallery.css";
@@ -11,19 +11,21 @@ import lgZoom from "lightgallery/plugins/zoom";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-const Gallery = () => {
-  const images = [
-    "/assets/img/gallery/1.webp",
-    "/assets/img/gallery/7.webp",
-    "/assets/img/gallery/19.webp",
-    "/assets/img/gallery/29.webp",
-  ];
-
+const Gallery = ({ images }) => {
   // Thumbnail URL generálása - ha van külön thumbnail kép
   const getThumbnailUrl = (imageUrl) => {
     return imageUrl;
   };
+  const [loadedImages, setLoadedImages] = useState([]);
 
+  useEffect(() => {
+    // Add full URL to images
+    const fullUrls = images.map((img) => ({
+      ...img,
+      image_url: `https://tester10.prismaweb.ro/uploads/gallery/${img.image_url}`,
+    }));
+    setLoadedImages(fullUrls);
+  }, [images]);
   const onInit = () => {
     console.log("LightGallery sikeresen inicializálva!");
   };
@@ -95,9 +97,8 @@ const Gallery = () => {
       document.head.removeChild(style);
     };
   }, []);
-const t = useTranslations("gallery");
+  const t = useTranslations("gallery");
   return (
-    
     <>
       <section className="lg:pt-120 md:pt-80 pt-60 relative section-about-two">
         <div className="container ">
@@ -123,8 +124,9 @@ const t = useTranslations("gallery");
             currentPagerPosition="middle"
             thumbnailContainer={true}
             thumbsPosition="bottom"
+            selector=".gallery-item"
           >
-            {images.map((image, index) => (
+            {loadedImages.map((image, index) => (
               <a
                 key={`gallery-item-${index}`}
                 className={`gallery-grid-item ${
@@ -132,12 +134,12 @@ const t = useTranslations("gallery");
                     ? "md:col-span-2"
                     : ""
                 }`}
-                style={{ backgroundImage: `url(${image})` }}
-                data-src={image}
-                data-thumb={getThumbnailUrl(image)}
+                style={{ backgroundImage: `url(${image.image_url})` }}
+                data-src={image.image_url}
+                data-thumb={getThumbnailUrl(image.image_url)}
               >
                 <img
-                  src={image}
+                  src={image.image_url}
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover rounded-xl opacity-0"
                   loading="lazy"
