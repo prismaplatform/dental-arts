@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import {
   ChevronDown,
   Menu,
@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+
 import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
@@ -226,7 +226,10 @@ const Header = () => {
                   <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/about-us">{t("aboutUs")}</Link>
                   </li>
-                  <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080] menu-item-children group relative">
+                    <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
+                    <Link href="/services"> {t("services")}</Link>
+                  </li>
+                  {/* <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/services" className="flex items-center">
                       {t("services")}
                       <ChevronDown
@@ -240,7 +243,7 @@ const Header = () => {
                       </li>
                      
                     </ul>
-                  </li>
+                  </li> */}
                   <li className="navbar-dropdown [text-shadow:_0_0_45px_#00000080]">
                     <Link href="/cases">{t("cases")}</Link>
                   </li>
