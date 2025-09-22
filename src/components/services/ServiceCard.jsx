@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, locale = 'hu', messages = {} }) => {
+  // Messages kezelése - közvetlenül a messages objektumból
+  const t = messages
+
   return (
     <div className="lg:col-span-4 md:col-span-6 col-span-12 group">
       <div className="services-section shadow-[0px_0px_15px_0px_rgba(0,0,0,0.07)] relative overflow-hidden before:w-full before:h-0 before:bg-gradient-to-t before:from-primary before:to-secondary before:absolute before:bottom-0 before:left-0 group-hover:before:h-full before:duration-500 rounded-xl h-full flex flex-col">
@@ -17,11 +17,6 @@ const ServiceCard = ({ service }) => {
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700 h-200"
           />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div> */}
-          
-         
-
-          
         </div>
 
         {/* Tartalom szekció */}
@@ -41,17 +36,17 @@ const ServiceCard = ({ service }) => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="font-sora text-lg font-bold text-secondary group-hover:text-white duration-500">
-                  {service.price || '250'} €-tól
+                  {service.price || '250'} {t?.services?.from || "€-tól"}
                 </p>
                
               </div>
               
-              <Link
+              {/* <Link
                 href={`/szolgaltatasok/${service.id}`}
                 className="inline-flex items-center justify-center w-12 h-12 bg-white/10 group-hover:bg-white/20 backdrop-blur-sm rounded-full text-secondary group-hover:text-white transition-all duration-300 hover:scale-110"
               >
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

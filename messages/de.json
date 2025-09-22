@@ -180,7 +180,13 @@
   "servicePage": {
     "hero": {
       "title": "Dienstleistungen",
-      "home": "Startseite"
+      "home": "Startseite",
+      "noResults": "Keine Ergebnisse gefunden.",
+      "showing": "Angezeigt:",
+      "of": "/",
+      "service": "Dienstleistung",
+      "services": "Dienstleistungen",
+      "from": "€ ab"
     },
     "highlight": {
       "title": "# Hervorgehobene Dienstleistung",
@@ -194,7 +200,7 @@
       "pagination2": "Dienstleistung"
     }
   },
-   "termsPage": {
+  "termsPage": {
     "hero": {
       "title": "Nutzungsbedingungen",
       "home": "Startseite"

@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useTranslations } from "next-intl";
-import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import { slideUp } from './animation';
 import { ArrowRight } from 'lucide-react';
 import styles from './style.module.scss';
+import { Link } from '@/i18n/navigation';
 export default function Landing({ animateHero = false }) {
 
   const firstText = useRef(null);

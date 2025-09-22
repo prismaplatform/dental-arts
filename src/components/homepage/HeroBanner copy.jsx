@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Heart } from 'lucide-react'; 
+import { Link } from '@/i18n/navigation';
 
 const Hero = () => {
   const [patientsCount, setPatientsCount] = useState(0);

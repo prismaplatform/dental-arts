@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import { ArrowRight, User, MessageSquare } from 'lucide-react'; // Importáltuk a User és MessageSquare ikonokat is
+import { Link } from '@/i18n/navigation';
 
 const BlogSlider = () => {
   return (

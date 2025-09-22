@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 const Appointment = () => {
   const [formData, setFormData] = useState({

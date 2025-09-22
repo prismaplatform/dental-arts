@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "@/i18n/navigation";
 
 export default function TestSection() {
   const t = useTranslations("hero");
@@ -110,16 +111,17 @@ export default function TestSection() {
                   {t("analogDentistry")}
                   <br></br> {t("footer")}
                 </h2>
-                <button
+                <Link
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all duration-300 font-medium"
                   style={{
                     fontSize: `1rem`,
                     padding: `0.5rem`,
                     marginTop: `0.5rem`,
                   }}
+                   href={"/services"}
                 >
                   {t("learnMore") || "Tudj meg többet"}
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -137,16 +139,17 @@ export default function TestSection() {
                   {t("digitalDentistry")}
                   <br></br> {t("footer")}
                 </h2>
-                <button
+                <Link
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all duration-300 font-medium"
                   style={{
                     fontSize: `1rem`,
                     padding: `0.5rem`,
                     marginTop: `0.5rem`,
                   }}
+                  href={"/services"}
                 >
                   {t("learnMore") || "Tudj meg többet"}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -192,7 +195,7 @@ export default function TestSection() {
                   {t("analogDentistry")}
                   <br /> {t("footer")}
                 </h2>
-                <button
+                <Link
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all duration-300 font-medium"
                   style={{
                     fontSize: `${getButtonSize(firstImageWidth) * 1.6}rem`,
@@ -200,9 +203,10 @@ export default function TestSection() {
                       getButtonSize(firstImageWidth) * 1.5
                     }rem`,
                   }}
+                   href={"/services"}
                 >
                   {t("learnMore") || "Tudj meg többet"}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -226,7 +230,7 @@ export default function TestSection() {
                   {t("digitalDentistry")}
                   <br /> {t("footer")}
                 </h2>
-                <button
+                <Link
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all duration-300 font-medium"
                   style={{
                     fontSize: `${getButtonSize(secondImageWidth) * 1.6}rem`,
@@ -234,9 +238,10 @@ export default function TestSection() {
                       getButtonSize(secondImageWidth) * 1.5
                     }rem`,
                   }}
+                   href={"/services"}
                 >
                   {t("learnMore") || "Tudj meg többet"}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

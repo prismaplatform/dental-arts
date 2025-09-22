@@ -3,7 +3,7 @@ import FeaturedService from './FeaturedService'
 import ServicesGrid from './ServicesGrid'
 import { getServices } from '@/app/api/services/route';
 
-const ServiceComp = async ({title1, text1, text2, title, subtitle, locale}) => {
+const ServiceComp = async ({title1, text1, text2, title, subtitle, locale,messages}) => {
   const servicesData = await getServices(locale);
   
   // Extract services array from the API response
@@ -25,7 +25,8 @@ const ServiceComp = async ({title1, text1, text2, title, subtitle, locale}) => {
         title={title}
         subtitle={subtitle}
         showPagination={true}
-        services={regularServices} // Pass only regular services (non-featured)
+        services={regularServices}
+        messages={messages} // Pass only regular services (non-featured)
       />
     </>
   )

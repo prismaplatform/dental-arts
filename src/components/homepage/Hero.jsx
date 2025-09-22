@@ -1,8 +1,8 @@
 'use client';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from "next-intl";
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+
 
 const Hero = () => {
  

@@ -1,5 +1,5 @@
-// components/PopularPosts.jsx
-import Link from 'next/link';
+
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 const PopularPosts = ({ posts }) => {

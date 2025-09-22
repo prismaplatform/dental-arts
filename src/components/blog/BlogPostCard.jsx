@@ -1,8 +1,7 @@
 // components/BlogPostCard.jsx
-import { ArrowRight, User, MessageCircle } from 'lucide-react'; // Import User and MessageCircle icons
-import React from 'react';
-import Image from 'next/image'; // Assuming you might want to use Next.js Image component for optimization
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { MessageCircle, User } from 'lucide-react'; // Import User and MessageCircle icons
+
 
 const BlogPostCard = ({ post }) => {
   const { image, date, author, comments, title, category } = post;

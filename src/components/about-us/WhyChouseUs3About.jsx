@@ -1,8 +1,8 @@
 // components/AboutUs.jsx
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react'; // Lucide ikon az "Olvass tovább" gombhoz
+import { Link } from '@/i18n/navigation';
 
 
 

@@ -179,7 +179,13 @@
   "servicePage": {
     "hero": {
       "title": "Szolgáltatások",
-      "home": "Főoldal"
+      "home": "Főoldal",
+      "noResults": "Nincs találat.",
+      "showing": "Megjelenítve:",
+      "of": "/",
+      "service": "szolgáltatás",
+      "services": "szolgáltatás",
+      "from": "€-tól"
     },
     "highlight": {
       "title": "# Kiemelt szolgáltatás",
@@ -193,7 +199,7 @@
       "pagination2": "szolgáltatás"
     }
   },
-   "termsPage": {
+  "termsPage": {
     "hero": {
       "title": "Felhasználási feltételek",
       "home": "Főoldal"

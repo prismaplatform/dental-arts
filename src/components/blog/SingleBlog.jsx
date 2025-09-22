@@ -2,8 +2,9 @@
 
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 const SingleBlog = () => {
   return (
