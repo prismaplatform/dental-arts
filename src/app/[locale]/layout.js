@@ -199,6 +199,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <head>
+        <meta name="robots" content="noindex, nofollow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
