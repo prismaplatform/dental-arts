@@ -89,7 +89,7 @@ const WhyChouseUs2 = () => {
 
             {/* Gomb */}
             <div className="flex justify-end">
-              <Link href="/appointment" className="btn max-xxl:px-30 mt-40">
+              <Link href="/contact" className="btn max-xxl:px-30 mt-40">
                 <span className="flex gap-10">
                   {t2("bookAppointment")} <ArrowRight size={20} />
                 </span>

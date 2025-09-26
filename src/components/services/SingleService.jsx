@@ -206,7 +206,7 @@ const SingleService = ({ slug }) => {
                     Összes szolgáltatás
                   </Link>
                   <Link
-                    href="/appointment"
+                    href="/contact"
                     className="font-bold flex items-center gap-20 text-secondary hover:text-primary transition-colors"
                   >
                     Időpontfoglalás
