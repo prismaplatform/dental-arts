@@ -2,7 +2,7 @@ export async function POST(request) {
   try {
     const body = await request.json();
     
-    const response = await fetch('https://tester10.prismaweb.ro/api/form/create.php', {
+    const response = await fetch('http://adminpanel.dentalarts.hu/api/form/create.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

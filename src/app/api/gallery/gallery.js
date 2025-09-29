@@ -1,7 +1,7 @@
 export async function getGallery() {
   try {
     const response = await fetch(
-      'https://tester10.prismaweb.ro/api/gallery/get_gallery.php',
+      'http://adminpanel.dentalarts.hu/api/gallery/get_gallery.php',
       {
         method: 'GET',
         headers: {

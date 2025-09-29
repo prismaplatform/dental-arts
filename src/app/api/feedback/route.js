@@ -1,7 +1,7 @@
 export async function getFeedback(lang) {
   try {
     const response = await fetch(
-      `https://tester10.prismaweb.ro/api/feedback/get_feedback.php?lang=${lang}`,
+      `http://adminpanel.dentalarts.hu/api/feedback/get_feedback.php?lang=${lang}`,
       {
         method: 'GET',
         headers: {

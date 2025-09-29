@@ -4,7 +4,7 @@ export async function POST(request) {
     console.log('Sending to PHP:', body);
     
     // Forward the request to your PHP API
-    const response = await fetch('https://tester10.prismaweb.ro/api/newsletter/create.php', {
+    const response = await fetch('http://adminpanel.dentalarts.hu/api/newsletter/create.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

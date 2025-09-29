@@ -1,7 +1,7 @@
 export async function getServices(lang) {
   try {
     const response = await fetch(
-      `https://tester10.prismaweb.ro/api/services/get_service.php?lang=${lang}`,
+      `http://adminpanel.dentalarts.hu/api/services/get_service.php?lang=${lang}`,
       {
         method: 'GET',
         headers: {

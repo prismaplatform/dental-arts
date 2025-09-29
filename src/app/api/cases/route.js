@@ -1,7 +1,7 @@
 export async function getCases(lang) {
   try {
     const response = await fetch(
-      `https://tester10.prismaweb.ro/api/cases/get_cases.php?lang=${lang}`,
+      `http://adminpanel.dentalarts.hu/api/cases/get_cases.php?lang=${lang}`,
       {
         method: 'GET',
         headers: {

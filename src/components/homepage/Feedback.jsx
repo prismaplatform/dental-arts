@@ -97,7 +97,7 @@ const t = useTranslations("testimonials");
                   <Image
                   width={60}
                   height={60}
-                   src={`https://tester10.prismaweb.ro/uploads/feedback/${testimonial.image}`}
+                   src={`http://adminpanel.dentalarts.hu/uploads/feedback/${testimonial.image}`}
                     alt={testimonial.name}
                     className="rounded-full w-50 h-50 object-cover"
                   />

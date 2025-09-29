@@ -1,7 +1,7 @@
 export async function getFaq(lang) {
   try {
     const response = await fetch(
-      `https://tester10.prismaweb.ro/api/faq/get_faq.php?lang=${lang}`,
+      `http://adminpanel.dentalarts.hu/api/faq/get_faq.php?lang=${lang}`,
       {
         method: 'GET',
         headers: {

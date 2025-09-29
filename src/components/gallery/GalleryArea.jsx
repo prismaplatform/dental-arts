@@ -23,7 +23,7 @@ const GalleryPage = ({ title, subtitle, images }) => {
     // Add full URL to images
     const fullUrls = images.map((img) => ({
       ...img,
-      image_url: `https://tester10.prismaweb.ro/uploads/gallery/${img.image_url}`,
+      image_url: `http://adminpanel.dentalarts.hu/uploads/gallery/${img.image_url}`,
     }));
     setLoadedImages(fullUrls);
   }, [images]);

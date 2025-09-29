@@ -93,7 +93,7 @@ const Services = ({services}) => {
                       >
                         {service.main_image_url ? (
                           <Image
-                            src={`https://tester10.prismaweb.ro/uploads/services/${service.main_image_url}`}
+                            src={`http://adminpanel.dentalarts.hu/uploads/services/${service.main_image_url}`}
                             alt={service.title}
                             fill
                             

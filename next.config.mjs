@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   images: {
-    domains: ["tester10.prismaweb.ro"], 
+    domains: ["adminpanel.dentalarts.hu"], 
   },
 };
 

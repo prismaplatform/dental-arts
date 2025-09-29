@@ -16,7 +16,7 @@ const FeaturedService = ({
 			<div className="grid grid-cols-12 xxl:gap-50 gap-25">
 				<div className="lg:col-span-6 col-span-12">
 					<div className="relative">
-						<img src={`https://tester10.prismaweb.ro/uploads/services/${featuredService.main_image_url}`} alt="img" className="relative sm:rounded-tr-[20px] rounded-tr-[10px] sm:rounded-bl-[20px] rounded-bl-[10px] w-full"/>
+						<img src={`http://adminpanel.dentalarts.hu/uploads/services/${featuredService.main_image_url}`} alt="img" className="relative sm:rounded-tr-[20px] rounded-tr-[10px] sm:rounded-bl-[20px] rounded-bl-[10px] w-full"/>
 					</div>
 				</div>
 				<div className="lg:col-span-6 col-span-12">

@@ -12,7 +12,7 @@ const ServiceCard = ({ service, locale = 'hu', messages = {} }) => {
         {/* Kép szekció */}
         <div className="relative h-200 overflow-hidden rounded-t-xl">
           <Image
-             src={`https://tester10.prismaweb.ro/uploads/services/${service.main_image_url}`}
+             src={`http://adminpanel.dentalarts.hu/uploads/services/${service.main_image_url}`}
             alt={service.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700 h-200"

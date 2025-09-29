@@ -8,7 +8,7 @@ import {
 
 const PortfolioAll = ({title, subtitle, home, casesData}) => {
   // Base URL for images
-  const imageBaseUrl = "https://tester10.prismaweb.ro/uploads/cases/";
+  const imageBaseUrl = "http://adminpanel.dentalarts.hu/uploads/cases/";
 
   return (
     <section className="lg:py-120 md:py-80 py-60">
